@@ -38,6 +38,7 @@ function App() {
         />
         {/* Map marker - set position to the desired location - currently, set to default */}
         {/* <Marker position={[42.354022, -71.046245]}> */}
+        {/* TODO - once we finish the RESULTS FOUND - Component, we need to add state management to collect use click and pass along the lat/lon below to update the marker AND details object for the description */}
         <Marker position={[-34.397, 150.644]}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.

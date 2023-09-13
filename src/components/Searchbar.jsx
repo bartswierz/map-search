@@ -21,7 +21,7 @@ const Searchbar = () => {
 
     // lowercase both input and name to make it case insensitive
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
-    console.log("filterData: ", filterData);
+    console.log("DATA INCLUDES: ", filterData);
 
     setFilteredList(filterData);
   };
@@ -31,25 +31,10 @@ const Searchbar = () => {
     console.log("user typing: ", e.target.value);
     //SET userInput AND FILTER DATA BASED ON USER INPUT
     setUserInput(e.target.value);
-
-    /*  TODO - filtered, we want to compare our userInput to the sampleData name and return all the object matches, we will display these below the input field
-    TODO - as a user types display most closely matched results in a gray text below the input field - on submit, display the results in a container below the input field
-    -filtering 
-    */
-    // console.log("sampleData: ", sampleData);
-    // const filteredList = sampleData.filter(({ name }) => name === userInput);
-    // lowercase both input and name to make it case insensitive
-    // setFilteredList(sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase())));
-    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
-    // console.log("filterData: ", filterData);
-    // console.log("filterData: ", typeof filterData);
-
-    // setFilteredList(filterData);
-    // console.log("filteredList: ", filteredList);
   };
 
   useEffect(() => {
-    console.log("filteredList: ", filteredList);
+    console.log("Searchbar - filteredList: ", filteredList);
     console.log("filteredList.length: ", filteredList.length);
   }, [filteredList]);
 
@@ -67,7 +52,7 @@ const Searchbar = () => {
         // onChange={(e) => setUserInput(e.target.value)}
       />
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
-      <div className="border bg-slate-500">
+      <div className="mt-4">
         <Results filteredList={filteredList} />
       </div>
     </form>
