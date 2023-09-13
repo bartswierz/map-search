@@ -6,6 +6,10 @@ import "../assets/icon-search.svg";
 const Results = ({ filteredList }) => {
   console.log("filteredList PASSED: ", filteredList);
 
+  const handleClick = () => {
+    console.log("handleClick");
+  };
+
   if (!filteredList) {
     return null;
   }
@@ -13,7 +17,10 @@ const Results = ({ filteredList }) => {
   return (
     <div className="text-sm h-max max-w-[400px]">
       {/* HEADER */}
-      <h2 className="bg-blue-500 p-3 font-semibold text-white">
+      <h2
+        className={`p-3 font-semibold text-white 
+        ${filteredList.length === 0 ? "bg-gray-500" : "bg-blue-500"}`}
+      >
         {filteredList.length === 0 ? (
           <span>No results found...</span>
         ) : (
@@ -40,10 +47,11 @@ const Results = ({ filteredList }) => {
               </div>
             </div>
 
+            {/* TODO - add redux onClick - set that lat/long as a marker on the map inside APP */}
             {/* NAME & LOCATION */}
-            <div>
+            <div onClick={handleClick}>
               <div className="font-semibold">{name}</div>
-              <div className="text-gray-300">
+              <div className="text-gray-400">
                 {location.lat}, {location.lon}
               </div>
             </div>
