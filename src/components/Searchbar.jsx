@@ -1,21 +1,29 @@
 import { sampleData } from "../../instruction-files/sample-data";
 import { useState, useEffect } from "react";
 import Results from "./Results";
+
 // TODO - add in the AUTOCOMPLETE
 //"Autocomplete" search field - Using the provided sample data in sample-data.js, allow users to search in an input field for results based on the data name value.
 const Searchbar = () => {
   // console.log("sampleData: ", sampleData);
   const [userInput, setUserInput] = useState("");
   const [filteredList, setFilteredList] = useState([]);
+  // const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit: e: ", e);
     console.log("submit - userInput: ", userInput);
 
-    // Empty input field - reset filteredList
+    // Empty input field - reset filteredList - meant to catch if user re-submits with an empty input field
     if (!userInput) {
       setFilteredList([]);
+
+      // Show the "No results found" message for 3 seconds then hide it
+      // setShowMessage(true); // Show the "No results found" message
+      // setTimeout(() => {
+      //   setShowMessage(false); // Hide the message after 3 seconds
+      // }, 3000);
       return;
     }
 
