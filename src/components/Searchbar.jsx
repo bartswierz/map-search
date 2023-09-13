@@ -62,16 +62,14 @@ const Searchbar = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="border-2 border-gray-300 rounded-md p-2 h-[200px] w-[300px]"
+        className="border-2 border-gray-300 rounded-md p-2 h-[50px] w-[400px] "
         onChange={(e) => handleChange(e)}
         // onChange={(e) => setUserInput(e.target.value)}
       />
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
-      {filteredList.length > 0 && (
-        <div className="border bg-slate-500">
-          <Results filteredList={filteredList} />
-        </div>
-      )}
+      <div className="border bg-slate-500">
+        <Results filteredList={filteredList} />
+      </div>
     </form>
   );
 };

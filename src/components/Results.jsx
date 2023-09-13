@@ -7,10 +7,14 @@ const Results = ({ filteredList }) => {
   // }
 
   return (
-    <div className="bg-slate-500 border" style={{ border: "border", zIndex: 50 }}>
-      <h2 className="bg-blue-700 p-3 border z-50" style={{ backgroundColor: "red" }}>
+    <div className="border">
+      <h2 className="p-3 ">
         {/* <h2 className="bg-blue-700 p-3 border z-50" style={{ zIndex: 50, backgroundColor: "red-" }}> */}
-        Found {filteredList.length} Results:
+        {filteredList.length === 0 ? (
+          "No results found..."
+        ) : (
+          <span className="text-semibold">{filteredList.length} Results Found:</span>
+        )}
       </h2>
       {/* AT LEAST ID AND NAME PRESENT, REST ARE OPTIONAL - TAKE CARE OF CONDITIONALS */}
       {filteredList.length > 0 &&

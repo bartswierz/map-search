@@ -2,7 +2,7 @@
 // import { MapContainer, TileLayer, useMap, Marker, Popup, ZoomControl } from "react-leaflet";
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import Searchbar from "./components/Searchbar";
+import Searchbar__ from "./components/Searchbar";
 
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
@@ -22,7 +22,7 @@ TAILWIND INSTALLATION - VITE: https://tailwindcss.com/docs/guides/vite
 function App() {
   return (
     // map-container set to 100vh/100vw to fill the screen
-    <div className="map-container w-screen- h-screen- relative-">
+    <div className="map-container w-screen- h-screen- relative- z-0">
       <MapContainer
         center={[42.35, -71.04]}
         zoom={20}
@@ -31,9 +31,7 @@ function App() {
         // style={{ width: "100%", height: "calc(100% - 60px)", zIndex: 0 }}
         style={{ minWidth: "100%", minHeight: "100%", zIndex: 0 }}
       >
-        <div className="z-10 absolute top-4 left-4 bg-white p-2" style={{ position: "absolute", top: 0, left: 0 }}>
-          <Searchbar />
-        </div>
+        <Searchbar__ />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
