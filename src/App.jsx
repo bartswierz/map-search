@@ -14,6 +14,10 @@ SETUP CODE - https://react-leaflet.js.org/docs/start-setup/
 TAILWIND INSTALLATION - VITE: https://tailwindcss.com/docs/guides/vite
   - npm install -D tailwindcss postcss autoprefixer
   - npx tailwindcss init -p
+
+STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
+  - npm install @reduxjs/toolkit
+  - npm install react-redux
 */
 
 /* TODO - add a component file for the Search Field -> Search Icon - Input field

@@ -1,7 +1,7 @@
 import { sampleData } from "../../instruction-files/sample-data";
 import { useState, useEffect } from "react";
 import Results from "./Results";
-
+import { Counter } from "../redux/features/counter/Counter";
 // TODO - add in the AUTOCOMPLETE
 //"Autocomplete" search field - Using the provided sample data in sample-data.js, allow users to search in an input field for results based on the data name value.
 const Searchbar = () => {
@@ -59,6 +59,8 @@ const Searchbar = () => {
         onChange={(e) => handleChange(e)}
         // onChange={(e) => setUserInput(e.target.value)}
       />
+      <Counter />
+
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
       <div className="mt-4">
         <Results filteredList={filteredList} />
