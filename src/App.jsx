@@ -3,6 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Searchbar from "./components/Searchbar";
+
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -22,21 +23,6 @@ function App() {
   return (
     // map-container set to 100vh/100vw to fill the screen
     <div className="map-container w-screen- h-screen- relative-">
-      {/* <div className="z-10 absolute top-4 left-4 bg-white p-2">
-        <Searchbar />
-      </div> */}
-      {/* <div className="map-container relative"> */}
-      {/* <div className="absolute top-4 left-0 z-20"> */}
-      {/* <div className="absolute top-0 left-20 mt-20"> */}
-
-      {/* </div> */}
-
-      {/* </div> */}
-      {/* setting our Map Container to 100% width/height of the div container -> full screen 
-      -Added zoomControl={false} to remove the default zoom control from the top left and placed one in the top right to make space for the search bar
-      */}
-      {/* <div className="w-full h-full z-0"> */}
-      {/* <div className="w-full h-full"> */}
       <MapContainer
         center={[42.35, -71.04]}
         zoom={20}
