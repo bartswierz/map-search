@@ -1,7 +1,7 @@
 import { sampleData } from "../../instruction-files/sample-data";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Results from "./Results";
-import { Counter } from "../redux/features/counter/Counter";
+
 // TODO - add in the AUTOCOMPLETE
 //"Autocomplete" search field - Using the provided sample data in sample-data.js, allow users to search in an input field for results based on the data name value.
 const Searchbar = () => {
@@ -11,15 +11,14 @@ const Searchbar = () => {
   // const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
+    // Prevent page refresh
     e.preventDefault();
-    console.log("submit: e: ", e);
-    console.log("submit - userInput: ", userInput);
 
     // Empty input field - reset filteredList - meant to catch if user re-submits with an empty input field
     if (!userInput) {
       setFilteredList([]);
 
-      // Show the "No results found" message for 3 seconds then hide it
+      // TODO - Show the "No results found" message for 3 seconds then hide it
       // setShowMessage(true); // Show the "No results found" message
       // setTimeout(() => {
       //   setShowMessage(false); // Hide the message after 3 seconds
@@ -29,7 +28,7 @@ const Searchbar = () => {
 
     // lowercase both input and name to make it case insensitive
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
-    console.log("DATA INCLUDES: ", filterData);
+    // console.log("HandleSubmit - FilteredData: ", filterData);
 
     setFilteredList(filterData);
   };
@@ -40,11 +39,6 @@ const Searchbar = () => {
     //SET userInput AND FILTER DATA BASED ON USER INPUT
     setUserInput(e.target.value);
   };
-
-  useEffect(() => {
-    console.log("Searchbar - filteredList: ", filteredList);
-    console.log("filteredList.length: ", filteredList.length);
-  }, [filteredList]);
 
   return (
     <form
@@ -59,7 +53,6 @@ const Searchbar = () => {
         onChange={(e) => handleChange(e)}
         // onChange={(e) => setUserInput(e.target.value)}
       />
-      <Counter />
 
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
       <div className="mt-4">

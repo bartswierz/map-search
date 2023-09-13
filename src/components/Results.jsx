@@ -2,9 +2,10 @@
 // import IconPin from "../assets/icon-pin.svg";
 import "../assets/icon-pin.svg";
 import "../assets/icon-search.svg";
+import { Counter } from "../redux/features/counter/Counter";
 /* eslint-disable react/prop-types */
 const Results = ({ filteredList }) => {
-  console.log("filteredList PASSED: ", filteredList);
+  // console.log("filteredList: ", filteredList);
 
   const handleClick = () => {
     console.log("handleClick");
@@ -57,6 +58,7 @@ const Results = ({ filteredList }) => {
             </div>
           </div>
         ))}
+        <Counter />
       </div>
     </div>
   );
