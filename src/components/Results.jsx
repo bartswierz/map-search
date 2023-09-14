@@ -2,13 +2,23 @@
 // import IconPin from "../assets/icon-pin.svg";
 import "../assets/icon-pin.svg";
 import "../assets/icon-search.svg";
-import { Counter } from "../redux/features/counter/Counter";
+// import { Counter } from "../redux/features/counter/Counter";
+// import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { updateLocation } from "../redux/features/user/userSlice";
 /* eslint-disable react/prop-types */
 const Results = ({ filteredList }) => {
+  const dispatch = useDispatch();
+
   // console.log("filteredList: ", filteredList);
 
-  const handleClick = () => {
-    console.log("handleClick");
+  const handleClick = (latitude, longitude) => {
+    console.log("handleClick - dispatch updateLocation: latitude", latitude, ",", "longitude: ", longitude);
+    // TODO - update location state in our redux store
+
+    // dispatch(updateLocation({ lat: location.lat, lon: location.lon }));
+    // TODO - pass the user choice for location
+    dispatch(updateLocation({ lat: latitude, lon: longitude }));
   };
 
   if (!filteredList) {
@@ -35,7 +45,11 @@ const Results = ({ filteredList }) => {
       <div className="bg-white">
         {/* {results.map(({ id, name, location }) => ( */}
         {filteredList.map(({ id, name, location }) => (
-          <div key={id} className="border-b border-r border-l border-gray-300 flex gap-4 p-2 hover:bg-slate-100 cursor-pointer px-3">
+          <div
+            key={id}
+            onClick={() => handleClick(location.lat, location.lon)}
+            className="border-b border-r border-l border-gray-300 flex gap-4 p-2 hover:bg-slate-100 cursor-pointer px-3"
+          >
             {/* ICON */}
             <div className="flex items-center">
               <div className="text-primary-color ">
@@ -50,7 +64,8 @@ const Results = ({ filteredList }) => {
 
             {/* TODO - add redux onClick - set that lat/long as a marker on the map inside APP */}
             {/* NAME & LOCATION */}
-            <div onClick={handleClick}>
+            {/* <div onClick={() => handleClick(location.lat, location.lon)}> */}
+            <div>
               <div className="font-semibold">{name}</div>
               <div className="text-gray-400">
                 {location.lat}, {location.lon}
@@ -58,7 +73,8 @@ const Results = ({ filteredList }) => {
             </div>
           </div>
         ))}
-        <Counter />
+        {/* FOR TESTING PURPOSES */}
+        {/* <Counter /> */}
       </div>
     </div>
   );
