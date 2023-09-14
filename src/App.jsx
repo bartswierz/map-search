@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import Searchbar__ from "./components/Searchbar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-
+import CenterToLocation from "./components/CenterToLocation";
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -28,7 +28,8 @@ STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
 function App() {
   const dispatch = useDispatch();
   // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
-  const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
+  const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
+  // const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
   const loc = useSelector((state) => {
     console.log("state: ", state.user.location);
     // return state.userSlice.location;
@@ -63,13 +64,15 @@ function App() {
     // map-container set to 100vh/100vw to fill the screen
     <div className="map-container w-screen- h-screen- relative- z-0">
       <MapContainer
-        center={[42.35, -71.04]}
+        // center={{ lat: 42.35, lng: -71.04 }}
+        // center={[42.354022, -71.046245]}
         // center={[-34.397, 150.644]}
+        center={[location.lat, location.lon]}
         // center={[location.lat, location.lon]}
-        // center={[location.lat, location.lon]}
-        zoom={20}
-        scrollWheelZoom={false}
+        zoom={23}
+        scrollWheelZoom={true}
         zoomControl={false}
+        // zoomControl={false}
         // style={{ width: "100%", height: "calc(100% - 60px)", zIndex: 0 }}
         style={{ minWidth: "100%", minHeight: "100%", zIndex: 0 }}
       >
@@ -79,15 +82,13 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {/* Map marker - set position to the desired location - currently, set to default */}
-        {/* <Marker position={[42.354022, -71.046245]}> */}
-        {/* <Marker position={[-34.397, 150.644]}> */}
-        {location && (
-          <Marker position={[location.lat, location.lon]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        )}
+        <Marker position={[location.lat, location.lon]}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+        {/* )} */}
+        <CenterToLocation location={location} />
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
         {/* <ZoomControl position="bottomright" /> */}
