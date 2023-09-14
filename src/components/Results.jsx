@@ -6,6 +6,7 @@ import "../assets/icon-search.svg";
 // import { useSelector, useDispatch } from "react-redux";
 import { useDispatch } from "react-redux";
 import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffic, storeName } from "../redux/features/user/userSlice";
+import Modal from "./Modal";
 
 /* eslint-disable react/prop-types */
 const Results = ({ filteredList }) => {
@@ -20,17 +21,26 @@ const Results = ({ filteredList }) => {
     let storeNameId = { name: store.name, id: store.id };
     dispatch(storeName(storeNameId)); //Alway given
     dispatch(storeLocation(store.location)); //
-    // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
-    if (store.details?.description) dispatch(storeDescription(store.details.description));
+    dispatch(storeDescription(store.details?.description));
+    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    dispatch(storeWebsite(store.details.website));
 
-    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    if (store.details?.website) dispatch(storeWebsite(store.details.website));
+    // // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
+    dispatch(storeTraffic(store.details.avgTraffic));
 
-    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    if (store.details?.images) dispatch(storeImages(store.details.images));
+    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    dispatch(storeImages(store.images));
+    // // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
+    dispatch(storeDescription(store.details.description));
 
-    // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
-    if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
+    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    // if (store.details?.website) dispatch(storeWebsite(store.details.website));
+
+    // // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
+    // if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
+
+    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    // if (store.images) dispatch(storeImages(store.images));
   };
 
   if (!filteredList) {
@@ -86,7 +96,7 @@ const Results = ({ filteredList }) => {
           </div>
         ))}
       </div>
-      {/* <Modal /> */}
+      <Modal />
     </div>
   );
 };

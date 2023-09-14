@@ -23,7 +23,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     storeName: (state, action) => {
-      console.log("Name - action.payload: ", action.payload);
+      // console.log("Name - action.payload: ", action.payload);
       const { name, id } = action.payload;
       state.name = name;
       state.id = id;
@@ -36,23 +36,31 @@ export const userSlice = createSlice({
     },
     storeDescription: (state, action) => {
       // console.log("Details - action.payload: ", action.payload);
-      const { description } = action.payload;
-      state.description = description;
+      // const { description } = action.payload;
+      console.log("description: ", action.payload);
+      state.details.description = action.payload;
     },
     storeTraffic: (state, action) => {
       // console.log("Traffic - action.payload: ", action.payload);
-      const { avgStoreTraffic } = action.payload;
-      state.avgStoreTraffic = avgStoreTraffic;
+      // const { avgStoreTraffic } = action.payload;
+      // action.payload ? (state.avgStoreTraffic = action.payload) : (state.avgStoreTraffic = {});
+      state.details.avgStoreTraffic = action.payload;
     },
     storeWebsite: (state, action) => {
-      // console.log("Website - action.payload: ", action.payload);
-      const { website } = action.payload;
-      state.website = website;
+      console.log("Website - action.payload: ", action.payload);
+      // const { website } = action.payload; //website = "https://groundsignal.com"
+      // TODO - remove https:// to fix the issue of the website not loading due to missing www
+      let url = action.payload.split("https://")[1];
+      console.log("url: ", url);
+      // action.payload ? (state.website = website) : (state.website = "");
+      // state.details.website = action.payload;
+      state.details.website = url;
     },
     storeImages: (state, action) => {
-      // console.log("action.payload: ", action.payload);
-      const { images } = action.payload;
-      state.images = images;
+      //Spreading the array of images [image1, image2, image3] into our state so that we can use the array methods on it
+      const [...images] = action.payload; // images = [image1, image2, image3]
+      console.log("images: ", images);
+      action.payload ? (state.images = images) : (state.images = []);
     },
   },
 });
@@ -60,7 +68,7 @@ export const userSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { storeLocation, storeDescription, storeTraffic, storeWebsite, storeImages, storeName } = userSlice.actions;
 
-// Selector to get the ENTIRE store object
+// Selector to get the ENTIRE store object for modal
 export const selectStore = (state) => state.user;
 
 export default userSlice.reducer;

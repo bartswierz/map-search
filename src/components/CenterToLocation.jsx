@@ -6,6 +6,7 @@ import { useMap } from "react-leaflet";
 // LEAFLET - MAP RESOURCES - https://leafletjs.com/reference.html#locate-options-setview
 // eslint-disable-next-line react/prop-types
 const CenterToLocation = ({ location }) => {
+  // eslint-disable-next-line react/prop-types
   const { lat, lon } = location;
   console.log("location: ", location);
   const map = useMap();
