@@ -76,9 +76,7 @@ const Results = ({ filteredList }) => {
               </div>
             </div>
 
-            {/* TODO - add redux onClick - set that lat/long as a marker on the map inside APP */}
             {/* NAME & LOCATION */}
-            {/* <div onClick={() => handleClick(location.lat, location.lon)}> */}
             <div>
               <div className="font-semibold">{store.name}</div>
               <div className="text-gray-400">
@@ -87,9 +85,10 @@ const Results = ({ filteredList }) => {
             </div>
           </div>
         ))}
-        {/* FOR TESTING PURPOSES */}
-        {/* <Counter /> */}
       </div>
+
+      {/* TODO - ADD IN THE MODAL HERE */}
+      <div className="bg-white w-[400px] h-[1000px]">Test</div>
     </div>
   );
 };
