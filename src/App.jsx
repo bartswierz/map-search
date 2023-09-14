@@ -1,11 +1,12 @@
 // import { useState } from "react";
 // import { MapContainer, TileLayer, useMap, Marker, Popup, ZoomControl } from "react-leaflet";
-import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Searchbar__ from "./components/Searchbar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
+import Modal from "./components/Modal";
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -29,6 +30,8 @@ function App() {
   const dispatch = useDispatch();
   // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
   const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
+  const [showModal, setShowModal] = useState(false); // True when user clicks Marker on map, set to false when they click X OR anywhere outside of the modal window
+
   // const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
   const loc = useSelector((state) => {
     console.log("state: ", state.user.location);
@@ -47,8 +50,20 @@ function App() {
     // });
   }, [loc]);
 
+  // const handleModal = () => {
+  //   console.log("marker clicked");
+  // };
   // const map = useMap();
 
+  const handleModal = () => {
+    console.log("marker clicked");
+    // setShowModal(true); // Show the modal when marker is clicked
+    setShowModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
+  };
+
+  // const handleCloseModal = () => {
+  //   setShowModal(false); // Close the modal when needed
+  // };
   // useEffect(() => {
   //   if (location) {
   //     map.setView([location.lat, location.lon], 20); // Set the view to the marker's position with a zoom level of 20
@@ -82,16 +97,24 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {/* Map marker - set position to the desired location - currently, set to default */}
-        <Marker position={[location.lat, location.lon]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        <div onClick={handleModal}>
+          {/* <Marker position={[location.lat, location.lon]} icon={"./assets/icon-pin.svg"}> */}
+          <Marker position={[location.lat, location.lon]}>
+            {/* TODO - replace popup with modal */}
+            {/* <Popup className="height-[500px]">
+              <Modal />
+            </Popup> */}
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </div>
         {/* )} */}
         <CenterToLocation location={location} />
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
         {/* <ZoomControl position="bottomright" /> */}
+        {/* {showModal && <Modal />} */}
       </MapContainer>
       {/* </div> */}
     </div>
