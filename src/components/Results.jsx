@@ -65,8 +65,6 @@ const Results = ({ filteredList }) => {
 
       {/* RESULTS */}
       <div className="bg-white">
-        {/* {results.map(({ id, name, location }) => ( */}
-        {/* {filteredList.map(({ id, name, location }) => ( */}
         {filteredList.map((store) => (
           <div
             key={store.id}
@@ -96,7 +94,6 @@ const Results = ({ filteredList }) => {
           </div>
         ))}
       </div>
-      {/* <Modal /> */}
     </div>
   );
 };

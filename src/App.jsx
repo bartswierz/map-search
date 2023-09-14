@@ -108,21 +108,15 @@ function App() {
             click: () => handleModal(location.lat, location.lon),
           }}
         >
-          {/* <Marker position={[location.lat, location.lon]}> */}
-          {/* TODO - replace popup with modal */}
-          {/* <Popup className="height-[500px]">
-              <Modal />
-            </Popup> */}
-          <Popup onClick={handleModal}>
+          {/* <Popup onClick={handleModal}>
             A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+          </Popup> */}
         </Marker>
-        {/* </div> */}
-        {/* )} */}
         <CenterToLocation location={location} />
+
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
-        {/* <ZoomControl position="bottomright" /> */}
+
         {/* Passing handleModal as a prop so we can open/close modal - handleModal is a simple boolean state switch */}
         {showModal && <Modal handleModal={handleModal} />}
       </MapContainer>

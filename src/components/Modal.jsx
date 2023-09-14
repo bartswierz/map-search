@@ -10,15 +10,32 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
   //TODO- we need to figure out how to open the modal from the marker click
   const store = useSelector(selectStore);
   const { name, id, location, details, images } = store;
+  // console.log("webiste: ", details.website);
   // console.log("store: ", store);
   // console.log("details.description: ", details.description);
   // console.log("images: ", images);
   // console.log("website: ", details.website);
   // console.log("avgTraffic: ", details.avgTraffic);
 
-  // if (!store) return <div>loading...</div>;
+  // Moved icon to its own component for better readability
+  const PinIcon = () => {
+    return (
+      // {/* ICON */}
+      <div className="flex items-center">
+        <div className="text-primary-color ">
+          <svg width="30" height="30" viewBox="0 0 11 14" xmlns="http://www.w3.org/2000/svg" className="text-primary-color">
+            <path
+              d="M5.49 0A5.496 5.496 0 0 0 0 5.49c0 2.08 1.412 4.261 2.596 5.724.97 1.197 2.54 2.768 2.886 2.797l.051.003c.37 0 2.002-1.69 2.88-2.786 1.17-1.461 2.567-3.644 2.567-5.738A5.496 5.496 0 0 0 5.49 0zm0 8.546a3.147 3.147 0 1 1-.001-6.293 3.147 3.147 0 0 1 0 6.293z"
+              fill="currentColor" // uses the text-primary-color from tailwind.config.js
+            />
+          </svg>
+        </div>
+      </div>
+    );
+  };
 
   return (
+    // Set button in the top right corner of the screen using fixed position
     // May have to set bg-black/80 to no background when modal is closed
     //Set a fixed overlay with a z-index of 9999 to cover the entire screen with a black gradient background. Justify-center/items-center will keep our modal centered
     <>
@@ -35,24 +52,42 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
         className="fixed flex justify-center items-center top-0 left-0 w-full h-full bg-black/80 z-[9000] cursor-default"
         onClick={handleModal}
       >
-        {/* Set button in the top right corner of the screen using fixed position */}
-        {/* <button onClick={closeModal} className="fixed top-5 right-5 font-bold text-2xl bg-slate-500 w-8 h-8">
-        X
-      </button> */}
-        <div className="w-[600px] h-[400px] bg-white">
-          <p>Name: {name}</p>
-          <p>id: {id}</p>
-          <p>
-            location: {location.lat}, {location.lon}
-          </p>
-          {details.description && <p>Description: {details.description}</p>}
+        <div className="w-[600px] h-[400px] bg-white rounded-md">
+          {/* TODO - 1 flex container - 2 items  */}
+          {/* HEADER CONTAINER */}
+          <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200">
+            {/* ICON, NAME, LOCATION */}
+            <div className="flex gap-4">
+              {/* ICON */}
+              <div className="flex justify-content items-center">
+                <PinIcon />
+              </div>
 
-          {details.website && (
-            // Fixes the website load error by adding 'www' to the url
-            <a href={`https://www.${details.website}`} target="_blank" rel="noreferrer" className="">
-              Website
-            </a>
-          )}
+              {/* NAME & LOCATION */}
+              <div className="flex flex-col">
+                <span className="text-2xl font-semibold text-gray-700">{name}</span>
+                <span className="text-base text-gray-400 font-medium">
+                  {location.lat}, {location.lon}
+                </span>
+              </div>
+            </div>
+
+            {/* WEBSITE LINK */}
+            <div className="flex justify-center items-center">
+              <button
+                type="button"
+                className="bg-blue-500 text-white px-8 py-2 flex justify-center items-center rounded-md h-12  hover:bg-blue-400"
+              >
+                {details.website && (
+                  <a href={`https://www.${details.website}`} target="_blank" rel="noreferrer" className="">
+                    <span className="text-white font-semibold">Visit Website</span>
+                  </a>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {details.description && <p>Description: {details.description}</p>}
 
           <div className="flex gap-2">
             {/* Images: */}

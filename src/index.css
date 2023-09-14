@@ -18,3 +18,8 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+/* FOR QUICK LAYOUTS */
+.b {
+  border: 2px solid rgb(0, 132, 255);
+}
