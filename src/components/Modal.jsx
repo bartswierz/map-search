@@ -52,7 +52,7 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
         className="fixed flex justify-center items-center top-0 left-0 w-full h-full bg-black/80 z-[9000] cursor-default"
         onClick={handleModal}
       >
-        <div className="w-[600px] h-[400px] bg-white rounded-md">
+        <div className="w-[500px] bg-white rounded-md">
           {/* TODO - 1 flex container - 2 items  */}
           {/* HEADER CONTAINER */}
           <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200">
@@ -87,13 +87,18 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
             </div>
           </div>
 
-          {details.description && <p>Description: {details.description}</p>}
+          {/* DESCRIPTION */}
+          {details.description && (
+            <div className="px-3 py-4">
+              <p className="text-base">{details.description}</p>
+            </div>
+          )}
 
-          <div className="flex gap-2">
-            {/* Images: */}
+          {/* IMAGES */}
+          <div className="flex gap-3 p-2 mt-10">
             {images.map((image) => {
               return (
-                <div key={image} className="flex h-[200px]">
+                <div key={image} className="flex h-[200px] max-h-[150px] flex-grow">
                   <img key={image} src={image} alt="store image" className="w-full h-full object-cover" />
                 </div>
               );
