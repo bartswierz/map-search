@@ -60,4 +60,7 @@ export const userSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { storeLocation, storeDescription, storeTraffic, storeWebsite, storeImages, storeName } = userSlice.actions;
 
+// Selector to get the ENTIRE store object
+export const selectStore = (state) => state.user;
+
 export default userSlice.reducer;

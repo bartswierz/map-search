@@ -13,7 +13,7 @@ const Results = ({ filteredList }) => {
 
   // console.log("filteredList: ", filteredList);
 
-  // const handleClick = (latitude, longitude) => {
+  // The idea was to separate the values as all but id, name, and location are optional to help with resusability as some future updates may only need a single piece of data. I also wanted to check for the existence of the data before dispatching it to the store as it related to the UI rendering.
   const handleClick = (store) => {
     console.log("handleClick - dispatch updateLocation: store: ', store", store);
     // UPDATE LOCATION TO CENTER MAP ON THE USER CHOICE
@@ -86,9 +86,7 @@ const Results = ({ filteredList }) => {
           </div>
         ))}
       </div>
-
-      {/* TODO - ADD IN THE MODAL HERE */}
-      <div className="bg-white w-[400px] h-[1000px]">Test</div>
+      {/* <Modal /> */}
     </div>
   );
 };
