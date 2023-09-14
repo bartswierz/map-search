@@ -26,7 +26,10 @@ const Results = ({ filteredList }) => {
     // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     if (store.details?.website) dispatch(storeWebsite(store.details.website));
 
-    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
+    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    if (store.details?.images) dispatch(storeImages(store.details.images));
+
+    // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
     if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
   };
 
