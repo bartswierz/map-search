@@ -5,20 +5,29 @@ import "../assets/icon-search.svg";
 // import { Counter } from "../redux/features/counter/Counter";
 // import { useSelector, useDispatch } from "react-redux";
 import { useDispatch } from "react-redux";
-import { updateLocation } from "../redux/features/user/userSlice";
+import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffic, storeName } from "../redux/features/user/userSlice";
+
 /* eslint-disable react/prop-types */
 const Results = ({ filteredList }) => {
   const dispatch = useDispatch();
 
   // console.log("filteredList: ", filteredList);
 
-  const handleClick = (latitude, longitude) => {
-    console.log("handleClick - dispatch updateLocation: latitude", latitude, ",", "longitude: ", longitude);
-    // TODO - update location state in our redux store
+  // const handleClick = (latitude, longitude) => {
+  const handleClick = (store) => {
+    console.log("handleClick - dispatch updateLocation: store: ', store", store);
+    // UPDATE LOCATION TO CENTER MAP ON THE USER CHOICE
+    let storeNameId = { name: store.name, id: store.id };
+    dispatch(storeName(storeNameId)); //Alway given
+    dispatch(storeLocation(store.location)); //
+    // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
+    if (store.details?.description) dispatch(storeDescription(store.details.description));
 
-    // dispatch(updateLocation({ lat: location.lat, lon: location.lon }));
-    // TODO - pass the user choice for location
-    dispatch(updateLocation({ lat: latitude, lon: longitude }));
+    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    if (store.details?.website) dispatch(storeWebsite(store.details.website));
+
+    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
+    if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
   };
 
   if (!filteredList) {
@@ -44,10 +53,12 @@ const Results = ({ filteredList }) => {
       {/* RESULTS */}
       <div className="bg-white">
         {/* {results.map(({ id, name, location }) => ( */}
-        {filteredList.map(({ id, name, location }) => (
+        {/* {filteredList.map(({ id, name, location }) => ( */}
+        {filteredList.map((store) => (
           <div
-            key={id}
-            onClick={() => handleClick(location.lat, location.lon)}
+            key={store.id}
+            // onClick={() => handleClick(store.location.lat, store.location.lon)}
+            onClick={() => handleClick(store)}
             className="border-b border-r border-l border-gray-300 flex gap-4 p-2 hover:bg-slate-100 cursor-pointer px-3"
           >
             {/* ICON */}
@@ -66,9 +77,9 @@ const Results = ({ filteredList }) => {
             {/* NAME & LOCATION */}
             {/* <div onClick={() => handleClick(location.lat, location.lon)}> */}
             <div>
-              <div className="font-semibold">{name}</div>
+              <div className="font-semibold">{store.name}</div>
               <div className="text-gray-400">
-                {location.lat}, {location.lon}
+                {store.location.lat}, {store.location.lon}
               </div>
             </div>
           </div>

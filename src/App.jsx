@@ -3,7 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Searchbar__ from "./components/Searchbar";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
 import Modal from "./components/Modal";
@@ -27,17 +27,15 @@ STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
  */
 
 function App() {
-  const dispatch = useDispatch();
   // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
   const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
-  const [showModal, setShowModal] = useState(false); // True when user clicks Marker on map, set to false when they click X OR anywhere outside of the modal window
+  const [showModal, setShowModal] = useState(true);
+  // const [showModal, setShowModal] = useState(false); // True when user clicks Marker on map, set to false when they click X OR anywhere outside of the modal window
 
   // const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
+  // get location object from redux store
   const loc = useSelector((state) => {
-    console.log("state: ", state.user.location);
-    // return state.userSlice.location;
-    // return state.user.location;
-    // return setLocation(state.user.location);
+    // console.log("state: ", state.user.location);
     return state.user.location;
   });
 
@@ -84,7 +82,7 @@ function App() {
         // center={[-34.397, 150.644]}
         center={[location.lat, location.lon]}
         // center={[location.lat, location.lon]}
-        zoom={23}
+        zoom={19}
         scrollWheelZoom={true}
         zoomControl={false}
         // zoomControl={false}
