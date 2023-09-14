@@ -23,10 +23,10 @@ const Results = ({ filteredList }) => {
     dispatch(storeLocation(store.location)); //
     dispatch(storeDescription(store.details?.description));
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    dispatch(storeWebsite(store.details.website));
+    if (store.details?.website) dispatch(storeWebsite(store.details.website));
 
     // // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
-    dispatch(storeTraffic(store.details.avgTraffic));
+    if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
 
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     dispatch(storeImages(store.images));
@@ -96,7 +96,7 @@ const Results = ({ filteredList }) => {
           </div>
         ))}
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </div>
   );
 };

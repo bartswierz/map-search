@@ -29,7 +29,7 @@ STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
 function App() {
   // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
   const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   // const [showModal, setShowModal] = useState(false); // True when user clicks Marker on map, set to false when they click X OR anywhere outside of the modal window
 
   // const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
@@ -53,12 +53,15 @@ function App() {
   // };
   // const map = useMap();
 
-  const handleModal = () => {
-    console.log("marker clicked");
+  const handleModal = (lat, lon) => {
+    console.log("marker clicked: ", lat, ",", lon);
     // setShowModal(true); // Show the modal when marker is clicked
     setShowModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
   };
 
+  useEffect(() => {
+    console.log("showModal changed to: ", showModal);
+  }, [showModal]);
   // const handleCloseModal = () => {
   //   setShowModal(false); // Close the modal when needed
   // };
@@ -95,24 +98,32 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {/* Map marker - set position to the desired location - currently, set to default */}
-        <div onClick={handleModal}>
-          {/* <Marker position={[location.lat, location.lon]} icon={"./assets/icon-pin.svg"}> */}
-          <Marker position={[location.lat, location.lon]}>
-            {/* TODO - replace popup with modal */}
-            {/* <Popup className="height-[500px]">
+        {/* <div onClick={handleModal} className="border bg-green-500 w-[50] h-[50] p-8 cursor-text"> */}
+        {/* <Marker position={[location.lat, location.lon]} icon={"./assets/icon-pin.svg"}> */}
+        {/* <Marker position={[location.lat, location.lon]} onClick={() => handleModal(location.lat, location.lon)}> */}
+        {/* We are using eventHandlers as onClick does not work on the newer react-leaflet v3 as researched. */}
+        <Marker
+          position={[location.lat, location.lon]}
+          eventHandlers={{
+            click: () => handleModal(location.lat, location.lon),
+          }}
+        >
+          {/* <Marker position={[location.lat, location.lon]}> */}
+          {/* TODO - replace popup with modal */}
+          {/* <Popup className="height-[500px]">
               <Modal />
             </Popup> */}
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </div>
+          <Popup onClick={handleModal}>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+        {/* </div> */}
         {/* )} */}
         <CenterToLocation location={location} />
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
         {/* <ZoomControl position="bottomright" /> */}
-        {/* {showModal && <Modal />} */}
+        {showModal && <Modal />}
       </MapContainer>
       {/* </div> */}
     </div>
