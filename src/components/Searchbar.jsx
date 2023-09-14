@@ -44,7 +44,8 @@ const Searchbar = () => {
     <form
       onSubmit={handleSubmit}
       // using inline style to position the search bar over map - absolute + z-[9999] wasn't taking effect via Tailwind
-      style={{ position: "absolute", top: 8, left: 8, zIndex: 9999 }}
+      className="z-[999] top-5 left-5 absolute"
+      // style={{ position: "absolute", top: 8, left: 8, zIndex: 9999 }}
     >
       <input
         type="text"

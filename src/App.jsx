@@ -123,7 +123,8 @@ function App() {
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
         {/* <ZoomControl position="bottomright" /> */}
-        {showModal && <Modal />}
+        {/* Passing handleModal as a prop so we can open/close modal - handleModal is a simple boolean state switch */}
+        {showModal && <Modal handleModal={handleModal} />}
       </MapContainer>
       {/* </div> */}
     </div>
