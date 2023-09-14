@@ -8,6 +8,8 @@ const Searchbar = () => {
   // console.log("sampleData: ", sampleData);
   const [userInput, setUserInput] = useState("");
   const [filteredList, setFilteredList] = useState([]);
+  const [isActive, setIsActive] = useState(false); // TODO - TRUE => BLACK TEXT/ICON / FALSE => GRAY TEXT/ICONto be black, inactive gray to match placeholder text
+
   // const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
@@ -40,23 +42,57 @@ const Searchbar = () => {
     setUserInput(e.target.value);
   };
 
+  // Changes Search Icon from Gray to Black when user clicks on the input field
+  const handleClick = () => {
+    console.log("user clicked on searchbar");
+    setIsActive(true);
+  };
+
+  const SearchIcon = () => {
+    return (
+      // {/* ICON */}
+      <div className="flex items-center">
+        {/* <div> */}
+        <svg width="18" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path
+              d="M6.472 12.944A6.472 6.472 0 1 1 6.472 0a6.472 6.472 0 0 1 0 12.944zm0-1.438a5.034 5.034 0 1 0 0-10.068 5.034 5.034 0 0 0 0 10.068z"
+              fill={`${isActive ? "#100" : "#bdbdbd"}`} // uses the text-primary-color from tailwind.config.js
+            />
+            <path
+              d="M9.86 11.166l1.044-1.045 4.896 4.896-1.045 1.044z"
+              // TODO - when active we want it black, inactive gray to match placeholder text
+              // fill="currentColor" // uses the text-primary-color from tailwind.config.js
+              fill={`${isActive ? "#100" : "#bdbdbd"}`} // uses the text-primary-color from tailwind.config.js
+            />
+          </g>
+        </svg>
+        {/* </div> */}
+      </div>
+    );
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       // using inline style to position the search bar over map - absolute + z-[9999] wasn't taking effect via Tailwind
-      className="z-[999] top-5 left-5 absolute"
+      className="z-[999] top-5 left-5 absolute w-full max-w-[500px]"
+      onClick={handleClick}
       // style={{ position: "absolute", top: 8, left: 8, zIndex: 9999 }}
     >
-      <input
-        type="text"
-        placeholder="Search..."
-        className="border-2 border-gray-300 rounded-md p-2 h-[50px] w-[400px] "
-        onChange={(e) => handleChange(e)}
-        // onChange={(e) => setUserInput(e.target.value)}
-      />
+      <div className="flex bg-white gap-2 py-2 pl-4 rounded-t-md border-2 border-[#bdbdbd] shadow-md shadow-[#bdbdbd] ">
+        <SearchIcon />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="rounded-md p-2 w-[380px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium border-transparent focus:border-transparent"
+          onChange={(e) => handleChange(e)}
+          // onChange={(e) => setUserInput(e.target.value)}
+        />
+      </div>
 
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
-      <div className="mt-4">
+      <div className="mt-4 w-[500px]-">
         <Results filteredList={filteredList} />
       </div>
     </form>

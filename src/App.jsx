@@ -78,7 +78,7 @@ function App() {
 
   return (
     // map-container set to 100vh/100vw to fill the screen
-    <div className="map-container w-screen- h-screen- relative- z-0">
+    <div className="map-container z-0">
       <MapContainer
         // center={{ lat: 42.35, lng: -71.04 }}
         // center={[42.354022, -71.046245]}
@@ -98,9 +98,6 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {/* Map marker - set position to the desired location - currently, set to default */}
-        {/* <div onClick={handleModal} className="border bg-green-500 w-[50] h-[50] p-8 cursor-text"> */}
-        {/* <Marker position={[location.lat, location.lon]} icon={"./assets/icon-pin.svg"}> */}
-        {/* <Marker position={[location.lat, location.lon]} onClick={() => handleModal(location.lat, location.lon)}> */}
         {/* We are using eventHandlers as onClick does not work on the newer react-leaflet v3 as researched. */}
         <Marker
           position={[location.lat, location.lon]}

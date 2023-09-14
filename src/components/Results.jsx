@@ -48,7 +48,7 @@ const Results = ({ filteredList }) => {
   }
 
   return (
-    <div className="text-sm h-max max-w-[400px]">
+    <div className="text-sm h-max max-w-[500px]">
       {/* HEADER */}
       <h2
         className={`p-3 font-semibold text-white 

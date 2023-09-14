@@ -53,7 +53,6 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
         onClick={handleModal}
       >
         <div className="w-[500px] bg-white rounded-md">
-          {/* TODO - 1 flex container - 2 items  */}
           {/* HEADER CONTAINER */}
           <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200">
             {/* ICON, NAME, LOCATION */}
@@ -95,7 +94,7 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
           )}
 
           {/* IMAGES */}
-          <div className="flex gap-3 p-2 mt-10">
+          <div className="flex gap-2 p-2 mt-10">
             {images.map((image) => {
               return (
                 <div key={image} className="flex h-[200px] max-h-[150px] flex-grow">
