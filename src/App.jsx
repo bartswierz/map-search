@@ -88,6 +88,7 @@ function App() {
         zoom={19}
         scrollWheelZoom={true}
         zoomControl={false}
+        dragging={`${showModal ? "false" : "true"}`}
         // zoomControl={false}
         // style={{ width: "100%", height: "calc(100% - 60px)", zIndex: 0 }}
         style={{ minWidth: "100%", minHeight: "100%", zIndex: 0 }}

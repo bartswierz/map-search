@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectStore } from "../redux/features/user/userSlice"; //Grabs all the store data from the redux store instead of having to grab each piece of data individually
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
-import { useState, useEffect } from "react";
+
 // ID and NAME bare minimum that will be given the rest are OPTIONAL
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
 const Modal = ({ openModal, closeModal, handleModal }) => {
@@ -9,13 +9,7 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
   //So our store will already have all data that we need to display once the user clicks on the result list item, so that is taken care of,
   //TODO- we need to figure out how to open the modal from the marker click
   const store = useSelector(selectStore);
-  const { name, id, location, details, images } = store;
-  // console.log("webiste: ", details.website);
-  // console.log("store: ", store);
-  // console.log("details.description: ", details.description);
-  // console.log("images: ", images);
-  // console.log("website: ", details.website);
-  // console.log("avgTraffic: ", details.avgTraffic);
+  const { name, location, details, images } = store;
 
   // Moved icon to its own component for better readability
   const PinIcon = () => {
@@ -35,8 +29,6 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
   };
 
   return (
-    // Set button in the top right corner of the screen using fixed position
-    // May have to set bg-black/80 to no background when modal is closed
     //Set a fixed overlay with a z-index of 9999 to cover the entire screen with a black gradient background. Justify-center/items-center will keep our modal centered
     <>
       <MdClose
@@ -48,11 +40,13 @@ const Modal = ({ openModal, closeModal, handleModal }) => {
       {/* <button onClick={handleModal} className="fixed top-5 right-5 font-bold text-2xl bg-slate-500 w-8 h-8 z-[9999]">
         X
       </button> */}
+      {/* OUTSIDE AREA - Clicking the button OR outside of the modal will close it*/}
       <div
         className="fixed flex justify-center items-center top-0 left-0 w-full h-full bg-black/80 z-[9000] cursor-default"
         onClick={handleModal}
       >
-        <div className="w-[500px] bg-white rounded-md">
+        {/* MODAL - e.stopPropagation prevents our modal from closing when clicking WITHIN the Modal*/}
+        <div className="w-[500px] bg-white rounded-md" onClick={(e) => e.stopPropagation()}>
           {/* HEADER CONTAINER */}
           <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200">
             {/* ICON, NAME, LOCATION */}
