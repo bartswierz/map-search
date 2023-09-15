@@ -25,3 +25,7 @@ CHART.JS - https://www.chartjs.org/docs/latest/getting-started/installation.html
 GOOGLE MAPS API - https://developers.google.com/maps/documentation/javascript/overview
 https://developers.google.com/maps/documentation/javascript/maptypes#:~:text=The%20following%20map%20types%20are,displays%20Google%20Earth%20satellite%20images.
 map types: roadmap, satellite, hybrid, terrain
+
+TO GET AN GOOGLE API KEY, PLEASE VISIT: https://developers.google.com/maps/documentation/javascript/get-api-key
+IF YOU WOULD LIKE TO USE A PERSONAL API KEY, PLEASE CREATE A .env FILE IN THE ROOT DIRECTORY AND ADD THE FOLLOWING LINE: VITE_GOOGLE_API_KEY=YOUR_API_KEY_HERE
+OR, YOU CAN USE THE API KEY PROVIDED IN THE STARTER INDEX.HTML FILE, I PLACED IT IN THE 'INSTRUCTIONS-FILES' FOLDER. I WANTED TO USE .ENV TO FOLLOW BEST PRACTICES AND TO KEEP THE API KEY PRIVATE

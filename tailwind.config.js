@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-color": "rgb(59 130 246)", // text-primary-color
+        "primary-color": "#3b82f6", // text-primary-color #3b82f6
       },
     },
   },

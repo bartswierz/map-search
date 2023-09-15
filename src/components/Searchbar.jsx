@@ -75,7 +75,7 @@ const Searchbar = () => {
     <form
       onSubmit={handleSubmit}
       // using inline style to position the search bar over map - absolute + z-[9999] wasn't taking effect via Tailwind
-      className="z-[999] top-5 left-5 absolute min-w-[280px] w-[25vw]  max-w-[500px]"
+      className="z-[999] top-5 left-5 absolute min-w-[280px] w-[25vw]  max-w-[500px] cursor-default"
       onClick={handleClick}
       // style={{ position: "absolute", top: 8, left: 8, zIndex: 9999 }}
     >
