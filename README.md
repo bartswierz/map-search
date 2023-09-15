@@ -1,6 +1,14 @@
 # Map Search
 
 ## Getting Started
+To run the application locally, follow the steps below
+
+1. Create an empty directory on your desktop
+2. Clone the repository into the folder locally by using git clone:
+   i. git clone
+3. Navigate into the directory
+   i. npm install
+4. 
 
 ## Built With
 - React.js
