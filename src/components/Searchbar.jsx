@@ -78,7 +78,6 @@ const Searchbar = () => {
           type="text"
           placeholder="Search..."
           className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none"
-          className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none"
           onChange={(e) => handleChange(e)}
         />
       </div>
