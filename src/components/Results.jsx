@@ -6,7 +6,6 @@ import "../assets/icon-search.svg";
 // import { useSelector, useDispatch } from "react-redux";
 import { useDispatch } from "react-redux";
 import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffic, storeName } from "../redux/features/user/userSlice";
-import Modal from "./Modal";
 
 /* eslint-disable react/prop-types */
 const Results = ({ filteredList }) => {
@@ -29,18 +28,9 @@ const Results = ({ filteredList }) => {
     if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
 
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    dispatch(storeImages(store.images));
-    // // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
-    dispatch(storeDescription(store.details.description));
-
-    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    // if (store.details?.website) dispatch(storeWebsite(store.details.website));
-
-    // // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
-    // if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
-
-    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
-    // if (store.images) dispatch(storeImages(store.images));
+    if (store.images) dispatch(storeImages(store.images));
+    // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
+    if (store.details?.description) dispatch(storeDescription(store.details.description));
   };
 
   if (!filteredList) {
@@ -48,10 +38,10 @@ const Results = ({ filteredList }) => {
   }
 
   return (
-    <div className="text-sm h-max max-w-[500px]">
+    <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-md shadow-[#bdbdbd]">
       {/* HEADER */}
       <h2
-        className={`p-3 font-semibold text-white 
+        className={`p-3 font-semibold text-white shadow-md shadow-[#bdbdbd]
         ${filteredList.length === 0 ? "bg-gray-500" : "bg-blue-500"}`}
       >
         {filteredList.length === 0 ? (
@@ -86,7 +76,7 @@ const Results = ({ filteredList }) => {
 
             {/* NAME & LOCATION */}
             <div>
-              <div className="font-semibold">{store.name}</div>
+              <div className="font-semibold text-[#666]">{store.name}</div>
               <div className="text-gray-400">
                 {store.location.lat}, {store.location.lon}
               </div>

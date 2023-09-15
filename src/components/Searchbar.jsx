@@ -76,7 +76,7 @@ const Searchbar = () => {
     <form
       onSubmit={handleSubmit}
       // using inline style to position the search bar over map - absolute + z-[9999] wasn't taking effect via Tailwind
-      className="z-[999] top-5 left-5 absolute w-full max-w-[500px]"
+      className="z-[999] top-5 left-5 absolute min-w-[280px] w-[25vw]  max-w-[500px]"
       onClick={handleClick}
       // style={{ position: "absolute", top: 8, left: 8, zIndex: 9999 }}
     >
@@ -85,14 +85,14 @@ const Searchbar = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="rounded-md p-2 w-[380px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium border-transparent focus:border-transparent"
+          className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium border-transparent focus:border-transparent"
           onChange={(e) => handleChange(e)}
           // onChange={(e) => setUserInput(e.target.value)}
         />
       </div>
 
       {/* TODO - POPULATE SEARCH MATCHES BELOW INPUT HERE AS 'USER TYPES" - IF THE FILTERED MAP HAS AT LEAST 1 VALUE IN THERE THEN DISPLAY*/}
-      <div className="mt-4 w-[500px]-">
+      <div className="mt-4">
         <Results filteredList={filteredList} />
       </div>
     </form>
