@@ -1,5 +1,5 @@
 import { sampleData } from "../constants/sample-data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Results from "./Results";
 
 // TODO - add in the AUTOCOMPLETE
@@ -19,30 +19,41 @@ const Searchbar = () => {
     // Empty input field - reset filteredList - meant to catch if user re-submits with an empty input field
     if (!userInput) {
       setFilteredList([]);
-
-      // TODO - Show the "No results found" message for 3 seconds then hide it
-      // setShowMessage(true); // Show the "No results found" message
-      // setTimeout(() => {
-      //   setShowMessage(false); // Hide the message after 3 seconds
-      // }, 3000);
       return;
     }
 
     // lowercase both input and name to make it case insensitive
-    const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
-    // console.log("HandleSubmit - FilteredData: ", filterData);
+    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
+    const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
 
     setFilteredList(filterData);
   };
 
   // We want to DISPLAY CONTAINER BELOW INPUT -IF USER TYPES IN INPUT FIELD- if its empty we dont want to display it, if it has atleast one character show the container with matches
+  // const handleChange = (e) => {
+  //   // console.log("User input: ", e.target.value);
+  //   setUserInput(e.target.value);
+  // };
+
   const handleChange = (e) => {
-    // console.log("User input: ", e.target.value);
-    //SET userInput AND FILTER DATA BASED ON USER INPUT
+    console.log("e: ", e);
     setUserInput(e.target.value);
+
+    if (!userInput) {
+      setFilteredList([]);
+      return;
+    }
+
+    // lowercase both input and name to make it case insensitive
+    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
+    const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
+    console.log("filterData: ", filterData);
+    setFilteredList(filterData);
   };
 
-  // Changes Search Icon from Gray to Black when user clicks on the input field
+  useEffect(() => {}, [userInput]);
+
+  // Changes Search Icon from Gray to Black
   const handleClick = () => {
     setIsActive(true);
   };
@@ -84,7 +95,7 @@ const Searchbar = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium border-transparent focus:border-transparent"
+          className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none"
           onChange={(e) => handleChange(e)}
         />
       </div>
