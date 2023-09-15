@@ -5,7 +5,7 @@ To run the application locally, follow the steps below
 
 1. Create an empty directory on your desktop
 2. Clone the repository into the folder locally by using git clone:
-   1. git clone
+   1. git clone https://github.com/bartswierz/map-search.git
 3. Navigate into the directory
    1. npm install
 4. 
