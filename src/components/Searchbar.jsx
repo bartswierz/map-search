@@ -1,5 +1,5 @@
 import { sampleData } from "../constants/sample-data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Results from "./Results";
 
 const Searchbar = () => {
@@ -25,9 +25,22 @@ const Searchbar = () => {
   //COLLECT USER INPUT
   const handleChange = (e) => {
     setUserInput(e.target.value);
+
+    if (!userInput) {
+      setFilteredList([]);
+      return;
+    }
+
+    // lowercase both input and name to make it case insensitive
+    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
+    const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
+    console.log("filterData: ", filterData);
+    setFilteredList(filterData);
   };
 
-  // Changes Search Icon from Gray to Black when user clicks on the input field
+  useEffect(() => {}, [userInput]);
+
+  // Changes Search Icon from Gray to Black
   const handleClick = () => {
     setIsActive(true);
   };
@@ -64,6 +77,7 @@ const Searchbar = () => {
         <input
           type="text"
           placeholder="Search..."
+          className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none"
           className="rounded-md p-2 min-w-[200px] text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none"
           onChange={(e) => handleChange(e)}
         />
