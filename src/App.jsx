@@ -21,6 +21,10 @@ TAILWIND INSTALLATION - VITE: https://tailwindcss.com/docs/guides/vite
 STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
   - npm install @reduxjs/toolkit
   - npm install react-redux
+
+CHART.JS - https://www.chartjs.org/docs/latest/getting-started/installation.html
+  - npm install chart.js
+  - npm install react-chartjs-2
 */
 
 /* TODO - add a component file for the Search Field -> Search Icon - Input field
@@ -29,29 +33,18 @@ STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
 function App() {
   // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
   const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
-  const [showModal, setShowModal] = useState(false);
-  // const [showModal, setShowModal] = useState(false); // True when user clicks Marker on map, set to false when they click X OR anywhere outside of the modal window
+  const [showModal, setShowModal] = useState(false); // TRUE = OPENED | FALSE = CLOSED
 
-  // const [location, setLocation] = useState({ lat: -34.397, lon: 150.644 });
   // get location object from redux store
   const loc = useSelector((state) => {
     // console.log("state: ", state.user.location);
     return state.user.location;
   });
 
+  // UPDATE LOCATION ONCE WE RECEIVE THE LOCATION FROM REDUX STORE, NEW DATA WILL BE SET WHENEVER USER CHOOSES FROM THE RESULTS LIST
   useEffect(() => {
-    // const loc = useSelector((state) => {
-    //   console.log("state: ", state.user.location);
-    // return state.userSlice.location;
-    // return state.user.location;
     setLocation(loc);
-    // });
   }, [loc]);
-
-  // const handleModal = () => {
-  //   console.log("marker clicked");
-  // };
-  // const map = useMap();
 
   const handleModal = (lat, lon) => {
     console.log("marker clicked: ", lat, ",", lon);
@@ -62,14 +55,6 @@ function App() {
   useEffect(() => {
     console.log("showModal changed to: ", showModal);
   }, [showModal]);
-  // const handleCloseModal = () => {
-  //   setShowModal(false); // Close the modal when needed
-  // };
-  // useEffect(() => {
-  //   if (location) {
-  //     map.setView([location.lat, location.lon], 20); // Set the view to the marker's position with a zoom level of 20
-  //   }
-  // }, [location]);
 
   console.log("loc passed in APP: ", loc);
   console.log("location: ", location.lat, ",", location.lon);
@@ -80,18 +65,13 @@ function App() {
     // map-container set to 100vh/100vw to fill the screen
     <div className="map-container z-0">
       <MapContainer
-        // center={{ lat: 42.35, lng: -71.04 }}
         // center={[42.354022, -71.046245]}
-        // center={[-34.397, 150.644]}
         center={[location.lat, location.lon]}
-        // center={[location.lat, location.lon]}
         zoom={19}
         scrollWheelZoom={true}
         zoomControl={false}
         dragging={`${showModal ? "false" : "true"}`}
-        // zoomControl={false}
-        // style={{ width: "100%", height: "calc(100% - 60px)", zIndex: 0 }}
-        style={{ minWidth: "100%", minHeight: "100%", zIndex: 0 }}
+        className="w-full h-full z-0"
       >
         <Searchbar__ />
         <TileLayer
