@@ -1,5 +1,4 @@
-// import { useState } from "react";
-// import { MapContainer, TileLayer, useMap, Marker, Popup, ZoomControl } from "react-leaflet";
+/* eslint-disable no-unused-vars */
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Searchbar__ from "./components/Searchbar";
@@ -7,8 +6,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
 import Modal from "./components/Modal";
-// import { sampleData } from "./instruction-files/sample-data";
-// import { sampleData } from "./constants/sample-data";
+
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -33,7 +31,7 @@ CHART.JS - https://www.chartjs.org/docs/latest/getting-started/installation.html
  */
 
 function App() {
-  // const [location, setLocation] = useState({ lat: 42.35, lon: -71.04 });
+  // Set to starting location in Boston, MA - Values collect from Google Maps
   const [location, setLocation] = useState({ lat: 42.354022, lon: -71.046245 });
   const [showModal, setShowModal] = useState(false); // TRUE = OPENED | FALSE = CLOSED
 
@@ -48,11 +46,9 @@ function App() {
     setLocation(loc);
   }, [loc]);
 
-  const handleModal = (lat, lon) => {
+  const handleModal = () => {
     setShowModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
   };
-
-  if (!location) return <div className="text-2xl font-bold text-center">Loading... No coordinates...</div>;
 
   return (
     // map-container set to 100vh/100vw to fill the screen

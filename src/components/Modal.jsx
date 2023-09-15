@@ -31,23 +31,20 @@ const Modal = ({ handleModal }) => {
   };
 
   return (
-    //Set a fixed overlay with a z-index of 9999 to cover the entire screen with a black gradient background. Justify-center/items-center will keep our modal centered
     <>
+      {/* CLOSE MODAL BUTTON */}
       <MdClose
         onClick={handleModal}
         className="fixed top-5 right-5 font-bold text-2xl bg-slate-500- w-10 h-10 z-[9999] cursor-pointer text-gray-400 hover:text-gray-300"
       >
         X
       </MdClose>
-      {/* <button onClick={handleModal} className="fixed top-5 right-5 font-bold text-2xl bg-slate-500 w-8 h-8 z-[9999]">
-        X
-      </button> */}
-      {/* OUTSIDE AREA - Clicking the button OR outside of the modal will close it*/}
+      {/* OUTSIDE AREA - CLOSE MODAL IF USER CLICKS BUTTON OR OUTSIDE OF MODAL*/}
       <div
         className="fixed flex justify-center items-center top-0 left-0 w-full h-full bg-black/80 z-[9000] cursor-default"
         onClick={handleModal}
       >
-        {/* MODAL - e.stopPropagation prevents our modal from closing when clicking WITHIN the Modal*/}
+        {/* MODAL - e.stopPropagation prevents our modal from closing when clicking within the Modal*/}
         <div className="w-[500px] bg-white rounded-md" onClick={(e) => e.stopPropagation()}>
           {/* HEADER CONTAINER */}
           <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200">
@@ -100,8 +97,8 @@ const Modal = ({ handleModal }) => {
             })}
           </div>
 
-          {/* CHART - Display Bar Chart IF avgStoreTraffic is available */}
-          <div className="w-full h-[600px]">Bar CHART {details.avgStoreTraffic && <BarChart data={details.avgStoreTraffic} />}</div>
+          {/* BAR CHART */}
+          <BarChart data={details.avgStoreTraffic} />
         </div>
         {/* END OF MODAL CONTENT */}
       </div>
