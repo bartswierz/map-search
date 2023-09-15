@@ -50,6 +50,11 @@ function App() {
     return state.user.location;
   });
 
+  // Start of the app will return empty string, this will keep the marker hidden until user clicks on a resultmarker for duration of app
+  const showMarker = useSelector((state) => {
+    return state.user.name;
+  });
+
   // UPDATE LOCATION ONCE WE RECEIVE THE LOCATION FROM REDUX STORE, NEW DATA WILL BE SET WHENEVER USER CHOOSES FROM THE RESULTS LIST
   useEffect(() => {
     setLocation(loc);
@@ -85,15 +90,17 @@ function App() {
         <ZoomControl position="topright" />
 
         {/* eventHandlers required for click events - react-leaflet v3+*/}
-        <Marker
-          position={[location.lat, location.lon]}
-          eventHandlers={{
-            click: () => handleModal(),
-          }}
-          icon={MarkerPin}
-        >
-          {/* <Popup onClick={handleModal}>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
-        </Marker>
+        {showMarker && (
+          <Marker
+            position={[location.lat, location.lon]}
+            eventHandlers={{
+              click: () => handleModal(),
+            }}
+            icon={MarkerPin}
+          >
+            {/* <Popup onClick={handleModal}>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
+          </Marker>
+        )}
         <CenterToLocation location={location} />
 
         {/* Passing function to update modal state on click */}
