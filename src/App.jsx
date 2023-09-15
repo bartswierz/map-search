@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { MapContainer, TileLayer, Marker, Popup, ZoomControl, useMap, Tooltip } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl, LayersControl, useMap, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Searchbar__ from "./components/Searchbar";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
 import Modal from "./components/Modal";
-
+import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -25,10 +26,11 @@ STATE MANAGEMENT - REDUX - https://redux-toolkit.js.org/tutorials/quick-start
 CHART.JS - https://www.chartjs.org/docs/latest/getting-started/installation.html
   - npm install chart.js
   - npm install react-chartjs-2
-*/
 
-/* TODO - add a component file for the Search Field -> Search Icon - Input field
- */
+GOOGLE MAPS API - https://developers.google.com/maps/documentation/javascript/overview
+  https://developers.google.com/maps/documentation/javascript/maptypes#:~:text=The%20following%20map%20types%20are,displays%20Google%20Earth%20satellite%20images.
+  map types: roadmap, satellite, hybrid, terrain
+*/
 
 function App() {
   // Set to starting location in Boston, MA - Values collect from Google Maps
@@ -62,32 +64,28 @@ function App() {
         dragging={`${showModal ? "false" : "true"}`}
         className="w-full h-full z-0"
       >
+        {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
+        <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />
+
+        {/* SEARCH BAR */}
         <Searchbar__ />
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {/* Map marker - set position to the desired location - currently, set to default */}
-        {/* We are using eventHandlers as onClick does not work on the newer react-leaflet v3 as researched. */}
+
+        {/* eventHandlers required for click events - react-leaflet v3+*/}
         <Marker
           position={[location.lat, location.lon]}
           eventHandlers={{
             click: () => handleModal(location.lat, location.lon),
           }}
         >
-          {/* <Popup onClick={handleModal}>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup> */}
+          {/* <Popup onClick={handleModal}>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
         </Marker>
         <CenterToLocation location={location} />
-
         {/* Set our Zoom control to the top right, can change to any of the four corners */}
         <ZoomControl position="topright" />
 
-        {/* Passing handleModal as a prop so we can open/close modal - handleModal is a simple boolean state switch */}
+        {/* Passing function to update modal state when user clicks button/outside of modal */}
         {showModal && <Modal handleModal={handleModal} />}
       </MapContainer>
-      {/* </div> */}
     </div>
   );
 }
