@@ -35,31 +35,27 @@ export const userSlice = createSlice({
       state.location.lon = lon;
     },
     storeDescription: (state, action) => {
-      // console.log("Details - action.payload: ", action.payload);
-      // const { description } = action.payload;
-      console.log("description: ", action.payload);
+      // console.log("description: ", action.payload);
       state.details.description = action.payload;
     },
     storeTraffic: (state, action) => {
-      // console.log("Traffic - action.payload: ", action.payload);
+      console.log("Traffic - action.payload: ", action.payload);
       // const { avgStoreTraffic } = action.payload;
       // action.payload ? (state.avgStoreTraffic = action.payload) : (state.avgStoreTraffic = {});
       state.details.avgStoreTraffic = action.payload;
     },
     storeWebsite: (state, action) => {
-      console.log("Website - action.payload: ", action.payload);
-      // const { website } = action.payload; //website = "https://groundsignal.com"
-      // TODO - remove https:// to fix the issue of the website not loading due to missing www
-      let url = action.payload.split("https://")[1];
-      console.log("url: ", url);
-      // action.payload ? (state.website = website) : (state.website = "");
-      // state.details.website = action.payload;
+      // console.log("Website - action.payload: ", action.payload);
+
+      //  removes https:// to fix the issue of the website not loading due to missing www
+      let url = action.payload.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
+
       state.details.website = url;
     },
     storeImages: (state, action) => {
-      //Spreading the array of images [image1, image2, image3] into our state so that we can use the array methods on it
+      //Destructuring the array of three images [image1, image2, image3] into our state so that we can use the array methods on it
       const [...images] = action.payload; // images = [image1, image2, image3]
-      console.log("images: ", images);
+
       action.payload ? (state.images = images) : (state.images = []);
     },
   },

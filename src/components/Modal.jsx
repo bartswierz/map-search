@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectStore } from "../redux/features/user/userSlice"; //Grabs all the store data from the redux store instead of having to grab each piece of data individually
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
+import BarChart from "./charts/BarChart";
 
 // ID and NAME bare minimum that will be given the rest are OPTIONAL
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
@@ -98,7 +99,11 @@ const Modal = ({ handleModal }) => {
               );
             })}
           </div>
+
+          {/* CHART - Display Bar Chart IF avgStoreTraffic is available */}
+          <div className="w-full h-[600px]">Bar CHART {details.avgStoreTraffic && <BarChart data={details.avgStoreTraffic} />}</div>
         </div>
+        {/* END OF MODAL CONTENT */}
       </div>
     </>
   );

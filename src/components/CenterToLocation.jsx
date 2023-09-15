@@ -8,7 +8,7 @@ import { useMap } from "react-leaflet";
 const CenterToLocation = ({ location }) => {
   // eslint-disable-next-line react/prop-types
   const { lat, lon } = location;
-  console.log("location: ", location);
+
   const map = useMap();
 
   useEffect(() => {

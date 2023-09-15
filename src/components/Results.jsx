@@ -11,26 +11,28 @@ import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffi
 const Results = ({ filteredList }) => {
   const dispatch = useDispatch();
 
-  // console.log("filteredList: ", filteredList);
-
   // The idea was to separate the values as all but id, name, and location are optional to help with resusability as some future updates may only need a single piece of data. I also wanted to check for the existence of the data before dispatching it to the store as it related to the UI rendering.
   const handleClick = (store) => {
-    console.log("handleClick - dispatch updateLocation: store: ', store", store);
+    console.log("Dispatch update store values: ", store);
+    console.log("traffic: ", store.details); //undefined
+    console.log("traffic: ", store.details.avgStoreTraffic); //undefined
     // UPDATE LOCATION TO CENTER MAP ON THE USER CHOICE
     let storeNameId = { name: store.name, id: store.id };
     dispatch(storeName(storeNameId)); //Alway given
     dispatch(storeLocation(store.location)); //
     dispatch(storeDescription(store.details?.description));
+
+    // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
+    if (store.details?.description) dispatch(storeDescription(store.details.description));
+
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     if (store.details?.website) dispatch(storeWebsite(store.details.website));
 
-    // // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
-    if (store.details?.avgTraffic) dispatch(storeTraffic(store.details.avgTraffic));
+    // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
+    if (store.details?.avgStoreTraffic) dispatch(storeTraffic(store.details.avgStoreTraffic));
 
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     if (store.images) dispatch(storeImages(store.images));
-    // UPDATE DESCRIPTION FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS A DESCRIPTION
-    if (store.details?.description) dispatch(storeDescription(store.details.description));
   };
 
   if (!filteredList) {

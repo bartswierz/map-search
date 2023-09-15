@@ -1,4 +1,4 @@
-import { sampleData } from "../../instruction-files/sample-data";
+import { sampleData } from "../constants/sample-data";
 import { useState } from "react";
 import Results from "./Results";
 
@@ -37,14 +37,13 @@ const Searchbar = () => {
 
   // We want to DISPLAY CONTAINER BELOW INPUT -IF USER TYPES IN INPUT FIELD- if its empty we dont want to display it, if it has atleast one character show the container with matches
   const handleChange = (e) => {
-    console.log("user typing: ", e.target.value);
+    // console.log("User input: ", e.target.value);
     //SET userInput AND FILTER DATA BASED ON USER INPUT
     setUserInput(e.target.value);
   };
 
   // Changes Search Icon from Gray to Black when user clicks on the input field
   const handleClick = () => {
-    console.log("user clicked on searchbar");
     setIsActive(true);
   };
 

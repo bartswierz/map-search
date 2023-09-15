@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
 import Modal from "./components/Modal";
+// import { sampleData } from "./instruction-files/sample-data";
+// import { sampleData } from "./constants/sample-data";
 /*
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
@@ -47,17 +49,8 @@ function App() {
   }, [loc]);
 
   const handleModal = (lat, lon) => {
-    console.log("marker clicked: ", lat, ",", lon);
-    // setShowModal(true); // Show the modal when marker is clicked
     setShowModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
   };
-
-  useEffect(() => {
-    console.log("showModal changed to: ", showModal);
-  }, [showModal]);
-
-  console.log("loc passed in APP: ", loc);
-  console.log("location: ", location.lat, ",", location.lon);
 
   if (!location) return <div className="text-2xl font-bold text-center">Loading... No coordinates...</div>;
 
