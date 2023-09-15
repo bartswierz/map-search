@@ -1,5 +1,14 @@
-#RESOURCES USED
+# Map Search
 
+## Getting Started
+
+## Built With
+- React.js
+- Tailwind CSS
+- Redux
+- Chart.js
+
+#RESOURCES USED
 DOCUMENTATION USED - FOR INTERVIEW PURPOSES
 REACT LEAFLET INSTALLATION - https://react-leaflet.js.org/docs/start-installation/
 
