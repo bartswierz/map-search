@@ -72,7 +72,7 @@ const Searchbar = () => {
       onClick={handleClick}
       className="z-[999] top-5 left-5 absolute min-w-[280px] w-[25vw]- w-[30vw]  max-w-[500px] cursor-default"
     >
-      <div className="flex bg-white gap-2 py-2 pl-4 rounded-t-md border-2 border-[#bdbdbd] shadow-md shadow-[#bdbdbd] ">
+      <div className="flex text-gray-600 bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
         <SearchIcon />
         <input
           type="text"

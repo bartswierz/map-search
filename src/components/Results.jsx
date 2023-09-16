@@ -41,7 +41,7 @@ const Results = ({ filteredList }) => {
   }
 
   return (
-    <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-md shadow-[#bdbdbd]">
+    <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden">
       {/* HEADER */}
       <h2
         className={`p-3 font-semibold text-white shadow-md shadow-[#bdbdbd]
@@ -79,7 +79,7 @@ const Results = ({ filteredList }) => {
 
             {/* NAME & LOCATION */}
             <div>
-              <div className="font-semibold text-[#666]">{store.name}</div>
+              <div className="font-semibold text-gray-600">{store.name}</div>
               <div className="text-gray-400">
                 {store.location.lat}, {store.location.lon}
               </div>
