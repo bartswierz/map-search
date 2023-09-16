@@ -57,8 +57,8 @@ function App() {
         {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
         <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />
         <Searchbar__ />
-        {/* ZOOM CONTROL */}
         <ZoomControl position="topright" />
+        <CenterToLocation location={location} />
 
         {/* eventHandlers required for click events - react-leaflet v3+*/}
         {showMarker && (
@@ -72,7 +72,6 @@ function App() {
             {/* <Popup onClick={handleModal}>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
           </Marker>
         )}
-        <CenterToLocation location={location} />
 
         {/* Passing function to update modal state on click */}
         {showModal && <Modal handleModal={handleModal} />}
