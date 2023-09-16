@@ -8,14 +8,15 @@ import { useDispatch } from "react-redux";
 import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffic, storeName } from "../redux/features/user/userSlice";
 
 /* eslint-disable react/prop-types */
-const Results = ({ filteredList }) => {
+const Results = ({ filteredList, userInput, setUserInput }) => {
   const dispatch = useDispatch();
 
-  // The idea was to separate the values as all but id, name, and location are optional to help with resusability as some future updates may only need a single piece of data. I also wanted to check for the existence of the data before dispatching it to the store as it related to the UI rendering.
+  console.log("results - userInput length: ", userInput.length);
+
+  // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {
-    // console.log("Dispatch update store values: ", store);
-    // console.log("traffic: ", store.details); //undefined
-    // console.log("traffic: ", store.details.avgStoreTraffic); //undefined
+    setUserInput(store.name); // Update the input field with the store name
+
     // UPDATE LOCATION TO CENTER MAP ON THE USER CHOICE
     let storeNameId = { name: store.name, id: store.id };
     dispatch(storeName(storeNameId)); //Alway given
@@ -30,7 +31,7 @@ const Results = ({ filteredList }) => {
 
     // UPDATE AVG Traffic FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS avgTraffic
     if (store.details?.avgStoreTraffic) dispatch(storeTraffic(store.details.avgStoreTraffic));
-    else dispatch(storeTraffic({})); // If no traffic data exists, set to empty object
+    // else dispatch(storeTraffic({})); // If no traffic data exists, set to empty object
 
     // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     if (store.images) dispatch(storeImages(store.images));
@@ -40,6 +41,9 @@ const Results = ({ filteredList }) => {
     return null;
   }
 
+  // Prevents 'no results' displaying when user input is empty
+  if (userInput.length === 0) return null;
+
   return (
     <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden">
       {/* HEADER */}
@@ -48,7 +52,7 @@ const Results = ({ filteredList }) => {
         ${filteredList.length === 0 ? "bg-gray-500" : "bg-blue-500"}`}
       >
         {filteredList.length === 0 ? (
-          <span>No results found...</span>
+          <span>No results found</span>
         ) : (
           <span>
             Found {filteredList.length} {filteredList.length > 1 ? "Results:" : "Result:"}

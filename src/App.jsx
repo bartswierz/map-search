@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, ZoomControl, LayersControl, useMap, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, ZoomControl } from "react-leaflet";
 import Searchbar__ from "./components/Searchbar";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 function App() {
   // Set to starting location in Boston, MA - Values collect from Google Maps
   const [location, setLocation] = useState({ lat: 42.34369297372647, lon: -71.04254368836378 });
-  const [showModal, setShowModal] = useState(false); // TRUE = OPENED | FALSE = CLOSED
+  const [displayModal, setDisplayModal] = useState(false); // Display/Remove modal
 
   // get location object from redux store
   const loc = useSelector((state) => {
@@ -32,27 +31,28 @@ function App() {
     setLocation(loc);
   }, [loc]);
 
-  // Create a custom icon
+  // Create a custom marker icon
   const MarkerPin = new Icon({
     iconUrl: IconPin, // URL to your SVG icon
     iconSize: [32, 32], // Specify the icon size (adjust as needed)
   });
 
   const handleModal = () => {
-    setShowModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
+    setDisplayModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
   };
 
   return (
     // map-container set to 100vh/100vw to fill the screen
-    <div className="map-container z-0">
+    // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
+    <div className="w-screen h-screen">
       <MapContainer
         // center={[42.354022, -71.046245]}
         center={[location.lat, location.lon]}
         zoom={17}
         scrollWheelZoom={true}
         zoomControl={false}
-        dragging={`${showModal ? "false" : "true"}`}
-        className="w-full h-full z-0"
+        dragging={`${displayModal ? true : false}`}
+        className="w-full h-full"
       >
         {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
         <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />
@@ -69,12 +69,12 @@ function App() {
             }}
             icon={MarkerPin}
           >
-            {/* <Popup onClick={handleModal}>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
+            {/* <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
           </Marker>
         )}
 
-        {/* Passing function to update modal state on click */}
-        {showModal && <Modal handleModal={handleModal} />}
+        {/* Passing callback function to update displayModal on click */}
+        {displayModal && <Modal handleModal={handleModal} />}
       </MapContainer>
     </div>
   );
