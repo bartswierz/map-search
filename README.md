@@ -33,6 +33,9 @@ React-Leaflet Installation - https://react-leaflet.js.org/docs/start-installatio
 - npm install react react-dom leaflet
 - npm install react-leaflet
 
+React-Leaflet-Google-Layer - Required to use google maps. Pass the API KEY within the ReactLeafletGoogleLayer component
+npm install --save react-leaflet-google-layer
+
 Tailwind Installation - VITE: https://tailwindcss.com/docs/guides/vite
 - npm install -D tailwindcss postcss autoprefixer
 - npx tailwindcss init -p
