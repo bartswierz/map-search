@@ -2,6 +2,8 @@ import { sampleData } from "../constants/sample-data";
 import { useEffect, useState } from "react";
 import Results from "./Results";
 
+// import Test from "./test";
+
 const Searchbar = () => {
   const [userInput, setUserInput] = useState("");
   const [filteredList, setFilteredList] = useState([]);
@@ -22,23 +24,24 @@ const Searchbar = () => {
     setFilteredList(filterData);
   };
 
+  // TODO - We are using the PREVIOUS VALUE INSTEAD OF THE CURRENT, WE NEED TO UPDATE IT CORRECTLY TO THE INPUT VALUE
   //COLLECT USER INPUT
   const handleChange = (e) => {
     setUserInput(e.target.value);
+  };
 
-    if (!userInput) {
+  // Update filter list when user input changes
+  useEffect(() => {
+    // Empty input field
+    if (userInput.length === 0) {
       setFilteredList([]);
       return;
     }
 
-    // lowercase both input and name to make it case insensitive
-    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().includes(userInput.toLowerCase()));
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
-    console.log("filterData: ", filterData);
-    setFilteredList(filterData);
-  };
 
-  useEffect(() => {}, [userInput]);
+    setFilteredList(filterData);
+  }, [userInput]);
 
   // Changes Search Icon from Gray to Black
   const handleClick = () => {
@@ -47,9 +50,7 @@ const Searchbar = () => {
 
   const SearchIcon = () => {
     return (
-      // {/* ICON */}
       <div className="flex items-center">
-        {/* <div> */}
         <svg width="18" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <g>
             <path
@@ -81,6 +82,10 @@ const Searchbar = () => {
           onChange={(e) => handleChange(e)}
         />
       </div>
+      {/* DISPLAY MATCH RESULTS HERE */}
+      <div></div>
+
+      {/* <Test /> */}
 
       {/* DISPLAY RESULTS */}
       <div className="mt-4">
