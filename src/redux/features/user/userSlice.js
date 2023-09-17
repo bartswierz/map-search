@@ -36,6 +36,11 @@ export const userSlice = createSlice({
       if (location) {
         state.location.lat = location.lat;
         state.location.lon = location.lon;
+      } else {
+        console.log("no location passed using default values");
+        // IF NOT PASSED IN, USE DEFAULT VALUES
+        state.location.lat = 42.34343568100882;
+        state.location.lon = -71.04241761553008;
       }
 
       // OPTIONAL VALUES: IF DETAILS OBJ. PASSED IN, UPDATE DETAILS
@@ -44,13 +49,10 @@ export const userSlice = createSlice({
         state.details.avgStoreTraffic = details.avgStoreTraffic || {};
 
         if (details.website) {
-          console.log("details.website passed before: ", details.website);
           let url = details.website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
           console.log("details.website passed after: ", url);
           state.details.website = url || "";
         }
-
-        // details.website || "";
       }
 
       state.images = images || [];
@@ -86,7 +88,7 @@ export const userSlice = createSlice({
       state.details.website = url;
     },
     storeImages: (state, action) => {
-      //Destructuring the array of three images [image1, image2, image3] into our state so that we can use the array methods on it
+      //Destructuring the array of three images [image1, image2, image3] incase we want to add more or less images in the future
       const [...images] = action.payload; // images = [image1, image2, image3]
 
       action.payload ? (state.images = images) : (state.images = []);
