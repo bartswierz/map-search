@@ -6,9 +6,9 @@ import Results from "../results/Results";
 import SearchInput from "./SearchInput";
 
 const Searchbar = () => {
-  const [userInput, setUserInput] = useState("");
-  const [resultsList, setResultsList] = useState([]);
-  const [isActive, setIsActive] = useState(false);
+  // const [userInput, setUserInput] = useState("");
+  // const [resultsList, setResultsList] = useState([]);
+  // const [isActive, setIsActive] = useState(false);
 
   // PREVENT PAGE REFRESH ON SUBMIT
   const handleSubmit = (e) => {
@@ -16,21 +16,21 @@ const Searchbar = () => {
   };
 
   //COLLECT USER INPUT
-  const handleChange = (e) => {
-    setUserInput(e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   setUserInput(e.target.value);
+  // };
 
   //TODO - we can pass the user input as callback from the input field to search bar and then pass it to results
   // We will pass this function to the SearchInput that can call it then pass the filteredList back to the Searchbar
-  const setResultsListCallback = (resultsList) => {
-    console.log("Filtered list passed to Parent: ", resultsList);
-    setResultsList(resultsList);
-  };
+  // const setResultsListCallback = (resultsList) => {
+  //   console.log("Filtered list passed to Parent: ", resultsList);
+  //   setResultsList(resultsList);
+  // };
 
-  // TESTING PURPOSES
-  useEffect(() => {
-    console.log("resultsList callback updated: ", resultsList);
-  }, [resultsList]);
+  // // TESTING PURPOSES
+  // useEffect(() => {
+  //   console.log("resultsList callback updated: ", resultsList);
+  // }, [resultsList]);
   // Update filter list when user input changes
   // useEffect(() => {
   //   // Empty input field clears any results
@@ -69,38 +69,7 @@ const Searchbar = () => {
 
   return (
     <form onSubmit={handleSubmit} className="z-[999] top-3 left-3 absolute min-w-[280px] w-[30vw] max-w-[500px] cursor-default">
-      {/* INPUT FIELD  {/* TODO filteredListCallback */}
-      <SearchInput setResultsListCallback={setResultsList} setUserInputCallback={setUserInput} />
-
-      {/* TODO - need to do a filteredListCallback into SearchInput to pass it down to Results after */}
-      {/* RESULTS */}
-      <div className="mt-4">
-        {/* TODO - filtered list taken care of inside searchbar, we will pass in the completed filteredList 
-        -setUserInput is for the input field to be updated to the text of the clicked result
-        -May be able to remove userInput prop if we replace length check with resultsList.length(empty array)
-        */}
-        <Results input={userInput} setUserInputCallback={setUserInput} />
-      </div>
-
-      {/* <div className="flex text-gray-600 bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
-        <SearchIcon />
-        <input
-          type="text"
-          placeholder="Search..."
-          value={userInput}
-          onChange={(e) => handleChange(e)}
-          onFocus={handleSearchIcon(true)}
-          onBlur={handleSearchIcon(false)}
-          className="rounded-md p-2 text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none mr-12 text-ellipsis w-[76%]"
-        />
-        {userInput.length > 0 && (
-          <div className="absolute flex justify-center items-center top-0 right-2 h-[62px]">
-            <button onClick={() => setUserInput("")} type="button" className="right-3 top-5 hover:text-green-500">
-              <MdClose size={26} color={"#444"} className=" hover:text-red-500" />
-            </button>
-          </div>
-        )}
-      </div> */}
+      <SearchInput />
     </form>
   );
 };

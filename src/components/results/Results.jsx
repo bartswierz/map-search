@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PinIcon from "../icons/PinIcon";
+import PinIcon from "./PinIcon";
 import { sampleData } from "../../constants/sample-data";
 import { useDispatch } from "react-redux";
 import {
@@ -9,19 +9,18 @@ import {
   storeImages,
   storeTraffic,
   storeName,
+  updateStore,
 } from "../../redux/features/user/userSlice";
 import ResultsHeader from "./ResultsHeader";
 
-// const Results = ({ input, setUserInputCallback, resultsList }) => {
 const Results = ({ input, setUserInputCallback }) => {
   const dispatch = useDispatch();
   const [resultsList, setResultsList] = useState([]);
 
-  //TODO - move this logic to results, instead only pass userInput
   // Sends userInput & resultsList back to parent component to pass to Results component
   useEffect(() => {
     // Updates input text field with store name
-    setUserInputCallback(input);
+    // setUserInputCallback(input);
 
     // Empty input field clears any previous results
     if (input.length === 0) {
@@ -36,14 +35,12 @@ const Results = ({ input, setUserInputCallback }) => {
     setResultsList(filterData);
   }, [input]);
 
-  // console.log("resultsList: ", resultsList);
-  // console.log("input: ", input.length);
-
   // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {
     // setUserInput(store.name); // Update the input field with the store name
     setUserInputCallback(store.name); // Update the input field with the store name
 
+    console.log("RESULTS user chose store: ", store);
     // UPDATE LOCATION TO CENTER MAP ON THE USER CHOICE
     let storeNameId = { name: store.name, id: store.id };
     dispatch(storeName(storeNameId)); //Alway given
@@ -60,7 +57,7 @@ const Results = ({ input, setUserInputCallback }) => {
     if (store.details?.avgStoreTraffic) dispatch(storeTraffic(store.details.avgStoreTraffic));
     // else dispatch(storeTraffic({})); // If no traffic data exists, set to empty object
 
-    // // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
+    // UPDATE IMAGES FOR THE MODAL - IF STORE.DETAILS EXISTS & HAS IMAGES
     if (store.images) dispatch(storeImages(store.images));
   };
 
@@ -81,9 +78,7 @@ const Results = ({ input, setUserInputCallback }) => {
             onClick={() => handleClick(store)}
             className="border-b border-r border-l border-gray-300 flex gap-4 p-2 hover:bg-slate-100 cursor-pointer px-3"
           >
-            {/* ICON */}
             <PinIcon />
-
             {/* NAME & LOCATION */}
             <div>
               <h2 className="font-semibold text-gray-600">{store.name}</h2>
