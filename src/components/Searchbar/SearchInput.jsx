@@ -3,8 +3,9 @@ import SearchIcon from "./SearchIcon";
 import { useState, useEffect } from "react";
 // import sampleData from "../../data/sampleData.json";
 import { sampleData } from "../../constants/sample-data";
+import SearchbarCloseBtn from "./SearchbarCloseBtn";
 
-const SearchInput = () => {
+const SearchInput = ({ setResultsListCallback }) => {
   const [userInput, setUserInput] = useState("");
   const [filteredList, setFilteredList] = useState([]);
   const [isActive, setIsActive] = useState(false);
@@ -24,28 +25,34 @@ const SearchInput = () => {
   useEffect(() => {
     // Empty input field clears any results
     if (userInput.length === 0) {
-      setFilteredList([]);
+      // TODO pass callback
+      // setFilteredList([]);
+      setResultsListCallback([]);
       return;
     }
 
     // lowercase both input and name to make it case insensitive
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
 
-    setFilteredList(filterData);
+    // TODO pass callback
+    // setFilteredList(filterData);
+    setResultsListCallback(filterData);
   }, [userInput]);
 
-  // Reset User Input
-  const SearchCloseBtn = () => {
-    if (userInput.length === 0) return null;
-
-    return (
-      <div className="absolute flex justify-center items-center top-0 right-2 h-[62px]">
-        <button onClick={() => setUserInput("")} type="button" className="right-3 top-5">
-          <MdClose size={26} color={"#444"} />
-        </button>
-      </div>
-    );
-  };
+  // const Input = ({ userInput, handleChange, handleSearchIcon }) => {
+  //   return (
+  //     <input
+  //       type="text"
+  //       placeholder="Search..."
+  //       value={userInput}
+  //       onChange={(e) => handleChange(e)}
+  //       // onClick={handleSearchIcon(true)}
+  //       onFocus={handleSearchIcon(true)}
+  //       onBlur={handleSearchIcon(false)}
+  //       className="rounded-md p-2 text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none mr-12 text-ellipsis w-[76%]"
+  //     />
+  //   );
+  // };
 
   // TODO - need to pass filteredList to Results component as props use a callback to pass it back to searchbar that can then pass it to results
   return (
@@ -62,7 +69,8 @@ const SearchInput = () => {
         onBlur={handleSearchIcon(false)}
         className="rounded-md p-2 text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none mr-12 text-ellipsis w-[76%]"
       />
-      <SearchCloseBtn />
+      {/* Updates our user input to empty string */}
+      <SearchbarCloseBtn setStateCallback={setUserInput} input={userInput} />
     </div>
   );
 };

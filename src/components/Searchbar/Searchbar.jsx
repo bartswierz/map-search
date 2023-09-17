@@ -1,13 +1,13 @@
-import { sampleData } from "../../constants/sample-data";
+// import { sampleData } from "../../constants/sample-data";
 import { useEffect, useState } from "react";
-import Results from "../Results";
-import { MdClose } from "react-icons/md";
-import SearchIcon from "./SearchIcon";
+import Results from "../results/Results";
+// import { MdClose } from "react-icons/md";
+// import SearchIcon from "./SearchIcon";
 import SearchInput from "./SearchInput";
 
 const Searchbar = () => {
   const [userInput, setUserInput] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
+  const [resultsList, setResultsList] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
   // PREVENT PAGE REFRESH ON SUBMIT
@@ -22,11 +22,15 @@ const Searchbar = () => {
 
   //TODO - we can pass the user input as callback from the input field to search bar and then pass it to results
   // We will pass this function to the SearchInput that can call it then pass the filteredList back to the Searchbar
-  const resultsListCallback = (filteredList) => {
-    console.log("Filtered list passed to Parent: ", filteredList);
-    setFilteredList(filteredList);
+  const setResultsListCallback = (resultsList) => {
+    console.log("Filtered list passed to Parent: ", resultsList);
+    setResultsList(resultsList);
   };
 
+  // TESTING PURPOSES
+  useEffect(() => {
+    console.log("resultsList callback updated: ", resultsList);
+  }, [resultsList]);
   // Update filter list when user input changes
   // useEffect(() => {
   //   // Empty input field clears any results
@@ -66,13 +70,17 @@ const Searchbar = () => {
   return (
     <form onSubmit={handleSubmit} className="z-[999] top-3 left-3 absolute min-w-[280px] w-[30vw] max-w-[500px] cursor-default">
       {/* INPUT FIELD  {/* TODO filteredListCallback */}
-      <SearchInput />
+      <SearchInput setResultsListCallback={setResultsList} />
 
       {/* TODO - need to do a filteredListCallback into SearchInput to pass it down to Results after */}
       {/* RESULTS */}
       <div className="mt-4">
         <div>Test</div>
-        <Results filteredList={filteredList} userInput={userInput} setUserInput={setUserInput} />
+        {/* TODO - filtered list taken care of inside searchbar, we will pass in the completed filteredList 
+        -setUserInput is for the input field to be updated to the text of the clicked result
+        -May be able to remove userInput prop if we replace length check with resultsList.length(empty array)
+        */}
+        <Results setResultsList={resultsList} userInput={userInput} setUserInput={setUserInput} resultsList={resultsList} />
       </div>
 
       {/* <div className="flex text-gray-600 bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
