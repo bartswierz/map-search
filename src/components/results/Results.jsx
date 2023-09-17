@@ -10,6 +10,7 @@ import {
   storeTraffic,
   storeName,
 } from "../../redux/features/user/userSlice";
+import ResultsHeader from "./ResultsHeader";
 
 // const Results = ({ input, setUserInputCallback, resultsList }) => {
 const Results = ({ input, setUserInputCallback }) => {
@@ -22,7 +23,7 @@ const Results = ({ input, setUserInputCallback }) => {
     // Updates input text field with store name
     setUserInputCallback(input);
 
-    // Empty input field clears any results
+    // Empty input field clears any previous results
     if (input.length === 0) {
       setResultsList([]);
       return;
@@ -63,76 +64,13 @@ const Results = ({ input, setUserInputCallback }) => {
     if (store.images) dispatch(storeImages(store.images));
   };
 
-  // If no matches OR no user input
-  if (!resultsList) {
-    return null;
-  }
-
-  const ResultsHeader = (list) => {
-    console.log("list passed: ", list.length);
-    // console.log("list: ", list.isArray());
-    //No results & no user input - this prevents 'no found' message to show up on an empty string
-    if (list.length === 0 && input.length === 0) return null;
-
-    const backgroundColor = resultsList.length === 0 ? "bg-gray-500" : "bg-blue-500";
-
-    const numResults = list.length;
-    console.log("numResults: ", numResults);
-
-    return (
-      <>
-        <h2
-          className={`p-3 font-semibold text-white shadow-md shadow-[#bdbdbd]
-        ${backgroundColor}`}
-        >
-          {list.length === 0 && input.length > 0 ? (
-            <span>No results found</span>
-          ) : (
-            <span>
-              Found {numResults} {`Result${numResults > 1 ? "s" : ""}`}
-            </span>
-          )}
-        </h2>
-      </>
-    );
-  };
-  // const ResultsHeader = (list) => {
-  //   //No results & no user input - this prevents 'no found' message to show up on an empty string
-  //   if (resultsList.length === 0 && input.length === 0) return null;
-
-  //   const backgroundColor = resultsList.length === 0 ? "bg-gray-500" : "bg-blue-500";
-
-  //   return (
-  //     <>
-  //       <h2
-  //         className={`p-3 font-semibold text-white shadow-md shadow-[#bdbdbd]
-  //       ${backgroundColor}`}
-  //       >
-  //         {resultsList.length === 0 && input.length > 0 ? (
-  //           <span>No results found</span>
-  //         ) : (
-  //           <span>
-  //             Found {resultsList.length} {`Result${resultsList.length > 1 ? "s" : ""}`}
-  //           </span>
-  //         )}
-  //       </h2>
-  //     </>
-  //   );
-  // };
-
-  // If no matches & user input exists
-  // if (resultsList.length === 0 && input.length > 0)
-  //   return <span className="p-3 font-semibold text-white shadow-md shadow-[#bdbdbd] bg-gray-500">No results found</span>;
-
-  // TODO - swap to check if it it an empty object
   // Prevents 'no results' displaying when user input is empty
   if (input.length === 0) return null;
-  console.log("input: ", input.length);
 
   return (
     <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden">
       {/* HEADER */}
-      <ResultsHeader list={resultsList} />
+      <ResultsHeader list={resultsList} input={input} />
 
       {/* RESULTS */}
       <div className="bg-white">
