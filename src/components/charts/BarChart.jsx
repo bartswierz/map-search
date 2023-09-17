@@ -2,7 +2,6 @@ import { Bar } from "react-chartjs-2";
 // import { Chart as ChartJS } from "chart.js/auto";
 /* CHARTJS REFERENCED - https://www.chartjs.org/docs/latest/getting-started/usage.html */
 
-// eslint-disable-next-line react/prop-types
 export const BarChart = ({ data }) => {
   // Iterating through our data object to get the labels and values
   const labels = Object.keys(data); // ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

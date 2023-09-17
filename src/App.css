@@ -1,4 +1,4 @@
-/* html,
+html,
 body {
   height: 100%;
   margin: 0;
@@ -8,10 +8,9 @@ body {
 .map {
   height: 100%;
   width: 100%;
-  /* background-color: blue; */
-/* } */
+}
 
-/* .map-container {
+.map-container {
   width: 100vw;
   height: 100vh;
-} */
+}

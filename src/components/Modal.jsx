@@ -5,7 +5,6 @@ import BarChart from "./charts/BarChart";
 
 // ID and NAME bare minimum that will be given the rest are OPTIONAL
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
-// eslint-disable-next-line react/prop-types
 const Modal = ({ handleModal }) => {
   //We can FIND the corresponding store by using the ID OR Lat/Lon passed in from the marker click event then we can access our store to display the content
   //So our store will already have all data that we need to display once the user clicks on the result list item, so that is taken care of,

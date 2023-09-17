@@ -6,8 +6,8 @@ const initialState = {
   id: null,
   name: "",
   location: {
-    lat: 42.346172931429194,
-    lon: -71.0395856066843,
+    lat: 42.34343568100882,
+    lon: -71.04241761553008,
   },
   details: {
     description: "",
@@ -45,7 +45,7 @@ export const userSlice = createSlice({
       state.details.avgStoreTraffic = action.payload;
     },
     storeWebsite: (state, action) => {
-      // console.log("Website - action.payload: ", action.payload);
+      console.log("Website - action.payload: ", action.payload);
 
       //  removes https:// to fix the issue of the website not loading due to missing www
       let url = action.payload.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"

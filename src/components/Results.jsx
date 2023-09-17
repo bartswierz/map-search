@@ -7,11 +7,8 @@ import "../assets/icon-search.svg";
 import { useDispatch } from "react-redux";
 import { storeLocation, storeDescription, storeWebsite, storeImages, storeTraffic, storeName } from "../redux/features/user/userSlice";
 
-/* eslint-disable react/prop-types */
 const Results = ({ filteredList, userInput, setUserInput }) => {
   const dispatch = useDispatch();
-
-  console.log("results - userInput length: ", userInput.length);
 
   // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {

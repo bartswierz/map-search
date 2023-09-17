@@ -1,23 +1,24 @@
 import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
-import { MapContainer, Marker, ZoomControl } from "react-leaflet";
-import Searchbar__ from "./components/Searchbar";
+import { MapContainer, ZoomControl } from "react-leaflet";
+import Searchbar__ from "./components/Searchbar/Searchbar";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CenterToLocation from "./components/CenterToLocation";
 import Modal from "./components/Modal";
 import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
-import IconPin from "./assets/icon-pin.svg";
+// import IconPin from "./assets/icon-pin.svg";
+import MarkerPin from "./components/map/MarkerPin";
+
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 function App() {
   // Set to starting location in Boston, MA - Values collect from Google Maps
-  const [location, setLocation] = useState({ lat: 42.34369297372647, lon: -71.04254368836378 });
-  const [displayModal, setDisplayModal] = useState(false); // Display/Remove modal
+  // 42.34343568100882, -71.04241761553008
+  const [location, setLocation] = useState({ lat: 42.34343568100882, lon: -71.04241761553008 });
+  const [openModal, setOpenModal] = useState(false); // Display/Remove modal
 
   // get location object from redux store
   const loc = useSelector((state) => {
-    // console.log("state: ", state.user.location);
     return state.user.location;
   });
 
@@ -31,19 +32,11 @@ function App() {
     setLocation(loc);
   }, [loc]);
 
-  // Create a custom marker icon
-  const MarkerPin = new Icon({
-    iconUrl: IconPin, // URL to your SVG icon
-    iconSize: [32, 32], // Specify the icon size (adjust as needed)
-  });
+  // Marker Click => Open Modal / Close Button OR Outside Modal => Close Modal
+  const handleModal = () => setOpenModal(!openModal); // Show the modal when marker is clicked
 
-  const handleModal = () => {
-    setDisplayModal((modalToggle) => !modalToggle); // Show the modal when marker is clicked
-  };
-
+  // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
   return (
-    // map-container set to 100vh/100vw to fill the screen
-    // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
     <div className="w-screen h-screen">
       <MapContainer
         // center={[42.354022, -71.046245]}
@@ -51,30 +44,19 @@ function App() {
         zoom={17}
         scrollWheelZoom={true}
         zoomControl={false}
-        dragging={`${displayModal ? true : false}`}
+        dragging={!openModal} // WHEN MODAL IS OPEN, DRAGGING IS DISABLED
         className="w-full h-full"
       >
         {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
         <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />
         <Searchbar__ />
         <ZoomControl position="topright" />
+        {/* MOVES TO NEW MARKER LOCAITON */}
         <CenterToLocation location={location} />
+        <MarkerPin showMarker={showMarker} location={location} handleModal={handleModal} />
 
-        {/* eventHandlers required for click events - react-leaflet v3+*/}
-        {showMarker && (
-          <Marker
-            position={[location.lat, location.lon]}
-            eventHandlers={{
-              click: () => handleModal(),
-            }}
-            icon={MarkerPin}
-          >
-            {/* <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup> */}
-          </Marker>
-        )}
-
-        {/* Passing callback function to update displayModal on click */}
-        {displayModal && <Modal handleModal={handleModal} />}
+        {/* Passing callback function to close modal when user clicks Close Btn or outside of modal */}
+        {openModal && <Modal handleModal={handleModal} />}
       </MapContainer>
     </div>
   );
