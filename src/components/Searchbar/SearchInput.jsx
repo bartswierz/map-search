@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { sampleData } from "../../constants/sample-data";
 import SearchbarCloseBtn from "./SearchbarCloseBtn";
 
-const SearchInput = ({ setResultsListCallback }) => {
+const SearchInput = ({ setResultsListCallback, setUserInputCallback }) => {
   const [userInput, setUserInput] = useState("");
   const [filteredList, setFilteredList] = useState([]);
   const [isActive, setIsActive] = useState(false);
@@ -22,21 +22,36 @@ const SearchInput = ({ setResultsListCallback }) => {
   // Updates search icon color when user clicks on input field
   const handleSearchIcon = (boolValue) => () => setIsActive(boolValue);
 
+  //TODO - move this logic to results, instead only pass userInput
+  // Sends userInput & resultsList back to parent component to pass to Results component
+  // useEffect(() => {
+  //   setUserInputCallback(userInput);
+
+  //   // Empty input field clears any results
+  //   if (userInput.length === 0) {
+  //     setResultsListCallback([]);
+  //     return;
+  //   }
+
+  //   // lowercase both input and name to make it case insensitive
+  //   const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
+
+  //   setResultsListCallback(filterData);
+  // }, [userInput]);
+
   useEffect(() => {
+    setUserInputCallback(userInput);
+
     // Empty input field clears any results
-    if (userInput.length === 0) {
-      // TODO pass callback
-      // setFilteredList([]);
-      setResultsListCallback([]);
-      return;
-    }
+    // if (userInput.length === 0) {
+    //   setResultsListCallback([]);
+    //   return;
+    // }
 
-    // lowercase both input and name to make it case insensitive
-    const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
+    // // lowercase both input and name to make it case insensitive
+    // const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(userInput.toLowerCase()));
 
-    // TODO pass callback
-    // setFilteredList(filterData);
-    setResultsListCallback(filterData);
+    // setResultsListCallback(filterData);
   }, [userInput]);
 
   // const Input = ({ userInput, handleChange, handleSearchIcon }) => {

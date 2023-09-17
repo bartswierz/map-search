@@ -70,17 +70,16 @@ const Searchbar = () => {
   return (
     <form onSubmit={handleSubmit} className="z-[999] top-3 left-3 absolute min-w-[280px] w-[30vw] max-w-[500px] cursor-default">
       {/* INPUT FIELD  {/* TODO filteredListCallback */}
-      <SearchInput setResultsListCallback={setResultsList} />
+      <SearchInput setResultsListCallback={setResultsList} setUserInputCallback={setUserInput} />
 
       {/* TODO - need to do a filteredListCallback into SearchInput to pass it down to Results after */}
       {/* RESULTS */}
       <div className="mt-4">
-        <div>Test</div>
         {/* TODO - filtered list taken care of inside searchbar, we will pass in the completed filteredList 
         -setUserInput is for the input field to be updated to the text of the clicked result
         -May be able to remove userInput prop if we replace length check with resultsList.length(empty array)
         */}
-        <Results setResultsList={resultsList} userInput={userInput} setUserInput={setUserInput} resultsList={resultsList} />
+        <Results input={userInput} setUserInputCallback={setUserInput} />
       </div>
 
       {/* <div className="flex text-gray-600 bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
