@@ -1,18 +1,12 @@
-// import { MdClose } from "react-icons/md";
 import SearchIcon from "./SearchIcon";
-import { useState, useEffect } from "react";
-// import sampleData from "../../data/sampleData.json";
-// import { sampleData } from "../../constants/sample-data";
+import { useState } from "react";
 import SearchbarCloseBtn from "./SearchbarCloseBtn";
 import Results from "../results/Results";
-import { useDispatch, useSelector } from "react-redux";
-// const SearchInput = ({ setUserInputCallback }) => {
+
 const SearchInput = () => {
   const [userInput, setUserInput] = useState("");
-  // const [filteredList, setFilteredList] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
-  // console.log("userinput changed: ", userInput);
   //COLLECT USER INPUT AS THEY TYPE
   const handleChange = (e) => {
     setUserInput(e.target.value);
@@ -20,18 +14,6 @@ const SearchInput = () => {
 
   // Updates search icon color when user clicks on input field
   const handleSearchIcon = (boolValue) => () => setIsActive(boolValue);
-
-  const setUserInputCallback = (storeName) => {
-    console.log("storeName passed from results: ", storeName);
-    setUserInput(storeName);
-  };
-
-  // Using input callback to pass userInput back to parent component to use in Results component
-  // useEffect(() => {
-  //   // setUserInputCallback(userInput);
-  //   console.log("userInput changed: ", userInput);
-  //   setUserInput(userInput);
-  // }, [userInput]);
 
   return (
     <>
@@ -52,6 +34,7 @@ const SearchInput = () => {
         <SearchbarCloseBtn resetInputCallback={setUserInput} input={userInput} />
       </div>
       <div className="mt-4">
+        {/* Passing in callback function to update the input field with user choice on click */}
         <Results input={userInput} setUserInputCallback={setUserInput} />
       </div>
     </>

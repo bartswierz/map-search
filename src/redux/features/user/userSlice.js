@@ -25,17 +25,35 @@ export const userSlice = createSlice({
   reducers: {
     // Passing in the whole object from results click to update the store state
     updateStore: (state, action) => {
-      const { name, id, location, description, avgStoreTraffic, website, images } = action.payload;
+      const { name, id, location, details, images } = action.payload;
       console.log("REDUX: updateStore - action.payload: ", action.payload);
-      // Update all the passed values
+
+      // UPDATE STORE NAME AND ID - GUARANTEED TO BE PASSED IN
       state.name = name;
       state.id = id;
-      state.location.lat = location.lat;
-      state.location.lon = location.lon;
-      state.details.description = description;
-      state.details.avgStoreTraffic = avgStoreTraffic;
-      state.details.website = website;
-      state.images = images;
+
+      // OPTIONAL VALUES: IF LOCATION OBJ. PASSED IN, UPDATE LOCATION
+      if (location) {
+        state.location.lat = location.lat;
+        state.location.lon = location.lon;
+      }
+
+      // OPTIONAL VALUES: IF DETAILS OBJ. PASSED IN, UPDATE DETAILS
+      if (details) {
+        state.details.description = details.description || "";
+        state.details.avgStoreTraffic = details.avgStoreTraffic || {};
+
+        if (details.website) {
+          console.log("details.website passed before: ", details.website);
+          let url = details.website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
+          console.log("details.website passed after: ", url);
+          state.details.website = url || "";
+        }
+
+        // details.website || "";
+      }
+
+      state.images = images || [];
     },
     storeName: (state, action) => {
       // console.log("Name - action.payload: ", action.payload);
@@ -78,12 +96,6 @@ export const userSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { storeLocation, storeDescription, storeTraffic, storeWebsite, storeImages, storeName, updateStore } = userSlice.actions;
-
-// Will be used for updating the store object when user clicks on a result
-export const updateStoreData = (data) => ({
-  type: "user/updateStoreData",
-  payload: data,
-});
 
 // Selector to get the ENTIRE store object for modal
 export const selectStore = (state) => state.user;
