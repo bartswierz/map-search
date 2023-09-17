@@ -28,11 +28,12 @@ export const userSlice = createSlice({
       const { name, id, location, details, images } = action.payload;
       console.log("REDUX: updateStore - action.payload: ", action.payload);
 
-      // UPDATE STORE NAME AND ID - GUARANTEED TO BE PASSED IN
+      // GUARANTEED VALUES - NAME AND ID
       state.name = name;
       state.id = id;
 
-      // OPTIONAL VALUES: IF LOCATION OBJ. PASSED IN, UPDATE LOCATION
+      // OPTIONAL VALUES
+      // IF LOCATION OBJ. PASSED IN, UPDATE LOCATION
       if (location) {
         state.location.lat = location.lat;
         state.location.lon = location.lon;
@@ -43,7 +44,7 @@ export const userSlice = createSlice({
         state.location.lon = -71.04241761553008;
       }
 
-      // OPTIONAL VALUES: IF DETAILS OBJ. PASSED IN, UPDATE DETAILS
+      // IF DETAILS OBJ. PASSED IN, UPDATE DETAILS
       if (details) {
         state.details.description = details.description || "";
         state.details.avgStoreTraffic = details.avgStoreTraffic || {};
