@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PinIcon from "./PinIcon";
+import PinIcon from "../icons/PinIcon";
 import { sampleData } from "../../constants/sample-data";
 import { useDispatch, useSelector } from "react-redux";
 import { updateStore } from "../../redux/features/user/userSlice";

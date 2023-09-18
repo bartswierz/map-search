@@ -1,13 +1,13 @@
 import "leaflet/dist/leaflet.css";
 import { MapContainer, ZoomControl } from "react-leaflet";
-import Searchbar__ from "./components/Searchbar/Searchbar";
+import Searchbar__ from "./components/searchbar/Searchbar";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import CenterToLocation from "./components/CenterToLocation";
-import Modal from "./components/Modal";
+import CenterToLocation__ from "./components/CenterToLocation";
+import Modal from "./components/modal/Modal";
 import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
 // import IconPin from "./assets/icon-pin.svg";
-import MarkerPin from "./components/map/MarkerPin";
+import MarkerPin__ from "./components/map/MarkerPin";
 
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
@@ -49,12 +49,14 @@ function App() {
       >
         {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
         <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />
-        <Searchbar__ />
-        <ZoomControl position="topright" />
-        {/* MOVES TO NEW MARKER LOCAITON */}
-        <CenterToLocation location={location} />
-        <MarkerPin showMarker={showMarker} location={location} handleModal={handleModal} />
+        <ZoomControl position="bottomright" className="hidden" />
 
+        {/* CONTAINS SEARCHBAR & RESULTS COMPONENT */}
+        <Searchbar__ />
+        {/* MARKER - onClick opens Modal - passing in handleModal */}
+        <MarkerPin__ showMarker={showMarker} location={location} handleModalCallback={handleModal} />
+        {/* MOVES TO NEW MARKER LOCAITON */}
+        <CenterToLocation__ location={location} />
         {/* Passing callback function to close modal when user clicks Close Btn or outside of modal */}
         {openModal && <Modal handleModal={handleModal} />}
       </MapContainer>

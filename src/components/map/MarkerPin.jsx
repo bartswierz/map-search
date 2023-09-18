@@ -3,7 +3,7 @@ import { Icon } from "leaflet";
 // import IconPin from "./assets/icon-pin.svg";
 import IconPin from "../../assets/icon-pin.svg";
 
-const MarkerPin = ({ showMarker, location, handleModal }) => {
+const MarkerPin = ({ showMarker, location, handleModalCallback }) => {
   // Create a custom marker icon
   const CustomMarkerPin = new Icon({
     iconUrl: IconPin, // URL to your SVG icon
@@ -16,7 +16,7 @@ const MarkerPin = ({ showMarker, location, handleModal }) => {
     <Marker
       position={[location.lat, location.lon]}
       eventHandlers={{
-        click: () => handleModal(), // Opens modal
+        click: () => handleModalCallback(), // Opens modal - function passed from App.jsx
       }}
       icon={CustomMarkerPin}
     >

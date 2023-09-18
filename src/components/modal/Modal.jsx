@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-import { selectStore } from "../redux/features/user/userSlice"; //Grabs all the store data from the redux store instead of having to grab each piece of data individually
+import { selectStore } from "../../redux/features/user/userSlice"; //Grabs all the store data from the redux store instead of having to grab each piece of data individually
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
-import BarChart from "./charts/BarChart";
-import PinIcon from "./results/PinIcon";
+import BarChart from "../charts/BarChart";
+import PinIcon from "../icons/PinIcon";
+import Image from "./Image";
 // ID and NAME bare minimum that will be given the rest are OPTIONAL
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
 const Modal = ({ handleModal }) => {
@@ -69,13 +70,30 @@ const Modal = ({ handleModal }) => {
           {/* IMAGES */}
           <div className="flex gap-2 p-2 mt-10">
             {images.map((image) => {
+              return <Image image={image} key={image} />;
+            })}
+          </div>
+
+          {/* Display broken image links */}
+          {/* {brokenImages.length > 0 && (
+            <div className="text-red-500">
+              <p>Broken Image Links:</p>
+              <ul>
+                {brokenImages.map((brokenImage) => (
+                  <li key={brokenImage}>{brokenImage}</li>
+                ))}
+              </ul>
+            </div>
+          )} */}
+          {/* <div className="flex gap-2 p-2 mt-10">
+            {images.map((image) => {
               return (
                 <div key={image} className="flex h-[200px] max-h-[150px] flex-grow">
                   <img key={image} src={image} alt="store image" className="w-full h-full object-cover" />
                 </div>
               );
             })}
-          </div>
+          </div> */}
 
           {/* BAR CHART */}
           <BarChart data={details.avgStoreTraffic} />
