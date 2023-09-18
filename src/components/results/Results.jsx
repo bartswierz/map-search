@@ -27,7 +27,7 @@ const Results = ({ input, setUserInputCallback }) => {
 
   // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {
-    setUserInputCallback(store.name); // Update the input field with the store name
+    setUserInputCallback(store.name); // UPDATE INPUT FIELD WITH STORE NAME PICKED
 
     /* UPDATE STORE W/ USER CHOICE: GUARNTEED - NAME, ID
     OPTIONAL: LOCATION, IMAGES, & DETAILS(DESCRIPTION, TRAFFIC, WEBSITE)  */
@@ -38,7 +38,7 @@ const Results = ({ input, setUserInputCallback }) => {
   if (input.length === 0) return null;
 
   return (
-    <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden">
+    <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden mt-4">
       {/* HEADER */}
       <ResultsHeader list={resultsList} input={input} />
 

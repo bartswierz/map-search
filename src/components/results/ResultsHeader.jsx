@@ -7,8 +7,7 @@ const ResultsHeader = ({ list, input }) => {
   const backgroundColor = list.length === 0 ? "bg-gray-500" : "bg-[#5581f6]";
 
   const numResults = list.length;
-  console.log("numResults: ", numResults);
-  
+
   const resultStr = numResults > 1 ? "Results:" : "Result:";
 
   return (
