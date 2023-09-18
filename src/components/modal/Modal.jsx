@@ -21,7 +21,7 @@ const Modal = ({ handleModal }) => {
       {/* CLOSE MODAL BUTTON */}
       <MdClose
         onClick={handleModal}
-        className="fixed top-5 right-5 font-bold text-2xl bg-slate-500- w-10 h-10 z-[9999] cursor-pointer text-gray-400 hover:text-gray-300"
+        className="fixed top-5 right-5 font-bold text-2xl bg-slate-500- w-10 h-10 z-[9999] cursor-pointer text-gray-400 hover:text-gray-300 transition-all ease-in-out duration-300"
       >
         X
       </MdClose>
@@ -31,7 +31,7 @@ const Modal = ({ handleModal }) => {
         onClick={handleModal}
       >
         {/* MODAL AREA - e.stopPropagation prevents our modal from closing when clicking within the Modal*/}
-        <div className="w-[500px] bg-white rounded-md max-w-[96vw]" onClick={(e) => e.stopPropagation()}>
+        <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
           {/* HEADER */}
           <ModalHeader name={name} location={location} websiteLink={details.website} />
 

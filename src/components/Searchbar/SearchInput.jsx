@@ -1,4 +1,4 @@
-import SearchIcon from "./SearchIcon";
+import SearchIcon from "../icons/SearchIcon";
 import { useState } from "react";
 import SearchbarCloseBtn from "./SearchbarCloseBtn";
 import Results from "../results/Results";
@@ -17,9 +17,9 @@ const SearchInput = () => {
 
   return (
     <>
-      <div className="flex text-gray-600 bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
+      <div className="flex text-gray-600- text-search-input bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd] ">
         {/* Passing isActive to change icon from Gray(inactive) to Black(active) */}
-        <SearchIcon isActive={isActive} />
+        <SearchIcon isActive={isActive} input={userInput} />
         <input
           type="text"
           placeholder="Search..."

@@ -14,7 +14,7 @@ const ModalHeader = ({ location, name, websiteLink }) => {
 
           {/* NAME & LOCATION */}
           <div className="flex flex-col">
-            <span className="text-xl font-semibold text-gray-700">{name}</span>
+            <span className="text-xl font-semibold text-name-color">{name}</span>
             <span className="text-base text-gray-400 font-medium">
               {location.lat}, {location.lon}
             </span>

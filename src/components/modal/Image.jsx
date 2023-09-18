@@ -8,12 +8,12 @@ const Image = ({ image }) => {
   if (isBroken) return null;
 
   return (
-    <div key={image} className="flex h-[200px] max-h-[150px] flex-grow">
+    <div key={image} className="max-h-[200px] w-full">
       <img
         key={image}
         src={image}
         alt="store image"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover object-center"
         onError={() => {
           // Handle broken image link
           setIsBroken(true);

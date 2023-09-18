@@ -4,8 +4,18 @@ export default {
   content: ["./src/**/*.{html,jsx}"],
   theme: {
     extend: {
+      //COLORS FOUND USING ONLINE INSPECT TOOL RESOURCE: https://pickcoloronline.com/
       colors: {
-        "primary-color": "#3b82f6", // text-primary-color #3b82f6
+        "primary-color": "#5581f6",
+        "primary-color-hover": "#5581f6",
+        "secondary-color": "#c4c4c4",
+        "name-color": "#494949",
+        "search-icon-active": "#2f2f2f",
+        "search-icon-inactive": "#9d9d9d",
+        "search-input": "#484848",
+      },
+      backgroundColor: {
+        "primary-bg": "#FFFFFF", //bg-primary-bg
       },
       screens: {
         xsm: "468px",

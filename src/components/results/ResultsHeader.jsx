@@ -3,12 +3,13 @@ const ResultsHeader = ({ list, input }) => {
   //No results & no user input - this prevents 'no found' message to show up on an empty string
   if (list.length === 0 && input.length === 0) return null;
 
-  const backgroundColor = list.length === 0 ? "bg-gray-500" : "bg-blue-500";
+  // const backgroundColor = list.length === 0 ? "bg-gray-500" : "bg-blue-500";
+  const backgroundColor = list.length === 0 ? "bg-gray-500" : "bg-[#5581f6]";
 
   const numResults = list.length;
   console.log("numResults: ", numResults);
-
-  const resultStr = numResults > 1 ? "Results" : "Result";
+  
+  const resultStr = numResults > 1 ? "Results:" : "Result:";
 
   return (
     <>

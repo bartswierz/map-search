@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PinIcon from "../icons/PinIcon";
 import { sampleData } from "../../constants/sample-data";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateStore } from "../../redux/features/user/userSlice";
 import ResultsHeader from "./ResultsHeader";
 // import { updateStoreData } from "../../redux/features/user/userSlice";
@@ -9,8 +9,7 @@ const Results = ({ input, setUserInputCallback }) => {
   const dispatch = useDispatch();
   const [resultsList, setResultsList] = useState([]);
 
-  // const testUpdate = useSelector((state) => state.updateStoreData);
-  // console.log("testUpdate: ", testUpdate);
+  // Creates a results list that START WITH the user input
   useEffect(() => {
     // Empty input field clears any previous results
     if (input.length === 0) {
@@ -23,13 +22,12 @@ const Results = ({ input, setUserInputCallback }) => {
 
     console.log("results list - results: ", resultsList);
     setResultsList(filterData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {
     setUserInputCallback(store.name); // Update the input field with the store name
-
-    console.log("RESULTS user chose store: ", store);
 
     /* UPDATE STORE W/ USER CHOICE: GUARNTEED - NAME, ID
     OPTIONAL: LOCATION, IMAGES, & DETAILS(DESCRIPTION, TRAFFIC, WEBSITE)  */
@@ -44,20 +42,20 @@ const Results = ({ input, setUserInputCallback }) => {
       {/* HEADER */}
       <ResultsHeader list={resultsList} input={input} />
 
-      {/* RESULTS */}
-      <div className="bg-white">
+      {/* RESULTS CONTENT */}
+      <div className=" bg-primary-bg">
         {resultsList.map((store) => (
           <div
             key={store.id}
-            // onClick={() => handleClick(store.location.lat, store.location.lon)}
             onClick={() => handleClick(store)}
-            className="border-b border-r border-l border-gray-300 flex gap-4 p-2 hover:bg-slate-100 cursor-pointer px-3"
+            className="border-b border-r border-l border-gray-300 flex gap-4 p-3 hover:bg-slate-100 cursor-pointer px-3 transition-all ease-in-out duration-300"
           >
             <PinIcon />
             {/* NAME & LOCATION */}
             <div>
-              <h2 className="font-semibold text-gray-600">{store.name}</h2>
-              <p className="text-gray-400">
+              <h2 className="font-semibold text-name-color">{store.name}</h2>
+              {/* <p className="text-gray-400"> */}
+              <p className="text-secondary-color">
                 {store.location.lat}, {store.location.lon}
               </p>
             </div>
