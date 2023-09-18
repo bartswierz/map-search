@@ -3,14 +3,17 @@ import { selectStore } from "../../redux/features/user/userSlice"; //Grabs all t
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
 import BarChart from "../charts/BarChart";
 import PinIcon from "../icons/PinIcon";
-import Image from "./Image";
+// import Image from "./Image";
 import ImageList from "./ImageList";
+import Description from "./Description";
+import WebsiteLink from "./WebsiteLink";
 // ID and NAME bare minimum that will be given the rest are OPTIONAL
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
 const Modal = ({ handleModal }) => {
   // Grabbing the store data from the redux store
   const store = useSelector(selectStore);
   const { name, location, details, images } = store;
+  console.log("modal - store: ", store);
 
   return (
     <>
@@ -47,7 +50,7 @@ const Modal = ({ handleModal }) => {
             </div>
 
             {/* WEBSITE LINK */}
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
               <button
                 type="button"
                 className="bg-blue-500 text-white px-8 py-2 flex justify-center items-center rounded-md h-12  hover:bg-blue-400"
@@ -58,15 +61,12 @@ const Modal = ({ handleModal }) => {
                   </a>
                 )}
               </button>
-            </div>
+            </div> */}
+            <WebsiteLink link={details.website} />
           </div>
 
           {/* DESCRIPTION */}
-          {details.description && (
-            <div className="px-3 py-4">
-              <p className="text-base">{details.description}</p>
-            </div>
-          )}
+          <Description text={details.description} />
 
           {/* IMAGES */}
           <ImageList imgList={images} />

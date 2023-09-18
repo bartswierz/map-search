@@ -18,12 +18,12 @@ const initialState = {
   userInput: "",
 };
 
-// Why did I separate the reducers into five separate reducers? I wanted to separate them to be able to create future features easier by separating the reducers into separate section to be more reusable when future features only require a specific piece of data. For example, if I wanted to use the storeLocation reducer in another component, I could just import it and use it. This way, I believe it would be easier to maintain this code by modularizing it.
+// Why did I separate the reducers into five separate reducers? I wanted to separate them to be able to create future features easier by separating the reducers into separate section to be more reusable when future features only pass one piece of data.
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    // Passing in the whole object from results click to update the store state
+    // Passing in the whole object from results click to update the store state to save us from having to make 7 different reducers to update each piece of data each time user chooses a result, this way only calls our redux store once
     updateStore: (state, action) => {
       const { name, id, location, details, images } = action.payload;
       console.log("REDUX: updateStore - action.payload: ", action.payload);
@@ -33,30 +33,52 @@ export const userSlice = createSlice({
       state.id = id;
 
       // OPTIONAL VALUES
-      // IF LOCATION OBJ. PASSED IN, UPDATE LOCATION
+      // IF LOCATION OBJ. IS GIVEN, UPDATE LOCATION, ELSE DEFAULT VALUES TO RESET POSITION TO STARTING POINT - THERE MAY BE TIMES WHERE WE MAY HAVE PREVIOUS LOCATION'S COORDINATES IN OUR STORE SO WE RESET IT TO THE DEFAULT VALUES
       if (location) {
+        // UPDATE LOCATION
         state.location.lat = location.lat;
         state.location.lon = location.lon;
       } else {
-        console.log("no location passed using default values");
-        // IF NOT PASSED IN, USE DEFAULT VALUES
+        // LOCATION NOT PROVIDED, SET TO DEFAULT
         state.location.lat = 42.34343568100882;
         state.location.lon = -71.04241761553008;
       }
 
-      // IF DETAILS OBJ. PASSED IN, UPDATE DETAILS
+      // UDPATING DESCRIPTION, WEBSITE, AND TRAFFIC TO THE VALUES IF GIVEN, OTHERWISE SET TO DEFAULT VALUES
       if (details) {
-        state.details.description = details.description || "";
-        state.details.avgStoreTraffic = details.avgStoreTraffic || {};
-
-        if (details.website) {
-          let url = details.website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
-          console.log("details.website passed after: ", url);
-          state.details.website = url || "";
+        if (details.description) {
+          // UPDATE DESCRIPTION
+          state.details.description = details.description;
+        } else {
+          // DESCRIPTION NOT PROVIDED, SET TO DEFAULT
+          state.details.description = "";
         }
+
+        // FIXING THE ISSUE OF THE WEBSITE NOT LOADING DUE TO MISSING WWW
+        if (details.website) {
+          // CREATE A NEW VARIABLE AND UPDATE THE WEBSITE STATE
+          const url = details.website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
+
+          const updatedLink = `https://www.${url}`;
+
+          state.details.website = updatedLink;
+        } else {
+          // WEBSITE NOT PROVIDED, SET TO DEFAULT
+          state.details.website = "";
+        }
+
+        if (details.avgStoreTraffic) state.details.avgStoreTraffic = details.avgStoreTraffic; // UPDATE AVGTRAFFIC
+        else state.details.avgStoreTraffic = {}; //TRAFFIC NOT PROVIDED, SET TO DEFAULT
+      } else {
+        // No details set all three to default values
+        console.log("details did not exist setting values to default");
+        state.details.description = "";
+        state.details.avgStoreTraffic = {};
+        state.details.website = "";
       }
 
-      state.images = images || [];
+      if (images) state.images = images;
+      else state.images = [];
     },
     storeName: (state, action) => {
       // console.log("Name - action.payload: ", action.payload);
@@ -75,14 +97,9 @@ export const userSlice = createSlice({
       state.details.description = action.payload;
     },
     storeTraffic: (state, action) => {
-      console.log("Traffic - action.payload: ", action.payload);
-      // const { avgStoreTraffic } = action.payload;
-      // action.payload ? (state.avgStoreTraffic = action.payload) : (state.avgStoreTraffic = {});
       state.details.avgStoreTraffic = action.payload;
     },
     storeWebsite: (state, action) => {
-      console.log("Website - action.payload: ", action.payload);
-
       //  removes https:// to fix the issue of the website not loading due to missing www
       let url = action.payload.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
 
@@ -100,7 +117,7 @@ export const userSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { storeLocation, storeDescription, storeTraffic, storeWebsite, storeImages, storeName, updateStore } = userSlice.actions;
 
-// Selector to get the ENTIRE store object data for use in modal
+// Selector to give our modal access to the entire store state as it is required for the modal to function properly. Other component will only use the useSelector hook to access the store state
 export const selectStore = (state) => state.user;
 
 export default userSlice.reducer;
