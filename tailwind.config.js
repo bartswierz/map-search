@@ -7,6 +7,9 @@ export default {
       colors: {
         "primary-color": "#3b82f6", // text-primary-color #3b82f6
       },
+      screens: {
+        xsm: "468px",
+      },
     },
   },
   plugins: [],

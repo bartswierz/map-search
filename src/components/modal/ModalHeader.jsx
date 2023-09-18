@@ -5,10 +5,8 @@ const ModalHeader = ({ location, name, websiteLink }) => {
   return (
     <>
       <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200 flex-wrap">
-        {/* TODO - make the items go from row to column at a certain width */}
-        {/* <div className="flex flex-row- flex-wrap justify-between"> */}
         {/* ICON, NAME, LOCATION */}
-        <div className="flex gap-4 b">
+        <div className="flex gap-4 justify-center w-full xsm:w-max">
           {/* ICON */}
           <div className="flex justify-content items-center">
             <PinIcon />
@@ -16,7 +14,7 @@ const ModalHeader = ({ location, name, websiteLink }) => {
 
           {/* NAME & LOCATION */}
           <div className="flex flex-col">
-            <span className="text-2xl font-semibold text-gray-700">{name}</span>
+            <span className="text-xl font-semibold text-gray-700">{name}</span>
             <span className="text-base text-gray-400 font-medium">
               {location.lat}, {location.lon}
             </span>
@@ -24,10 +22,9 @@ const ModalHeader = ({ location, name, websiteLink }) => {
         </div>
 
         {/* details.website */}
-        <div className="b pl-4- w-full sm:w-auto sm:self-center sm:pl-4 sm:justify-center">
+        <div className="w-full text-base xsm:text-sm mt-2 xsm:mt-0  xsm:w-auto xsm:self-center xsm:pl-4 xsm:justify-center">
           <WebsiteLink link={websiteLink} />
         </div>
-        {/* </div> */}
       </div>
     </>
   );
