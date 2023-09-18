@@ -1,8 +1,8 @@
 import { Bar } from "react-chartjs-2";
 // IMPORTANT - CHARTJS REQUIRES CHART.JS/AUTO - WILL CRASH WITHOUT IT
+// eslint-disable-next-line no-unused-vars
 import { Chart as ChartJS } from "chart.js/auto";
-/* CHARTJS REFERENCED - https://www.chartjs.org/docs/latest/getting-started/usage.html */
-import { useEffect, useState } from "react";
+/* CHARTJS REFERENCED - 'Build a new application with Chart.js' https://www.chartjs.org/docs/latest/getting-started/usage.html */
 
 export const BarChart = ({ data }) => {
   console.log("barchart: data: ", data);
@@ -26,7 +26,7 @@ export const BarChart = ({ data }) => {
   };
 
   // options = options={{aspectRatio}} aspect ratio, animations, etc.
-  return <Bar data={chartData} />;
+  return <Bar data={chartData} className="p-4 max-w-[98vw]" />;
 };
 
 export default BarChart;

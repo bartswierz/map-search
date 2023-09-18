@@ -44,6 +44,7 @@ function App() {
         zoom={17}
         scrollWheelZoom={true}
         zoomControl={false}
+        doubleClickZoom={false} // Disable double-click zooming
         dragging={!openModal} // WHEN MODAL IS OPEN, DRAGGING IS DISABLED
         className="w-full h-full"
       >
