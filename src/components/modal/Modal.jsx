@@ -28,7 +28,6 @@ const Modal = ({ handleModal }) => {
       >
         {/* MODAL AREA - e.stopPropagation prevents our modal from closing when clicking within the Modal*/}
         <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
-          {/* HEADER */}
           <ModalHeader name={name} location={location} websiteLink={details.website} />
           <Description text={details.description} />
           <ImageList imgList={images} />
