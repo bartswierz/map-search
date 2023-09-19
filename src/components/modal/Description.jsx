@@ -1,6 +1,6 @@
-// Displays passed text as a description for the selected store
+// DISPLAYS STORE DESCRIPTION
 const Description = ({ text }) => {
-  // No text
+  // IF STORE HAS NO DESCRIPTION RETURN NOTHING
   if (!text) return null;
 
   return (

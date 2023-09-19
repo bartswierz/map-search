@@ -1,20 +1,16 @@
 import { useSelector } from "react-redux";
-import { selectStore } from "../../redux/features/user/userSlice"; //Grabs all the store data from the redux store instead of having to grab each piece of data individually
+import { selectStore } from "../../redux/features/user/userSlice"; //Selects all the store data from the redux store
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
 import BarChart from "../charts/BarChart";
-// import PinIcon from "../icons/PinIcon";
-// import Image from "./Image";
 import ImageList from "./ImageList";
 import Description from "./Description";
-// import WebsiteLink from "./WebsiteLink";
 import ModalHeader from "./ModalHeader";
-// ID and NAME bare minimum that will be given the rest are OPTIONAL
+
 //openModal -> user clicks on marker, closeModal -> user clicks on X OR outside of modal
 const Modal = ({ handleModal }) => {
   // Grabbing the store data from the redux store
   const store = useSelector(selectStore);
   const { name, location, details, images } = store;
-  console.log("modal - store: ", store);
 
   return (
     <>
@@ -34,14 +30,8 @@ const Modal = ({ handleModal }) => {
         <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
           {/* HEADER */}
           <ModalHeader name={name} location={location} websiteLink={details.website} />
-
-          {/* DESCRIPTION */}
           <Description text={details.description} />
-
-          {/* IMAGES */}
           <ImageList imgList={images} />
-
-          {/* BAR CHART */}
           <BarChart data={details.avgStoreTraffic} />
         </div>
         {/* END OF MODAL CONTENT */}

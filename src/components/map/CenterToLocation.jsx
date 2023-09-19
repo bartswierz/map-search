@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 
-//Centers our map on marker location
 // LEAFLET - MAP RESOURCES - https://leafletjs.com/reference.html#locate-options-setview
+// MOVES TO THE NEW MARKER LOCATION
 const CenterToLocation = ({ location }) => {
   const { lat, lon } = location;
 

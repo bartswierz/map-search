@@ -7,7 +7,7 @@ export default {
       //COLORS FOUND USING ONLINE INSPECT TOOL RESOURCE: https://pickcoloronline.com/
       colors: {
         "primary-color": "#5581f6",
-        "primary-color-hover": "#5581f6",
+        "primary-color-hover": "#5077E4",
         "secondary-color": "#c4c4c4",
         "name-color": "#494949",
         "search-icon-active": "#2f2f2f",
@@ -15,7 +15,7 @@ export default {
         "search-input": "#484848",
       },
       backgroundColor: {
-        "primary-bg": "#FFFFFF", //bg-primary-bg
+        "primary-bg": "#FFFFFF",
       },
       screens: {
         xsm: "468px",

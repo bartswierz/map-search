@@ -3,7 +3,9 @@ const WebsiteLink = ({ link }) => {
 
   const LinkButton = ({ link, unavailable = false }) => {
     // Unavailable link => Gray Button & No Link, Available Link => Blue Button & Link
-    const backgroundColor = unavailable ? "bg-gray-400 cursor-not-allowed" : "bg-primary-color hover:bg-primary-color hover:shadow-md";
+    const backgroundColor = unavailable
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-primary-color hover:bg-primary-color-hover hover:shadow-md";
 
     // If theres no link, we will return null otherwise pass the link to the href
     const siteLink = unavailable ? null : link;

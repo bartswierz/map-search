@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// When user clicks on a Results List item, we will update the location state with the lat and lon of the selected item
-//DEFAULT VALUES USED FROM THE INSTRUCTIONS - -34.397, 150.644
+//DEFAULT VALUES
 const initialState = {
   id: null,
   name: "",
@@ -18,7 +17,7 @@ const initialState = {
   userInput: "",
 };
 
-// Why did I separate the reducers into five separate reducers? I wanted to separate them to be able to create future features easier by separating the reducers into separate section to be more reusable when future features only pass one piece of data.
+// userSlice is setup for updating store objects via updateStore(when user clicks on a result item), and for updating individual values for future features.
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -26,7 +25,6 @@ export const userSlice = createSlice({
     // Passing in the whole object from results click to update the store state to save us from having to make 7 different reducers to update each piece of data each time user chooses a result, this way only calls our redux store once
     updateStore: (state, action) => {
       const { name, id, location, details, images } = action.payload;
-      console.log("REDUX: updateStore - action.payload: ", action.payload);
 
       // GUARANTEED VALUES - NAME AND ID
       state.name = name;
@@ -71,7 +69,6 @@ export const userSlice = createSlice({
         else state.details.avgStoreTraffic = {}; //TRAFFIC NOT PROVIDED, SET TO DEFAULT
       } else {
         // No details set all three to default values
-        console.log("details did not exist setting values to default");
         state.details.description = "";
         state.details.avgStoreTraffic = {};
         state.details.website = "";
@@ -81,29 +78,37 @@ export const userSlice = createSlice({
       else state.images = [];
     },
     storeName: (state, action) => {
-      // console.log("Name - action.payload: ", action.payload);
       const { name, id } = action.payload;
       state.name = name;
       state.id = id;
     },
     storeLocation: (state, action) => {
-      // console.log("Location - action.payload: ", action.payload);
       const { lat, lon } = action.payload; // location = {lat, lon}
       state.location.lat = lat;
       state.location.lon = lon;
     },
     storeDescription: (state, action) => {
-      // console.log("description: ", action.payload);
-      state.details.description = action.payload;
+      const { description } = action.payload;
+
+      if (description) state.details.description = description;
+      else state.details.description = "";
     },
     storeTraffic: (state, action) => {
-      state.details.avgStoreTraffic = action.payload;
+      const { avgStoreTraffic } = action.payload;
+
+      if (avgStoreTraffic) state.details.avgStoreTraffic = avgStoreTraffic;
+      else state.details.avgStoreTraffic = {};
     },
     storeWebsite: (state, action) => {
-      //  removes https:// to fix the issue of the website not loading due to missing www
-      let url = action.payload.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
+      const { website } = action.payload;
+      if (website) {
+        //  removes https:// to fix the issue of the website not loading due to missing www
+        const url = website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
 
-      state.details.website = url;
+        const updatedLink = `https://www.${url}`;
+
+        state.details.website = updatedLink;
+      } else state.details.website = "";
     },
     storeImages: (state, action) => {
       //Destructuring the array of three images [image1, image2, image3] incase we want to add more or less images in the future

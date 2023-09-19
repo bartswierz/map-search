@@ -6,8 +6,8 @@ import IconPin from "../../assets/icon-pin.svg";
 const MarkerPin = ({ showMarker, location, handleModalCallback }) => {
   // Create a custom marker icon
   const CustomMarkerPin = new Icon({
-    iconUrl: IconPin, // URL to your SVG icon
-    iconSize: [32, 32], // Specify the icon size (adjust as needed)
+    iconUrl: IconPin,
+    iconSize: [32, 32],
   });
 
   if (!showMarker) return null;
@@ -16,11 +16,11 @@ const MarkerPin = ({ showMarker, location, handleModalCallback }) => {
     <Marker
       position={[location.lat, location.lon]}
       eventHandlers={{
-        click: () => handleModalCallback(), // Opens modal - function passed from App.jsx
+        click: () => handleModalCallback(), // Opens modal - Updates openModal state to true inside Map component
       }}
       icon={CustomMarkerPin}
     >
-      {/* POPUP */}
+      {/* OPTIONAL: ADD POPUP */}
     </Marker>
   );
 };

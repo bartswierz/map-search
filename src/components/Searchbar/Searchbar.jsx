@@ -13,34 +13,32 @@ const Searchbar = () => {
     e.preventDefault();
   };
 
+  // UPDATE USER INPUT AS THEY TYPE
   const handleChange = (e) => {
     setUserInput(e.target.value);
   };
 
-  // UPDATE SEARCH ICON FROM GRAY(INACTIVE) TO BLACK(ACTIVE) WHEN USER CLICKS ON INPUT FIELD
-  const handleSearchIcon = (boolValue) => () => setIsActive(boolValue);
-
-  // INPUT FIELD FOR SEARCHBAR
-  const SearchInput = () => {
-    //COLLECT USER INPUT AS THEY TYPE
-    return (
-      <input
-        type="text"
-        placeholder="Search..."
-        value={userInput}
-        onChange={(e) => handleChange(e)}
-        onFocus={handleSearchIcon(true)}
-        onBlur={handleSearchIcon(false)}
-        className="rounded-md p-2 text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none mr-12 text-ellipsis w-[76%]"
-      />
-    );
+  // CHANGE SEARCH ICON COLOR: ACTIVE/onFocus = BLACK | INACTIVE/onBlur = GRAY
+  const handleSearchIcon = (boolValue) => {
+    setIsActive(boolValue);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="z-[999] top-3 left-3 absolute min-w-[280px] w-[70vw] max-w-[500px] cursor-default">
+    <form onSubmit={handleSubmit} className="absolute z-[999] top-3 left-3 min-w-[280px] w-[70vw] max-w-[500px] cursor-default">
       <div className="flex text-search-input bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd]">
         <SearchIcon isActive={isActive} input={userInput} />
-        <SearchInput />
+
+        {/* SEARCH INPUT FIELD */}
+        <input
+          type="text"
+          placeholder="Search..."
+          value={userInput}
+          onChange={(e) => handleChange(e)}
+          onFocus={() => handleSearchIcon(true)}
+          onBlur={() => handleSearchIcon(false)}
+          className="rounded-md p-2 text-xl placeholder:text-[#bfbebe] placeholder:font-medium focus:outline-none mr-12 text-ellipsis w-[76%]"
+        />
+
         {/* RESETS USER INPUT ONCLICK*/}
         <SearchbarClearBtn resetInputCallback={setUserInput} input={userInput} />
       </div>

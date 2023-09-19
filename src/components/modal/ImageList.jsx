@@ -1,4 +1,6 @@
 import Image from "./Image";
+
+// Maps through image array and returns an image component for each image
 const ImageList = ({ imgList }) => {
   // No images
   if (imgList.length === 0) return null;

@@ -4,7 +4,7 @@ import { sampleData } from "../../constants/sample-data";
 import { useDispatch } from "react-redux";
 import { updateStore } from "../../redux/features/user/userSlice";
 import ResultsHeader from "./ResultsHeader";
-// import { updateStoreData } from "../../redux/features/user/userSlice";
+
 const Results = ({ input, setUserInputCallback }) => {
   const dispatch = useDispatch();
   const [resultsList, setResultsList] = useState([]);
@@ -20,7 +20,6 @@ const Results = ({ input, setUserInputCallback }) => {
     // lowercase both input and name to make it case insensitive
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(input.toLowerCase()));
 
-    console.log("results list - results: ", resultsList);
     setResultsList(filterData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
@@ -54,7 +53,6 @@ const Results = ({ input, setUserInputCallback }) => {
             {/* NAME & LOCATION */}
             <div>
               <h2 className="font-semibold text-name-color">{store.name}</h2>
-              {/* <p className="text-gray-400"> */}
               <p className="text-secondary-color">
                 {store.location.lat}, {store.location.lon}
               </p>

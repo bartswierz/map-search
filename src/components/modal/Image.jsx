@@ -4,7 +4,7 @@ import { useState } from "react";
 const Image = ({ image }) => {
   const [isBroken, setIsBroken] = useState(false);
 
-  // Invalid image link
+  // Invalid image link doesn't render, the remaining images will take up the space
   if (isBroken) return null;
 
   return (

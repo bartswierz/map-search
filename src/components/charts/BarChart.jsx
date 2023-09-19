@@ -1,11 +1,9 @@
-import { Bar } from "react-chartjs-2";
-// IMPORTANT - CHARTJS REQUIRES CHART.JS/AUTO - WILL CRASH WITHOUT IT
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import { Chart as ChartJS } from "chart.js/auto";
-/* CHARTJS REFERENCED - 'Build a new application with Chart.js' https://www.chartjs.org/docs/latest/getting-started/usage.html */
+/* CHARTJS REFERENCED - 'Build a new application with Chart.js' https://www.chartjs.org/docs/latest/getting-started/usage.html - IMPORTANT: CHARTJS REQUIRES CHART.JS/AUTO - WILL CRASH WITHOUT IT */
+import { Bar } from "react-chartjs-2";
 
 export const BarChart = ({ data }) => {
-  console.log("barchart: data: ", data);
   // Iterating through our data object to get the labels and values
   const labels = Object.keys(data); // ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
@@ -14,6 +12,7 @@ export const BarChart = ({ data }) => {
   if (values.length === 0) return null;
 
   const chartData = {
+    // type: "line",
     type: "bar", // bar, line, pie, etc.
     labels: labels,
     datasets: [
@@ -25,8 +24,8 @@ export const BarChart = ({ data }) => {
     ],
   };
 
-  // options = options={{aspectRatio}} aspect ratio, animations, etc.
   return <Bar data={chartData} className="p-4 max-w-[98vw]" />;
+  //  <Line data={chartData} className="p-4 max-w-[98vw]" />;
 };
 
 export default BarChart;
