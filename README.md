@@ -95,6 +95,6 @@ State Management Decision:
     - Favorites feature: Allow users to save stores they liked from the results list. I planned to collect the store id and/or name and display it in a separate modal with a toggle but once I really dug into trying to resolve all the edge cases I could think of with the app, it felt like it could end up causing us to produce incomplete results or the required features not being as refined to our liking.
     - Popular Daytime/Nighttime Store Feature: Implement an option for users to check popular 'daytime' and 'nighttime' spots based on the location. This can potential bring in more new customers that are new in town or are overwhelmed with all the choices available on the map. 
     - Suggest Me Something feature: option that a user can choose that would select a choice for them based on their preference if they can't decide. This could help with increasing sales as some customers may decide on none if they can't decide on one.
-    - Rating feature: this would give the business more credibility and increase the chances of new customers visiting their business.
-    - Reviews Feature: similar to rating, it would help give businesses more credibility and a better chance of new customers coming to their businesses. 
+    - Rating feature: Seeing a high rating can increase customers by giving social proof that others also really enjoy the business.
+    - Reviews Feature: Users would be able to browse through available reviews left for the company, increasing credibility and increased chance of new customers coming to their businesses. 
     
