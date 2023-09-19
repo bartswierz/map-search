@@ -5,7 +5,6 @@ import SearchIcon from "../icons/SearchIcon";
 
 const Searchbar = () => {
   const [userInput, setUserInput] = useState("");
-  // eslint-disable-next-line no-unused-vars
   const [isActive, setIsActive] = useState(false);
 
   // PREVENT PAGE REFRESH ON SUBMIT

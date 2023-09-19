@@ -21,7 +21,6 @@ const Results = ({ input, setUserInputCallback }) => {
     const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(input.toLowerCase()));
 
     setResultsList(filterData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   // Dispatch values to our redux store when user clicks on a result
