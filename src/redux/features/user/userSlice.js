@@ -78,14 +78,20 @@ export const userSlice = createSlice({
       else state.images = [];
     },
     storeName: (state, action) => {
+      //Guaranteed to have a name and id as per the instructions
       const { name, id } = action.payload;
       state.name = name;
       state.id = id;
     },
     storeLocation: (state, action) => {
       const { lat, lon } = action.payload; // location = {lat, lon}
-      state.location.lat = lat;
-      state.location.lon = lon;
+      if (lat && lon) {
+        state.location.lat = lat;
+        state.location.lon = lon;
+      } else {
+        state.location.lat = 42.34343568100882;
+        state.location.lon = -71.04241761553008;
+      }
     },
     storeDescription: (state, action) => {
       const { description } = action.payload;
