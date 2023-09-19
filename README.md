@@ -69,3 +69,14 @@ CHART.JS Installation - https://www.chartjs.org/docs/latest/getting-started/inst
 - npm install react-chartjs-2
 
 GOOGLE MAPS API - https://developers.google.com/maps/documentation/javascript/overview
+
+## Why did I (or did not) do something?
+-To prepare for the future of this project, I took several developer-focused actions:
+
+State Management Decision:
+- From my previous experience building out react.js applications I found Redux to be a great statemanagement option that never failed me when I needed good state management as my application and complexity increased. I decided to implement extra reducers within my Redux store to anticipate future feature additions. This approach includes a large reducer that handles user choices to update various values and individual reducers for specific values, which can be useful if a future feature only needs to update a particular value. I decided on a large reducer to simplify state management, avoiding the need for multiple dispatches when a user clicked on a result. This approach enhances code readability and minimizes calls to the store from ~6-7 down to 1. I ensured that state values are updated efficiently by checking if a value exists; if it does, the state is updated; otherwise, it defaults to a predefined value. This prevents previous state values from lingering in the store, potentially affecting user interactions. To solve our optional value issue, I ensured that state values are updated by checking if a value exists first, and if it does, the state is updated. Otherwise, it is set to the default value similar to the values in our initialState. This prevents previous state values from lingering in the store, potentially affecting user interactions when they open new modals at different locations.
+- Limited our use of Dispatch and useSelector usage: I made a conscious effort to limit the use of dispatches and useSelector unless they were required to prevent us from prop drilling. For components where passing a setter for input was only one level deep, I chose not to use these Redux mechanisms to maintain code readability and maintainability. When a component required a callback for updating user input, I labeled the prop with 'callback' to provide clarity on its purpose. Instead of repeatedly fetching user input from the Redux store as it changed character by character, I opted for efficiency by passing callbacks directly. This ended up being pretty valuable in our application as the user input was so important in multiple components to ensure specific conditions were met.
+
+
+
+
