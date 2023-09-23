@@ -356,6 +356,57 @@ export const hikingData = [
     },
     images: [],
   },
+  {
+    id: 22,
+    name: "Great Smokey Mountains",
+    geolocation: {
+      lat: 35.61176,
+      lon: -83.48954,
+    },
+    details: {
+      description:
+        "Great Smoky Mountains National Park, straddling the border of North Carolina and Tennessee, entices visitors with its misty, ancient forests, diverse wildlife, and the rolling blue-hued ridges of the Appalachian Mountains.",
+      website: "https://www.nps.gov/grsm/index.htm",
+      address: "",
+      annualVisitors: 14137812,
+      // miles: 500,
+    },
+    images: [],
+  },
+  {
+    id: 23,
+    name: "Red Rock Canyon",
+    geolocation: {
+      lat: 36.13557,
+      lon: -115.42724,
+    },
+    details: {
+      description:
+        "Red Rock Canyon, located just outside of Las Vegas, Nevada, showcases a striking desert landscape adorned with towering red sandstone formations, making it a haven for outdoor enthusiasts and rock climbing aficionados.",
+      website: "https://www.redrockcanyonlv.org/",
+      address: "1000 Scenic Loop Dr, Las Vegas, NV 89161",
+      annualVisitors: 4000000,
+      // miles: 13,
+    },
+    images: [],
+  },
+  {
+    id: 24,
+    name: "Crater Rim Trail",
+    geolocation: {
+      lat: 19.452,
+      lon: -155.29201,
+    },
+    details: {
+      description:
+        "The Crater Rim Trail offers a mesmerizing journey around the summit of Kīlauea Volcano in Hawai'i Volcanoes National Park, providing unparalleled views of the volcanic landscapes and ever-changing terrain.",
+      website: "https://www.nps.gov/havo/planyourvisit/hike_day_craterrim.htm",
+      address: "National Park, 1 Crater Rim Drive, Volcano, HI 96785",
+      annualVisitors: 15000,
+      // miles: 21,
+    },
+    images: [],
+  },
 ];
 
 /* Object Structure
