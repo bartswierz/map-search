@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PinIcon from "../icons/PinIcon";
-import { sampleData } from "../../constants/sample-data";
+import { hikingData } from "../../constants/hiking-data";
 import { useDispatch } from "react-redux";
 import { updateStore } from "../../redux/features/location/locationSlice";
 import ResultsHeader from "./ResultsHeader";
@@ -18,7 +18,7 @@ const Results = ({ input, setUserInputCallback }) => {
     }
 
     // lowercase both input and name to make it case insensitive
-    const filterData = sampleData.filter(({ name }) => name.toLowerCase().startsWith(input.toLowerCase()));
+    const filterData = hikingData.filter(({ name }) => name.toLowerCase().startsWith(input.toLowerCase()));
 
     setResultsList(filterData);
   }, [input]);

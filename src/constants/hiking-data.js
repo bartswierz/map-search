@@ -1,7 +1,7 @@
 /* Useful reference for Chicago Tour Attractions https://tourscanner.com/blog/best-tourist-attractions-in-chicago/ 
 Hiking Trails - https://theplanetd.com/best-hikes-in-the-united-states/
 */
-export const sampleData = [
+export const hikingData = [
   {
     id: 1,
     name: "Tongass National Park",
@@ -115,6 +115,74 @@ export const sampleData = [
       address: "Appalachian National Scenic Trail, Killington, VT 05751",
       annualVisitors: 3000000,
       // miles: 2198,
+    },
+    images: [],
+  },
+  {
+    id: 8,
+    name: "Continental Divide Trail",
+    geolocation: {
+      lat: 31.49774,
+      lon: -108.2076,
+    },
+    details: {
+      description:
+        "The Continental Divide Trail begins its epic 3,100-mile journey at Crazy Cook Monument in remote New Mexico, inviting hikers to embark on a rugged adventure along the Rocky Mountains' spine, traversing diverse landscapes and challenging terrain.",
+      website: "https://www.fs.usda.gov/managing-land/trails/cdt",
+      address: "Hachita, NM 88040",
+      annualVisitors: 100000,
+      // miles: 3100,
+    },
+    images: [],
+  },
+  {
+    id: 9,
+    name: "Joshua Tree National Park",
+    geolocation: {
+      lat: 33.88994,
+      lon: -115.85086,
+    },
+    details: {
+      description:
+        "Joshua Tree National Park, located in Southern California, showcases a stunning desert landscape marked by unique Joshua trees, striking rock formations, and a celestial haven for stargazers.",
+      website: "https://www.nps.gov/jotr/index.htm",
+      address: "6554 Park Boulevard, Joshua Tree, CA 92252",
+      annualVisitors: 3064400,
+      // miles: 60,
+    },
+    images: [],
+  },
+  {
+    id: 10,
+    name: "Badlands National Park",
+    geolocation: {
+      lat: 43.86973,
+      lon: -102.32801,
+    },
+    details: {
+      description:
+        "Badlands National Park, situated in South Dakota, captivates visitors with its otherworldly landscapes featuring eroded buttes, colorful canyons, and fossil-rich terrain showcasing the ancient history of North America.",
+      website: "https://www.nps.gov/badl/index.htm",
+      address: "25216 Ben Reifel Road, Interior, SD 57750",
+      annualVisitors: 1006809,
+      // miles: 80,
+    },
+    images: [],
+  },
+  {
+    id: 11,
+    name: "Grand Canyon",
+    geolocation: {
+      lat: 36.29334,
+      lon: -112.25876,
+    },
+    details: {
+      description:
+        "The Grand Canyon, a geological marvel in northern Arizona, boasts awe-inspiring vistas of its immense, millennia-carved chasm, revealing Earth's complex geological history.",
+      website: "https://www.nps.gov/grca/index.htm",
+      address: "20 South Entrance Road Grand Canyon, AZ 86023",
+      annualVisitors: 4730000,
+      // miles: 0,
     },
     images: [],
   },
