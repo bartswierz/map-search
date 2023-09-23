@@ -53,7 +53,8 @@ const Map = () => {
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"satellite"} /> */}
       <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} />
 
-      <ZoomControl position="bottomright" className="hidden" />
+      {/* <ZoomControl position="bottomright" className="hidden" /> */}
+      <ZoomControl position="topright" className="hidden" />
 
       {/* CONTAINS SEARCHBAR & RESULTS COMPONENT */}
       <Searchbar__ />
