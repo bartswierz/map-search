@@ -50,7 +50,6 @@ export const locationSlice = createSlice({
 
       // UDPATING DESCRIPTION, WEBSITE, AND TRAFFIC TO THE VALUES IF GIVEN, OTHERWISE SET TO DEFAULT VALUES
       if (details) {
-        console.log("inside details: ", details);
         // UPDATE DESCRIPTION IF GIVEN, OTHERWISE SET TO DEFAULT
         if (description) state.details.description = description;
         else state.details.description = "";
@@ -107,20 +106,14 @@ export const locationSlice = createSlice({
     },
     locationWebsite: (state, action) => {
       const { website } = action.payload;
-      if (website) {
-        //  removes https:// to fix the issue of the website not loading due to missing www
-        const url = website.split("https://")[1]; //"https://groundsignal.com" -> "groundsignal.com"
-
-        const updatedLink = `https://www.${url}`;
-
-        state.details.website = updatedLink;
-      } else state.details.website = "";
+      if (website) state.details.website = website;
+      else state.details.website = "";
     },
     locationAnnualVistors: (state, action) => {
       const { annualVistors } = action.payload;
 
-      if (annualVistors) state.details.annualVistors = annualVistors;
-      else state.details.annualVistors = 0;
+      if (annualVistors) state.details.annualVisitors = annualVistors;
+      else state.details.annualVisitors = 0;
     },
     locationImages: (state, action) => {
       //Destructuring the array of three images [image1, image2, image3] incase we want to add more or less images in the future

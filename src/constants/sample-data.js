@@ -38,4 +38,41 @@ export const sampleData = [
       //   "http://dspncdn.com/a1/media/692x/f8/58/77/f85877c41fb6147599886048e3582d47.jpg",
     ],
   },
+  {
+    id: 3,
+    name: "Mt. Whitney Trail",
+    geolocation: {
+      lat: 37.3627,
+      lon: -118.41087,
+    },
+    details: {
+      description:
+        "The Mount Whitney hiking trail is a challenging and scenic route leading to the highest peak in the contiguous United States, offering breathtaking views and a strenuous ascent for outdoor enthusiasts.",
+      website: "https://www.alltrails.com/trail/us/california/mount-whitney-via-mount-whitney-trail",
+      address: "Inyo National Forest 351 Pacu Lane Suite 200 Bishop, CA 93514",
+      annualVisitors: 4000000,
+    },
+    images: [
+      //   "http://dspncdn.com/a1/media/692x/f8/58/77/f85877c41fb6147599886048e3582d47.jpg",
+    ],
+  },
+  {
+    id: 4,
+    name: "John Muir Trail",
+    geolocation: {
+      lat: 37.23481,
+      lon: -118.8706,
+    },
+    details: {
+      description:
+        "The John Muir Trail is a world-renowned long-distance hiking route stretching over 200 miles through California's Sierra Nevada mountains, showcasing stunning alpine landscapes and natural beauty.",
+      website: "https://www.alltrails.com/trail/us/california/mount-whitney-via-mount-whitney-trail",
+      address: "Happy Isles Trailhead, Yosemite Valley, Yosemite National Park, CA 95389",
+      annualVisitors: 4000000,
+      //miles: 219
+    },
+    images: [
+      //   "http://dspncdn.com/a1/media/692x/f8/58/77/f85877c41fb6147599886048e3582d47.jpg",
+    ],
+  },
 ];
