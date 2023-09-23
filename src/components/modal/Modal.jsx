@@ -11,7 +11,8 @@ const Modal = ({ handleModal }) => {
   // Grabbing the store data from the redux store
   const store = useSelector(selectStore);
   const { name, geolocation, details, images } = store;
-  console.log("geolocation", geolocation);
+  const { address, description, avgStoreTraffic } = details;
+
   return (
     <>
       {/* CLOSE MODAL BUTTON */}
@@ -28,12 +29,14 @@ const Modal = ({ handleModal }) => {
       >
         {/* MODAL AREA - e.stopPropagation prevents our modal from closing when clicking within the Modal*/}
         <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
-          <ModalHeader name={name} geolocation={geolocation} websiteLink={details.website} />
-          <Description text={details.description} />
-          <ImageList imgList={images} />
-          <BarChart data={details.avgStoreTraffic} />
+          <ModalHeader name={name} geolocation={geolocation} details={details} />
+          <div className="flex flex-col gap-2 px-2 pt-4 pb-4">
+            <Description text={address}>{address}</Description>
+            <Description text={description} />
+            <ImageList imgList={images} />
+            <BarChart data={avgStoreTraffic} />
+          </div>
         </div>
-        {/* END OF MODAL CONTENT */}
       </div>
     </>
   );
