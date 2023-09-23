@@ -13,7 +13,8 @@ const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
 const Map = () => {
   // Set to starting location to Millenium Park - Values collected from Google Maps
-  const [geolocation, setGeolocation] = useState({ lat: 41.88260909084107, lon: -87.62254314668812 });
+  // const [geolocation, setGeolocation] = useState({ lat: 41.88260909084107, lon: -87.62254314668812 });
+  const [geolocation, setGeolocation] = useState({ lat: 41.31976, lon: -88.99344 });
   const [openModal, setOpenModal] = useState(false); // Display/Remove modal
 
   // get geolocation object from redux store

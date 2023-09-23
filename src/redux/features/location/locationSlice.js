@@ -5,8 +5,9 @@ const initialState = {
   id: null,
   name: "",
   geolocation: {
-    lat: 56.94062,
-    lon: -133.61918,
+    // lat: 41.31976, lon: -88.99344
+    lat: 41.31976,
+    lon: -88.99344,
   },
   details: {
     description: "",
@@ -40,9 +41,9 @@ export const locationSlice = createSlice({
         state.geolocation.lat = geolocation.lat;
         state.geolocation.lon = geolocation.lon;
       } else {
-        // LOCATION NOT PROVIDED, SET TO DEFAULT
-        state.geolocation.lat = 41.88260909084107;
-        state.geolocation.lon = -87.62254314668812;
+        // LOCATION NOT PROVIDED, SET TO DEFAULT LOCATION - STARVED ROCK STATE PARK
+        state.geolocation.lat = 41.31976;
+        state.geolocation.lon = -88.99344;
       }
 
       if (images) state.images = images;
