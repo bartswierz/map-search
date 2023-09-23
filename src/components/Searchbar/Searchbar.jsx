@@ -6,13 +6,13 @@ import SearchIcon from "../icons/SearchIcon";
 const Searchbar = () => {
   const [userInput, setUserInput] = useState("");
   const [isActive, setIsActive] = useState(false);
+  // const [displayValue, setDisplayValue] = useState("");
 
   // PREVENT PAGE REFRESH ON SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  // UPDATE USER INPUT AS THEY TYPE
   const handleChange = (e) => {
     setUserInput(e.target.value);
   };
