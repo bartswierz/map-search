@@ -11,8 +11,9 @@ const Modal = ({ handleModal }) => {
   // Grabbing the store data from the redux store
   const store = useSelector(selectStore);
   const { name, geolocation, details, images } = store;
-  const { address, description, avgStoreTraffic } = details;
+  const { address, description, annualVisitors, avgStoreTraffic } = details;
 
+  const annualVistorText = annualVisitors ? `Annual Visitors: ${annualVisitors.toLocaleString()}` : null;
   return (
     <>
       {/* CLOSE MODAL BUTTON */}
@@ -31,7 +32,8 @@ const Modal = ({ handleModal }) => {
         <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
           <ModalHeader name={name} geolocation={geolocation} details={details} />
           <div className="flex flex-col gap-2 px-2 pt-4 pb-4">
-            <Description text={address}>{address}</Description>
+            <Description text={address} />
+            <Description text={annualVistorText} />
             <Description text={description} />
             <ImageList imgList={images} />
             <BarChart data={avgStoreTraffic} />
