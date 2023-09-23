@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectStore } from "../../redux/features/user/userSlice"; //Selects all the store data from the redux store
+import { selectStore } from "../../redux/features/location/locationSlice"; //Selects all the store data from the redux store
 import { MdClose } from "react-icons/md"; // X icon for closing the modal
 import BarChart from "../charts/BarChart";
 import ImageList from "./ImageList";
@@ -10,8 +10,8 @@ import ModalHeader from "./ModalHeader";
 const Modal = ({ handleModal }) => {
   // Grabbing the store data from the redux store
   const store = useSelector(selectStore);
-  const { name, location, details, images } = store;
-
+  const { name, geolocation, details, images } = store;
+  console.log("geolocation", geolocation);
   return (
     <>
       {/* CLOSE MODAL BUTTON */}
@@ -28,7 +28,7 @@ const Modal = ({ handleModal }) => {
       >
         {/* MODAL AREA - e.stopPropagation prevents our modal from closing when clicking within the Modal*/}
         <div className="w-[500px] bg-white rounded-md max-w-[96vw] h-auto" onClick={(e) => e.stopPropagation()}>
-          <ModalHeader name={name} location={location} websiteLink={details.website} />
+          <ModalHeader name={name} geolocation={geolocation} websiteLink={details.website} />
           <Description text={details.description} />
           <ImageList imgList={images} />
           <BarChart data={details.avgStoreTraffic} />

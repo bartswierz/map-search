@@ -1,7 +1,8 @@
 import WebsiteLink from "./WebsiteLink";
 import PinIcon from "../icons/PinIcon";
 
-const ModalHeader = ({ location, name, websiteLink }) => {
+const ModalHeader = ({ geolocation, name, websiteLink }) => {
+  console.log("modalHeader - geolocation", geolocation);
   return (
     <>
       <div className="flex px-3 py-2 justify-between border-b-2 border-gray-200 flex-wrap">
@@ -16,7 +17,7 @@ const ModalHeader = ({ location, name, websiteLink }) => {
           <div className="flex flex-col">
             <span className="text-xl font-semibold text-name-color">{name}</span>
             <span className="text-base text-gray-400 font-medium">
-              {location.lat}, {location.lon}
+              {geolocation.lat}, {geolocation.lon}
             </span>
           </div>
         </div>

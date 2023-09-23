@@ -1,9 +1,9 @@
 // USED TO CREATE THE STORE THAT HOLDS ALL STATES AND VARIABLES
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./features/user/userSlice";
+import locationReducer from "./features/location/locationSlice";
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
+    location: locationReducer,
   },
 });

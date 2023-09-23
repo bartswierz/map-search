@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PinIcon from "../icons/PinIcon";
 import { sampleData } from "../../constants/sample-data";
 import { useDispatch } from "react-redux";
-import { updateStore } from "../../redux/features/user/userSlice";
+import { updateStore } from "../../redux/features/location/locationSlice";
 import ResultsHeader from "./ResultsHeader";
 
 const Results = ({ input, setUserInputCallback }) => {
@@ -53,7 +53,7 @@ const Results = ({ input, setUserInputCallback }) => {
             <div>
               <h2 className="font-semibold text-name-color">{store.name}</h2>
               <p className="text-secondary-color">
-                {store.location.lat}, {store.location.lon}
+                {store.geolocation.lat}, {store.geolocation.lon}
               </p>
             </div>
           </div>
