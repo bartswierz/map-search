@@ -1,5 +1,6 @@
-/* Useful reference for Chicago Tour Attractions https://tourscanner.com/blog/best-tourist-attractions-in-chicago/ 
-Hiking Trails - https://theplanetd.com/best-hikes-in-the-united-states/
+/* Useful Hiking Trail References used for choosing hiking locations:
+- https://theplanetd.com/best-hikes-in-the-united-states/
+- https://www.alltrails.com/us/illinois/state-parks
 */
 export const hikingData = [
   {
@@ -407,12 +408,63 @@ export const hikingData = [
     },
     images: [],
   },
+  {
+    id: 25,
+    name: "Starved Rock State Park",
+    geolocation: {
+      lat: 41.31976,
+      lon: -88.99344,
+    },
+    details: {
+      description:
+        "Starved Rock State Park, nestled along the Illinois River, showcases towering sandstone canyons, seasonal waterfalls, and captivating hiking trails, offering a natural oasis in the heart of Illinois.",
+      website: "https://www.starvedrocklodge.com/starved-rock-state-park/",
+      address: "One Lodge Lane, Oglesby, IL 61348",
+      annualVisitors: 2100000,
+      // miles: 0,
+    },
+    images: [],
+  },
+  {
+    id: 26,
+    name: "Matthiessen State Park",
+    geolocation: {
+      lat: 41.29651,
+      lon: -89.02388,
+    },
+    details: {
+      description:
+        "Matthiessen State Park, located adjacent to Starved Rock State Park in Illinois, enchants visitors with its stunning geological formations, lush woodlands, and cascading waterfalls, providing a serene and picturesque natural retreat.",
+      website: "https://dnr.illinois.gov/parks/park.matthiessen.html",
+      address: "2500 IL-178, Oglesby, IL 61348",
+      annualVisitors: 3000000,
+      // miles: 0,
+    },
+    images: [],
+  },
+  {
+    id: 27,
+    name: "Ferne Clyffe State Park",
+    geolocation: {
+      lat: 37.52949,
+      lon: -88.98284,
+    },
+    details: {
+      description:
+        "Ferne Clyffe State Park, situated in southern Illinois, captivates nature lovers with its tranquil forests, rugged bluffs, and a hidden gem of a waterfall, offering a peaceful outdoor haven.",
+      website: "https://dnr.illinois.gov/parks/park.ferneclyffe.html",
+      address: "90 Goreville Rd, Goreville, IL 62939",
+      annualVisitors: 200000,
+      // miles: 0,
+    },
+    images: [],
+  },
 ];
 
 /* Object Structure
 {
   id: 0,
-  name: "",
+  name: "",  
   geolocation: {
     lat: 0,
     lon: 0,
