@@ -173,8 +173,8 @@ export const hikingData = [
     id: 11,
     name: "Grand Canyon",
     geolocation: {
-      lat: 36.29334,
-      lon: -112.25876,
+      lat: 36.2867,
+      lon: -112.22031,
     },
     details: {
       description:
@@ -182,7 +182,109 @@ export const hikingData = [
       website: "https://www.nps.gov/grca/index.htm",
       address: "20 South Entrance Road Grand Canyon, AZ 86023",
       annualVisitors: 4730000,
-      // miles: 0,
+      // miles: 21,
+    },
+    images: [],
+  },
+  {
+    id: 12,
+    name: "Glacier National Park",
+    geolocation: {
+      lat: 48.75961,
+      lon: -113.78702,
+    },
+    details: {
+      description:
+        "Glacier National Park, nestled in Montana's pristine wilderness, showcases a breathtaking landscape of towering, glacier-carved peaks, pristine lakes, and abundant wildlife, offering an immersive outdoor experience.",
+      website: "https://www.nps.gov/glac/index.htm",
+      address: "64 Grinnell Drive Glacier National Park Headquarters West Glacier, MT 59936",
+      annualVisitors: 2908458,
+      // miles: 700,
+    },
+    images: [],
+  },
+  {
+    id: 13,
+    name: "Bryce Canyon",
+    geolocation: {
+      lat: 37.59304,
+      lon: -112.18733,
+    },
+    details: {
+      description:
+        "Bryce Canyon National Park, located in southern Utah, is renowned for its mesmerizing crimson-hued amphitheaters of hoodoos, creating an otherworldly and enchanting natural spectacle.",
+      website: "https://www.nps.gov/brca/index.htm",
+      address: "Highway 63. Bryce Canyon National Park Bryce, UT 84764",
+      annualVisitors: 1500000,
+      // miles: 20,
+    },
+    images: [],
+  },
+  {
+    id: 14,
+    name: "Zion National Park",
+    geolocation: {
+      lat: 37.29781,
+      lon: -113.02877,
+    },
+    details: {
+      description:
+        "Zion National Park, situated in southwestern Utah, mesmerizes visitors with its towering sandstone cliffs, emerald-green river, and winding slot canyons, offering an outdoor paradise for hikers and adventurers.",
+      website: "https://www.nps.gov/zion/index.htm",
+      address: "Zion National Park 1 Zion Park Blvd. Springdale, UT 84767",
+      annualVisitors: 4500000,
+      // miles: 90,
+    },
+    images: [],
+  },
+  {
+    id: 15,
+    name: "Rocky Mountain National Park",
+    geolocation: {
+      lat: 40.34318,
+      lon: -105.6881,
+    },
+    details: {
+      description:
+        "Rocky Mountain National Park, nestled in the heart of Colorado, enchants visitors with its towering peaks, alpine lakes, and diverse ecosystems, providing a pristine wilderness playground for nature enthusiasts.",
+      website: "https://www.nps.gov/romo/index.htm",
+      address: "1000 US Hwy 36. Estes Park, CO 80517",
+      annualVisitors: 4500000,
+      // miles: 350,
+    },
+    images: [],
+  },
+  {
+    id: 16,
+    name: "Haleakala National Park",
+    geolocation: {
+      lat: 20.70128,
+      lon: -156.17332,
+    },
+    details: {
+      description:
+        "Haleakalā National Park, located on the Hawaiian island of Maui, showcases a surreal volcanic landscape with its massive crater and lush, high-elevation rainforests, offering a unique blend of natural beauty and cultural significance.",
+      website: "https://www.nps.gov/hale/index.htm",
+      address: "30185 State Hwy 378. Kula, HI 96790",
+      annualVisitors: 853181,
+      // miles: 11,
+    },
+    images: [],
+  },
+  {
+    id: 17,
+    name: "Point Lobos State Natural Reserve",
+    geolocation: {
+      lat: 36.51644,
+      lon: -121.9366,
+    },
+    details: {
+      description:
+        "Point Lobos State Natural Reserve, on the picturesque California coast, is a coastal haven renowned for its dramatic cliffs, pristine marine habitats, and abundant wildlife, providing a serene escape for nature enthusiasts.",
+      website: "http://www.parks.ca.gov/?page_id=571",
+      address: "62 Hwy 1, Carmel, CA 93923",
+      annualVisitors: 600000,
+      // miles: 5,
     },
     images: [],
   },

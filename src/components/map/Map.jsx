@@ -49,8 +49,8 @@ const Map = () => {
       {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} /> */}
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"terrain"} /> */}
-      <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"satellite"} />
-      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} /> */}
+      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"satellite"} /> */}
+      <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} />
 
       <ZoomControl position="bottomright" className="hidden" />
 
