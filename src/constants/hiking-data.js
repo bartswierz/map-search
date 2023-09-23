@@ -13,7 +13,7 @@ export const hikingData = [
       description:
         "The Tongass National Forest is the largest national forest in the United States, known for its stunning temperate rainforests, diverse wildlife, and pristine wilderness in southeastern Alaska.",
       website: "https://www.fs.usda.gov/tongass/",
-      address: "8510 Mendenhall Loop Road, Juneau, AK 99801",
+      address: "8510 Mendenhall Loop Road, Juneau, AK, 99801",
       annualVisitors: 1881000,
     },
     images: [],
@@ -29,7 +29,7 @@ export const hikingData = [
       description:
         "Yosemite National Park is a breathtaking natural wonderland located in California's Sierra Nevada Mountains, renowned for its iconic granite cliffs, cascading waterfalls, and diverse wilderness, including the iconic Yosemite Valley.",
       website: "https://www.nps.gov/yose/index.htm",
-      address: "Tioga Rd Hwy 120 & Hwy 140 Yosemite National Park, CA 95389",
+      address: "Tioga Rd Hwy 120 & Hwy 140 Yosemite National Park, CA, 95389",
       annualVisitors: 3667550,
     },
     images: [],
@@ -45,7 +45,7 @@ export const hikingData = [
       description:
         "The Mount Whitney hiking trail is a challenging and scenic route leading to the highest peak in the contiguous United States, offering breathtaking views and a strenuous ascent for outdoor enthusiasts.",
       website: "https://www.alltrails.com/trail/us/california/mount-whitney-via-mount-whitney-trail",
-      address: "Inyo National Forest 351 Pacu Lane Suite 200 Bishop, CA 93514",
+      address: "Inyo National Forest 351 Pacu Lane Suite 200 Bishop, CA, 93514",
       annualVisitors: 4000000,
     },
     images: [],
@@ -61,7 +61,7 @@ export const hikingData = [
       description:
         "The John Muir Trail is a world-renowned long-distance hiking route stretching over 200 miles through California's Sierra Nevada mountains, showcasing stunning alpine landscapes and natural beauty.",
       website: "https://www.nps.gov/yose/planyourvisit/jmt.htm",
-      address: "Happy Isles Trailhead, Yosemite Valley, Yosemite National Park, CA 95389",
+      address: "Happy Isles Trailhead, Yosemite Valley, Yosemite National Park, CA, 95389",
       annualVisitors: 10000,
       //miles: 219
     },
@@ -78,7 +78,7 @@ export const hikingData = [
       description:
         "Smith Rock, established as a state park in central Oregon in 1960, is widely recognized as the beginning of American sport climbing culture.",
       website: "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=36",
-      address: "9241 NE Crooked River Dr. Terrebonne, OR 97760",
+      address: "9241 NE Crooked River Dr. Terrebonne, OR, 97760",
       annualVisitors: 747000,
       miles: 3,
     },
@@ -95,7 +95,7 @@ export const hikingData = [
       description:
         "The Pacific Crest Trail (PCT) offers a transformative long-distance hiking experience along the scenic western border of the United States, spanning from the border of Mexico to Canada, allowing adventurers to connect with the natural beauty of the American wilderness.",
       website: "https://www.pcta.org/",
-      address: "1323 Club Drive Vallejo, CA 94592",
+      address: "1323 Club Drive Vallejo, CA, 94592",
       annualVisitors: 400000,
       // miles: 2650,
     },
@@ -112,7 +112,7 @@ export const hikingData = [
       description:
         "The Appalachian Trail (AT) beckons hikers on a legendary journey, traversing the rugged beauty of the Eastern United States from Georgia to Maine, providing an immersive wilderness experience.",
       website: "https://www.nps.gov/appa/index.htm",
-      address: "Appalachian National Scenic Trail, Killington, VT 05751",
+      address: "Appalachian National Scenic Trail, Killington, VT, 05751",
       annualVisitors: 3000000,
       // miles: 2198,
     },
@@ -129,7 +129,7 @@ export const hikingData = [
       description:
         "The Continental Divide Trail begins its epic 3,100-mile journey at Crazy Cook Monument in remote New Mexico, inviting hikers to embark on a rugged adventure along the Rocky Mountains' spine, traversing diverse landscapes and challenging terrain.",
       website: "https://www.fs.usda.gov/managing-land/trails/cdt",
-      address: "Hachita, NM 88040",
+      address: "Hachita, NM, 88040",
       annualVisitors: 100000,
       // miles: 3100,
     },
@@ -146,7 +146,7 @@ export const hikingData = [
       description:
         "Joshua Tree National Park, located in Southern California, showcases a stunning desert landscape marked by unique Joshua trees, striking rock formations, and a celestial haven for stargazers.",
       website: "https://www.nps.gov/jotr/index.htm",
-      address: "6554 Park Boulevard, Joshua Tree, CA 92252",
+      address: "6554 Park Boulevard, Joshua Tree, CA, 92252",
       annualVisitors: 3064400,
       // miles: 60,
     },
@@ -163,7 +163,7 @@ export const hikingData = [
       description:
         "Badlands National Park, situated in South Dakota, captivates visitors with its otherworldly landscapes featuring eroded buttes, colorful canyons, and fossil-rich terrain showcasing the ancient history of North America.",
       website: "https://www.nps.gov/badl/index.htm",
-      address: "25216 Ben Reifel Road, Interior, SD 57750",
+      address: "25216 Ben Reifel Road, Interior, SD, 57750",
       annualVisitors: 1006809,
       // miles: 80,
     },
@@ -180,7 +180,7 @@ export const hikingData = [
       description:
         "The Grand Canyon, a geological marvel in northern Arizona, boasts awe-inspiring vistas of its immense, millennia-carved chasm, revealing Earth's complex geological history.",
       website: "https://www.nps.gov/grca/index.htm",
-      address: "20 South Entrance Road Grand Canyon, AZ 86023",
+      address: "20 South Entrance Road Grand Canyon, AZ, 86023",
       annualVisitors: 4730000,
       // miles: 21,
     },
@@ -197,7 +197,7 @@ export const hikingData = [
       description:
         "Glacier National Park, nestled in Montana's pristine wilderness, showcases a breathtaking landscape of towering, glacier-carved peaks, pristine lakes, and abundant wildlife, offering an immersive outdoor experience.",
       website: "https://www.nps.gov/glac/index.htm",
-      address: "64 Grinnell Drive Glacier National Park Headquarters West Glacier, MT 59936",
+      address: "64 Grinnell Drive Glacier National Park Headquarters West Glacier, MT, 59936",
       annualVisitors: 2908458,
       // miles: 700,
     },
@@ -214,7 +214,7 @@ export const hikingData = [
       description:
         "Bryce Canyon National Park, located in southern Utah, is renowned for its mesmerizing crimson-hued amphitheaters of hoodoos, creating an otherworldly and enchanting natural spectacle.",
       website: "https://www.nps.gov/brca/index.htm",
-      address: "Highway 63. Bryce Canyon National Park Bryce, UT 84764",
+      address: "Highway 63. Bryce Canyon National Park Bryce, UT, 84764",
       annualVisitors: 1500000,
       // miles: 20,
     },
@@ -231,7 +231,7 @@ export const hikingData = [
       description:
         "Zion National Park, situated in southwestern Utah, mesmerizes visitors with its towering sandstone cliffs, emerald-green river, and winding slot canyons, offering an outdoor paradise for hikers and adventurers.",
       website: "https://www.nps.gov/zion/index.htm",
-      address: "Zion National Park 1 Zion Park Blvd. Springdale, UT 84767",
+      address: "Zion National Park 1 Zion Park Blvd. Springdale, UT, 84767",
       annualVisitors: 4500000,
       // miles: 90,
     },
@@ -248,7 +248,7 @@ export const hikingData = [
       description:
         "Rocky Mountain National Park, nestled in the heart of Colorado, enchants visitors with its towering peaks, alpine lakes, and diverse ecosystems, providing a pristine wilderness playground for nature enthusiasts.",
       website: "https://www.nps.gov/romo/index.htm",
-      address: "1000 US Hwy 36. Estes Park, CO 80517",
+      address: "1000 US Hwy 36. Estes Park, CO, 80517",
       annualVisitors: 4500000,
       // miles: 350,
     },
@@ -265,7 +265,7 @@ export const hikingData = [
       description:
         "Haleakalā National Park, located on the Hawaiian island of Maui, showcases a surreal volcanic landscape with its massive crater and lush, high-elevation rainforests, offering a unique blend of natural beauty and cultural significance.",
       website: "https://www.nps.gov/hale/index.htm",
-      address: "30185 State Hwy 378. Kula, HI 96790",
+      address: "30185 State Hwy 378. Kula, HI, 96790",
       annualVisitors: 853181,
       // miles: 11,
     },
@@ -285,6 +285,74 @@ export const hikingData = [
       address: "62 Hwy 1, Carmel, CA 93923",
       annualVisitors: 600000,
       // miles: 5,
+    },
+    images: [],
+  },
+  {
+    id: 18,
+    name: "Grand Teton",
+    geolocation: {
+      lat: 43.73799,
+      lon: -110.80149,
+    },
+    details: {
+      description:
+        "Grand Teton, a majestic mountain in Wyoming's Teton Range, stands tall as the centerpiece of Grand Teton National Park, surrounded by pristine lakes, lush valleys, and a rugged wilderness that beckons outdoor adventurers.",
+      website: "https://www.nps.gov/grte/index.htm",
+      address: "103 Headquarters Loop Moose, WY, 83012",
+      annualVisitors: 3000000,
+      // miles: 35,
+    },
+    images: [],
+  },
+  {
+    id: 19,
+    name: "Rubicon Trail",
+    geolocation: {
+      lat: 38.92862,
+      lon: -119.98487,
+    },
+    details: {
+      description:
+        "The Rubicon Trail, located in the Sierra Nevada Mountains of California, is an iconic off-road adventure route that traces its roots to the birthplace of recreational jeeping, where enthusiasts first tested the capabilities of their Willys Jeeps in the challenging and rugged terrain.",
+      website: "https://www.edcgov.us/Government/Rubicon/pages/information_to_the_rubicon_trail.aspx",
+      address: "9881 CA-89, South Lake Tahoe, CA 96150",
+      annualVisitors: 0,
+      // miles: 0,
+    },
+    images: [],
+  },
+  {
+    id: 20,
+    name: "Yellowstone National Park",
+    geolocation: {
+      lat: 44.42976,
+      lon: -110.58466,
+    },
+    details: {
+      description:
+        "Yellowstone National Park, located primarily in Wyoming but extending into Montana and Idaho, is a pristine wilderness sanctuary renowned for its geothermal wonders, wildlife diversity, and iconic geysers like Old Faithful.",
+      website: "https://www.nps.gov/yell/index.htm",
+      address: "2 Officers Row Yellowstone National Park Headquarters Yellowstone National Park, WY 82190",
+      annualVisitors: 3000000,
+      // miles: 900,
+    },
+    images: [],
+  },
+  {
+    id: 21,
+    name: "Pictured Rocks National Lakeshore",
+    geolocation: {
+      lat: 46.56926,
+      lon: -86.3185,
+    },
+    details: {
+      description:
+        "Pictured Rocks National Lakeshore, nestled along the Lake Superior shoreline in Michigan's Upper Peninsula, boasts striking sandstone cliffs, colorful rock formations, and pristine forests, creating a captivating and scenic natural masterpiece.",
+      website: "https://www.uptravel.com/outdoors-recreation/national-state-parks/pictured-rocks-national-lakeshore/",
+      address: "1505 Sand Point Road, Munising, MI 49862",
+      annualVisitors: 1200000,
+      // miles: 42,
     },
     images: [],
   },
