@@ -4,33 +4,35 @@
 If you're an avid hiker or just looking for a new adventure, Trailhawk is the perfect app for you. Trailhawk lets you discover the best of the U.S. State Parks and National Parks. From casual hiking trails to treks spanning over 2000 miles, Trailhawk has you covered.
 
 ## Available Locations
-1. <strong>Starved Rock State Park</strong>
-2. <strong>Matthiessen State Park </strong>
-3. <strong>Ferne Clyffe State Park </strong>
-4. <strong>Crater Rim Trail </strong>
-5. <strong>Red Rock Canyon </strong>
-6. <strong>Great Smokey Mountains </strong>
-7. <strong>Pictured Rocks National Lakeshore </strong>
-8. <strong>Yellowstone National Park</strong>
-9. <strong>Rubicon Trail</strong>
-10. <strong>Grand Teton</strong>
-11. <strong>Point Lobos State Natural Reserve </strong>
-12. <strong>Haleakala National Park </strong>
-13. <strong>Rocky Mountain National Park </strong>
-14. <strong>Zion National Park</strong>
-15. <strong>Bryce Canyon</strong>
-16. <strong>Glacier National Park</strong>
-17. <strong>Grand Canyon</strong>
-18. <strong>Badlands National Park</strong>
-19. <strong>Joshua Tree National Park</strong>
-20. <strong>Continental Divide Trail</strong>
-21. <strong>Appalachian Trail</strong>
-22. <strong>Pacific Crest Trail</strong>
-23. <strong>Smith Rock State Park </strong> 
-24. <strong>John Muir Trail</strong> - Yosemite National Park, CA, 95389 
-25. <strong>Mt. Whitney Trail</strong> - Bishop, CA, 93514 
-26. <strong>Yosemite National Park</strong> - Yosemite National Park, CA, 95389 
-27. <strong>Tongass National Park</strong> - Juneau, AK, 99801 
+Hiking Trail/State Park  | State
+------------- | -------------
+<strong>Starved Rock State Park</strong> | Test
+<strong>Matthiessen State Park </strong> |
+<strong>Ferne Clyffe State Park </strong> | 
+<strong>Crater Rim Trail </strong> | 
+<strong>Red Rock Canyon </strong> | 
+<strong>Great Smokey Mountains </strong> |
+<strong>Pictured Rocks National Lakeshore </strong> |
+<strong>Yellowstone National Park</strong> |
+<strong>Rubicon Trail</strong> |
+<strong>Grand Teton</strong> |
+<strong>Point Lobos State Natural Reserve</strong> |
+<strong>Haleakala National Park</strong> |
+<strong>Rocky Mountain National Park</strong> |
+<strong>Zion National Park</strong> |
+<strong>Bryce Canyon</strong> | 
+<strong>Glacier National Park</strong> |
+<strong>Grand Canyon</strong> |
+<strong>Badlands National Park</strong> | 
+<strong>Joshua Tree National Park</strong> |
+<strong>Continental Divide Trail</strong> |
+<strong>Appalachian Trail</strong> |
+<strong>Pacific Crest Trail</strong> |
+<strong>Smith Rock State Park </strong> | 
+<strong>John Muir Trail</strong> | Yosemite National Park, CA, 95389 
+<strong>Mt. Whitney Trail</strong> | Bishop, CA, 93514 
+<strong>Yosemite National Park</strong> | Yosemite National Park, CA, 95389 
+<strong>Tongass National Park</strong> | Juneau, AK, 99801 
 
 ## Getting Started
 
