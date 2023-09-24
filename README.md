@@ -24,18 +24,18 @@ To run the application locally, follow the steps below
 
             npm run dev
 
- ### OPTIONAL: If you would like to experience the app with the best experience you can add a GOOGLE API KEY to remove the Developer Mode Overlay:
+   ### Optional: If you would like to experience the app with the best experience you can add a GOOGLE API KEY to remove the Developer Mode Overlay:
 
-1. Get An Google API Key(~1-2 Minutes)
+   1. Get An Google API Key(~1-2 Minutes)
 
             https://developers.google.com/maps/documentation/javascript/get-api-key
 
-2. Create an .env file at the root directory
-3. Paste your API KEY inside <strong>.env</strong>
-
+   2. Create an .env file at the root directory
+   3. Paste your API KEY inside <strong>.env</strong>
+   
             VITE_GOOGLE_API_KEY=YOUR_API_KEY
 
-4. The google map will now be displayed without the developer mode overlay! Enjoy!
+   4. The google map will now be displayed without the developer mode overlay! Enjoy!
 
 ## Built With
 
