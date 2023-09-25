@@ -4,20 +4,20 @@
 If you're an avid hiker or just looking for a new adventure, Trailhawk is the perfect app for you. Trailhawk lets you discover the best of the U.S. State Parks and National Parks. From casual hiking trails to treks spanning over 2000 miles, Trailhawk has you covered.
 
 ## Available Locations
-Hiking Trail/State Park  | State
-------------- | -------------
-<strong>Starved Rock State Park</strong> | Test
-<strong>Matthiessen State Park </strong> |
-<strong>Ferne Clyffe State Park </strong> | 
-<strong>Crater Rim Trail </strong> | 
-<strong>Red Rock Canyon </strong> | 
-<strong>Great Smokey Mountains </strong> |
-<strong>Pictured Rocks National Lakeshore </strong> |
-<strong>Yellowstone National Park</strong> |
-<strong>Rubicon Trail</strong> |
-<strong>Grand Teton</strong> |
-<strong>Point Lobos State Natural Reserve</strong> |
-<strong>Haleakala National Park</strong> |
+Hiking Trail/State Park  | State | Est. Distance
+-- | - | -
+<strong>Starved Rock State Park</strong> | Illinois | 13 Miles
+<strong>Matthiessen State Park</strong> | Illinois | 5 Miles
+<strong>Ferne Clyffe State Park</strong> | Illinois | 75 Miles
+<strong>Crater Rim Trail</strong> | Hawaii | 21 Miles
+<strong>Red Rock Canyon</strong> | Nevada | 13 Miles
+<strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles
+<strong>Pictured Rocks National Lakeshore</strong> | 42 Miles
+<strong>Yellowstone National Park</strong> | Wyoming | 900 Miles
+<strong>Rubicon Trail</strong> | California | 22 Miles
+<strong>Grand Teton</strong> | Wyoming | 35 Miles
+<strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles
+<strong>Haleakala National Park</strong> | Hawaii | 11 Miles
 <strong>Rocky Mountain National Park</strong> |
 <strong>Zion National Park</strong> |
 <strong>Bryce Canyon</strong> | 
@@ -31,8 +31,8 @@ Hiking Trail/State Park  | State
 <strong>Smith Rock State Park </strong> | 
 <strong>John Muir Trail</strong> | Yosemite National Park, CA, 95389 
 <strong>Mt. Whitney Trail</strong> | Bishop, CA, 93514 
-<strong>Yosemite National Park</strong> | Yosemite National Park, CA, 95389 
-<strong>Tongass National Park</strong> | Juneau, AK, 99801 
+<strong>Yosemite National Park</strong> | California |
+<strong>Tongass National Park</strong> | Alaska | 700
 
 ## Getting Started
 
