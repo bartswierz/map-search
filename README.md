@@ -12,27 +12,27 @@ Hiking Trail/State Park  | State | Est. Distance
 <strong>Crater Rim Trail</strong> | Hawaii | 21 Miles
 <strong>Red Rock Canyon</strong> | Nevada | 13 Miles
 <strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles
-<strong>Pictured Rocks National Lakeshore</strong> | 42 Miles
+<strong>Pictured Rocks National Lakeshore</strong> | Michigan | 42 Miles
 <strong>Yellowstone National Park</strong> | Wyoming | 900 Miles
 <strong>Rubicon Trail</strong> | California | 22 Miles
 <strong>Grand Teton</strong> | Wyoming | 35 Miles
 <strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles
 <strong>Haleakala National Park</strong> | Hawaii | 11 Miles
-<strong>Rocky Mountain National Park</strong> |
-<strong>Zion National Park</strong> |
-<strong>Bryce Canyon</strong> | 
-<strong>Glacier National Park</strong> |
-<strong>Grand Canyon</strong> |
-<strong>Badlands National Park</strong> | 
-<strong>Joshua Tree National Park</strong> |
-<strong>Continental Divide Trail</strong> |
-<strong>Appalachian Trail</strong> |
-<strong>Pacific Crest Trail</strong> |
-<strong>Smith Rock State Park </strong> | 
-<strong>John Muir Trail</strong> | Yosemite National Park, CA, 95389 
-<strong>Mt. Whitney Trail</strong> | Bishop, CA, 93514 
-<strong>Yosemite National Park</strong> | California |
-<strong>Tongass National Park</strong> | Alaska | 700
+<strong>Rocky Mountain National Park</strong> | Colorado | 350 Miles
+<strong>Zion National Park</strong> | Utah | 90 Miles
+<strong>Bryce Canyon</strong> | Utah | 20 Miles
+<strong>Glacier National Park</strong> | Montana | 700 Miles
+<strong>Grand Canyon</strong> | Arizona | 21 Miles
+<strong>Badlands National Park</strong> | South Dakota | 80 Miles
+<strong>Joshua Tree National Park</strong> | California | 60 Miles
+<strong>Continental Divide Trail</strong> | New Mexico | 3100 Miles
+<strong>Appalachian Trail</strong> | Vermont | 2198 Miles
+<strong>Pacific Crest Trail</strong> | California | 2650 Miles
+<strong>Smith Rock State Park </strong> | Oregon | 3 Miles
+<strong>John Muir Trail</strong> | California | 219 Miles
+<strong>Mt. Whitney Trail</strong> | California | 22 Miles
+<strong>Yosemite National Park</strong> | California | 750 Miles
+<strong>Tongass National Park</strong> | Alaska | 700 Miles
 
 ## Getting Started
 
