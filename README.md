@@ -4,35 +4,35 @@
 If you're an avid hiker or just looking for a new adventure, Trailhawk is the perfect app for you. Trailhawk lets you discover the best of the U.S. State Parks and National Parks. From casual hiking trails to treks spanning over 2000 miles, Trailhawk has you covered.
 
 ## Available Locations
-Hiking Trail/State Park  | State | Est. Distance
--- | - | -
-<strong>Starved Rock State Park</strong> | Illinois | 13 Miles
-<strong>Matthiessen State Park</strong> | Illinois | 5 Miles
-<strong>Ferne Clyffe State Park</strong> | Illinois | 75 Miles
-<strong>Crater Rim Trail</strong> | Hawaii | 21 Miles
-<strong>Red Rock Canyon</strong> | Nevada | 13 Miles
-<strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles
-<strong>Pictured Rocks National Lakeshore</strong> | Michigan | 42 Miles
-<strong>Yellowstone National Park</strong> | Wyoming | 900 Miles
-<strong>Rubicon Trail</strong> | California | 22 Miles
-<strong>Grand Teton</strong> | Wyoming | 35 Miles
-<strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles
-<strong>Haleakala National Park</strong> | Hawaii | 11 Miles
-<strong>Rocky Mountain National Park</strong> | Colorado | 350 Miles
-<strong>Zion National Park</strong> | Utah | 90 Miles
-<strong>Bryce Canyon</strong> | Utah | 20 Miles
-<strong>Glacier National Park</strong> | Montana | 700 Miles
-<strong>Grand Canyon</strong> | Arizona | 21 Miles
-<strong>Badlands National Park</strong> | South Dakota | 80 Miles
-<strong>Joshua Tree National Park</strong> | California | 60 Miles
-<strong>Continental Divide Trail</strong> | New Mexico | 3100 Miles
-<strong>Appalachian Trail</strong> | Vermont | 2198 Miles
-<strong>Pacific Crest Trail</strong> | California | 2650 Miles
-<strong>Smith Rock State Park </strong> | Oregon | 3 Miles
-<strong>John Muir Trail</strong> | California | 219 Miles
-<strong>Mt. Whitney Trail</strong> | California | 22 Miles
-<strong>Yosemite National Park</strong> | California | 750 Miles
-<strong>Tongass National Park</strong> | Alaska | 700 Miles
+Hiking Trail/State Park  | State | Est. Distance | Annual Visitors
+-- | - | - | -
+<strong>Starved Rock State Park</strong> | Illinois | 13 Miles | 2100000
+<strong>Matthiessen State Park</strong> | Illinois | 5 Miles | 3000000
+<strong>Ferne Clyffe State Park</strong> | Illinois | 75 Miles | 200000
+<strong>Crater Rim Trail</strong> | Hawaii | 21 Miles | 15000
+<strong>Red Rock Canyon</strong> | Nevada | 13 Miles | 4000000
+<strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles | 14137812
+<strong>Pictured Rocks National Lakeshore</strong> | Michigan | 42 Miles | 1200000
+<strong>Yellowstone National Park</strong> | Wyoming | 900 Miles | 3000000
+<strong>Rubicon Trail</strong> | California | 22 Miles | ~5000000
+<strong>Grand Teton</strong> | Wyoming | 35 Miles | 3000000
+<strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles | 600000
+<strong>Haleakala National Park</strong> | Hawaii | 11 Miles | 853181
+<strong>Rocky Mountain National Park</strong> | Colorado | 350 Miles | 4500000
+<strong>Zion National Park</strong> | Utah | 90 Miles | 4500000
+<strong>Bryce Canyon</strong> | Utah | 20 Miles | 1500000
+<strong>Glacier National Park</strong> | Montana | 700 Miles | 2908458
+<strong>Grand Canyon</strong> | Arizona | 21 Miles | 4730000
+<strong>Badlands National Park</strong> | South Dakota | 80 Miles | 1006809
+<strong>Joshua Tree National Park</strong> | California | 60 Miles | 3064400
+<strong>Continental Divide Trail</strong> | New Mexico | 3100 Miles | 100000
+<strong>Appalachian Trail</strong> | Vermont | 2198 Miles | 3000000
+<strong>Pacific Crest Trail</strong> | California | 2650 Miles | 400000
+<strong>Smith Rock State Park </strong> | Oregon | 3 Miles | 747000
+<strong>John Muir Trail</strong> | California | 219 Miles | 10000
+<strong>Mt. Whitney Trail</strong> | California | 22 Miles | 4000000
+<strong>Yosemite National Park</strong> | California | 750 Miles | 3667550
+<strong>Tongass National Park</strong> | Alaska | 700 Miles | 1881000
 
 ## Getting Started
 
