@@ -7,7 +7,7 @@ import Searchbar__ from "../searchbar/Searchbar";
 import CenterToLocation__ from "./CenterToLocation";
 import MarkerPin__ from "./MarkerPin";
 import Modal from "../modal/Modal";
-
+import MapLayer from "./MapLayer";
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
@@ -16,6 +16,8 @@ const Map = () => {
   // const [geolocation, setGeolocation] = useState({ lat: 41.88260909084107, lon: -87.62254314668812 });
   const [geolocation, setGeolocation] = useState({ lat: 41.31976, lon: -88.99344 });
   const [openModal, setOpenModal] = useState(false); // Display/Remove modal
+
+  const [mapType, setMapType] = useState("hybrid");
 
   // get geolocation object from redux store
   const loc = useSelector((state) => {
@@ -51,7 +53,25 @@ const Map = () => {
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} /> */}
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"terrain"} /> */}
       {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"satellite"} /> */}
-      <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} />
+      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} /> */}
+      {/* {mapType === "roadmap" && <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />}
+      {mapType === "hybrid" && <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} />} */}
+
+      <MapLayer />
+
+      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={mapType} /> */}
+      {/* <button
+        className="text-white text-2xl z-[999] fixed bottom-5 left-5 bg-green-500 px-4 py-2"
+        onClick={() => setMapType("roadmap")}
+      >
+        Switch to Roadmap: {mapType}
+      </button> */}
+      {/* <button
+        className="text-white text-2xl z-[999] fixed bottom-[15%] left-5 bg-green-500 px-4 py-2"
+        onClick={() => setMapType("hybrid")}
+      >
+        Switch to hybrid: {mapType}
+      </button> */}
 
       {/* <ZoomControl position="bottomright" className="hidden" /> */}
       <ZoomControl position="topright" className="hidden" />
