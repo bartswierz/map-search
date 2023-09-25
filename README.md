@@ -6,33 +6,33 @@ If you're an avid hiker or just looking for a new adventure, Trailhawk is the pe
 ## Available Locations
 Hiking Trail/State Park  | State | Est. Distance | Annual Visitors
 -- | - | - | -
-<strong>Starved Rock State Park</strong> | Illinois | 13 Miles | 2100000
-<strong>Matthiessen State Park</strong> | Illinois | 5 Miles | 3000000
-<strong>Ferne Clyffe State Park</strong> | Illinois | 75 Miles | 200000
-<strong>Crater Rim Trail</strong> | Hawaii | 21 Miles | 15000
-<strong>Red Rock Canyon</strong> | Nevada | 13 Miles | 4000000
-<strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles | 14137812
-<strong>Pictured Rocks National Lakeshore</strong> | Michigan | 42 Miles | 1200000
-<strong>Yellowstone National Park</strong> | Wyoming | 900 Miles | 3000000
-<strong>Rubicon Trail</strong> | California | 22 Miles | ~5000000
-<strong>Grand Teton</strong> | Wyoming | 35 Miles | 3000000
-<strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles | 600000
-<strong>Haleakala National Park</strong> | Hawaii | 11 Miles | 853181
-<strong>Rocky Mountain National Park</strong> | Colorado | 350 Miles | 4500000
-<strong>Zion National Park</strong> | Utah | 90 Miles | 4500000
-<strong>Bryce Canyon</strong> | Utah | 20 Miles | 1500000
-<strong>Glacier National Park</strong> | Montana | 700 Miles | 2908458
-<strong>Grand Canyon</strong> | Arizona | 21 Miles | 4730000
-<strong>Badlands National Park</strong> | South Dakota | 80 Miles | 1006809
-<strong>Joshua Tree National Park</strong> | California | 60 Miles | 3064400
-<strong>Continental Divide Trail</strong> | New Mexico | 3100 Miles | 100000
-<strong>Appalachian Trail</strong> | Vermont | 2198 Miles | 3000000
-<strong>Pacific Crest Trail</strong> | California | 2650 Miles | 400000
-<strong>Smith Rock State Park </strong> | Oregon | 3 Miles | 747000
-<strong>John Muir Trail</strong> | California | 219 Miles | 10000
-<strong>Mt. Whitney Trail</strong> | California | 22 Miles | 4000000
-<strong>Yosemite National Park</strong> | California | 750 Miles | 3667550
-<strong>Tongass National Park</strong> | Alaska | 700 Miles | 1881000
+<strong>Starved Rock State Park</strong> | Illinois | 13 Miles | 2,100,000
+<strong>Matthiessen State Park</strong> | Illinois | 5 Miles | 3,000,000
+<strong>Ferne Clyffe State Park</strong> | Illinois | 75 Miles | 200,000
+<strong>Crater Rim Trail</strong> | Hawaii | 21 Miles | 15,000
+<strong>Red Rock Canyon</strong> | Nevada | 13 Miles | 4,000,000
+<strong>Great Smokey Mountains</strong> | Tennessee | 500 Miles | 14,137,812
+<strong>Pictured Rocks National Lakeshore</strong> | Michigan | 42 Miles | 1,200,000
+<strong>Yellowstone National Park</strong> | Wyoming | 900 Miles | 3,000,000
+<strong>Rubicon Trail</strong> | California | 22 Miles | ~5,000,000
+<strong>Grand Teton</strong> | Wyoming | 35 Miles | 3,000,000
+<strong>Point Lobos State Natural Reserve</strong> | California | 5 Miles | 600,000
+<strong>Haleakala National Park</strong> | Hawaii | 11 Miles | 853,181
+<strong>Rocky Mountain National Park</strong> | Colorado | 350 Miles | 4,500,000
+<strong>Zion National Park</strong> | Utah | 90 Miles | 4,500,000
+<strong>Bryce Canyon</strong> | Utah | 20 Miles | 1,500,000
+<strong>Glacier National Park</strong> | Montana | 700 Miles | 2,908,458
+<strong>Grand Canyon</strong> | Arizona | 21 Miles | 4,730,000
+<strong>Badlands National Park</strong> | South Dakota | 80 Miles | 1,006,809
+<strong>Joshua Tree National Park</strong> | California | 60 Miles | 3,064,400
+<strong>Continental Divide Trail</strong> | New Mexico | 3100 Miles | 100,000
+<strong>Appalachian Trail</strong> | Vermont | 2198 Miles | 3,000,000
+<strong>Pacific Crest Trail</strong> | California | 2650 Miles | 400,000
+<strong>Smith Rock State Park </strong> | Oregon | 3 Miles | 747,000
+<strong>John Muir Trail</strong> | California | 219 Miles | 10,000
+<strong>Mt. Whitney Trail</strong> | California | 22 Miles | 4,000,000
+<strong>Yosemite National Park</strong> | California | 750 Miles | 3,667,550
+<strong>Tongass National Park</strong> | Alaska | 700 Miles | 1,881,000
 
 ## Getting Started
 
