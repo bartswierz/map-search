@@ -7,9 +7,11 @@ const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 // Update the map type to either roadmap = roads OR hybrid(default) = nature & roads
 const MapLayer = () => {
+  // On app start, we will use the 'hybrid' map type to give us a better mix of nature & roads
   const [mapType, setMapType] = useState("hybrid");
 
   const MapButton = ({ text }) => {
+    // Checking whether to set our icon to either roads icon or nature icon
     const iconType = text === "hybrid" ? <GiTrail className="text-xl" size={48} /> : <FaRoad className="text-xl" size={48} />;
 
     return (
