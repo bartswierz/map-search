@@ -23,7 +23,10 @@ const Searchbar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="absolute z-[999] top-3 left-3 min-w-[280px] w-[70vw] max-w-[500px] cursor-default">
+    <form
+      onSubmit={handleSubmit}
+      className="absolute z-[999] top-3 left-3 min-w-[280px]- min-w-[240px] w-[70vw] max-w-[500px] cursor-default"
+    >
       <div className="flex text-search-input bg-white gap-2 py-2 pl-4 rounded-t-[4px] border-[1.5px] border-[#c6c5c5] shadow-sm shadow-[#bdbdbd]">
         <SearchIcon isActive={isActive} input={userInput} />
 

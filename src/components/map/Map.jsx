@@ -2,13 +2,11 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, ZoomControl } from "react-leaflet";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
 import Searchbar__ from "../searchbar/Searchbar";
 import CenterToLocation__ from "./CenterToLocation";
 import MarkerPin__ from "./MarkerPin";
-import Modal from "../modal/Modal";
-import MapLayer from "./MapLayer";
-const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+import Modal__ from "../modal/Modal";
+import MapLayer__ from "./MapLayer";
 
 // LEAFLET SETUP RESOURCE: https://react-leaflet.js.org/docs/start-setup/
 const Map = () => {
@@ -16,8 +14,6 @@ const Map = () => {
   // const [geolocation, setGeolocation] = useState({ lat: 41.88260909084107, lon: -87.62254314668812 });
   const [geolocation, setGeolocation] = useState({ lat: 41.31976, lon: -88.99344 });
   const [openModal, setOpenModal] = useState(false); // Display/Remove modal
-
-  const [mapType, setMapType] = useState("hybrid");
 
   // get geolocation object from redux store
   const loc = useSelector((state) => {
@@ -37,6 +33,7 @@ const Map = () => {
   // Marker Click => Open Modal / Close Button OR Outside Modal => Close Modal
   const handleModal = () => setOpenModal(!openModal); // Show the modal when marker is clicked
 
+  // NOTE: our components are identified with '__' to help differentiate between react-leaflet components and our components
   return (
     <MapContainer
       // center={[42.354022, -71.046245]}
@@ -46,21 +43,10 @@ const Map = () => {
       zoomControl={false}
       doubleClickZoom={false} // Disable double-click zooming
       dragging={!openModal} // WHEN MODAL IS OPEN, DRAGGING IS DISABLED
-      className="w-full h-full"
+      className="w-full h-full relative"
     >
-      {/* Map Types: 'roadmap' | 'satellite' | 'terrain' | 'hybrid' */}
-      {/* ADDING GOOGLE MAP TILES - PASSING ENV VARIABLE - API KEY*/}
-      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} /> */}
-      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"terrain"} /> */}
-      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"satellite"} /> */}
-      {/* <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} /> */}
-      {/* {mapType === "roadmap" && <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"roadmap"} />}
-      {mapType === "hybrid" && <ReactLeafletGoogleLayer apiKey={GOOGLE_API_KEY} type={"hybrid"} />} */}
-
-      <MapLayer />
-
-      {/* <ZoomControl position="bottomright" className="hidden" /> */}
-      <ZoomControl position="topright" className="hidden" />
+      <MapLayer__ />
+      <ZoomControl position="topright" />
 
       {/* CONTAINS SEARCHBAR & RESULTS COMPONENT */}
       <Searchbar__ />
@@ -72,7 +58,7 @@ const Map = () => {
       <CenterToLocation__ location={geolocation} />
 
       {/* Passing callback function to close modal when user clicks Close Btn or outside of modal */}
-      {openModal && <Modal handleModal={handleModal} />}
+      {openModal && <Modal__ handleModal={handleModal} />}
     </MapContainer>
   );
 };
