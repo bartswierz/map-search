@@ -8,6 +8,7 @@ import ResultsHeader from "./ResultsHeader";
 const Results = ({ input, setUserInputCallback }) => {
   const dispatch = useDispatch();
   const [resultsList, setResultsList] = useState([]);
+  const [displayResults, setDisplayResults] = useState(true);
 
   // Creates a results list that START WITH the user input
   useEffect(() => {
@@ -21,10 +22,15 @@ const Results = ({ input, setUserInputCallback }) => {
     const filterData = hikingData.filter(({ name }) => name.toLowerCase().startsWith(input.toLowerCase()));
 
     setResultsList(filterData);
+
+    // setting to true to allow results to display once again since the input has changed
+    setDisplayResults(true);
   }, [input]);
 
   // Dispatch values to our redux store when user clicks on a result
   const handleClick = (store) => {
+    setDisplayResults(false); // HIDE RESULTS LIST
+
     setUserInputCallback(store.name); // UPDATE INPUT FIELD WITH STORE NAME PICKED
 
     /* UPDATE STORE W/ USER CHOICE: GUARNTEED - NAME, ID
@@ -32,8 +38,13 @@ const Results = ({ input, setUserInputCallback }) => {
     dispatch(updateStore(store));
   };
 
-  // Prevents 'no results' displaying when user input is empty
-  if (input.length === 0) return null;
+  // clear results list and re-renders when user clicks on a result
+  useEffect(() => {
+    if (!displayResults) setResultsList([]);
+  }, [displayResults]);
+
+  /* input length 0 takes care of user clearing field,  */
+  if (input.length === 0 || resultsList.length === 0 || !displayResults) return null;
 
   return (
     <div className="text-sm h-max max-w-[500px] border border-[#bdbdbd] shadow-sm shadow-[#bdbdbd] rounded-[4px] overflow-hidden mt-4">

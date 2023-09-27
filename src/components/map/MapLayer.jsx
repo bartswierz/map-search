@@ -15,7 +15,10 @@ const MapLayer = () => {
     const iconType = text === "hybrid" ? <GiTrail className="text-xl" size={48} /> : <FaRoad className="text-xl" size={48} />;
 
     return (
-      <div className={`group flex flex-col w-[64px] cursor-pointer hover:text-gray-900`} onClick={() => setMapType(`${text}`)}>
+      <div
+        className={`group flex flex-col w-[42px] md:w-[64px] cursor-pointer hover:text-gray-900`}
+        onClick={() => setMapType(`${text}`)}
+      >
         <div className="border-2 border-gray-900 transition-all rounded-md flex justify-center items-center p-1 group-hover:text-gray-900 shadow-lg">
           {iconType}
         </div>
@@ -26,7 +29,7 @@ const MapLayer = () => {
 
   /* Map Types: 'roadmap' | 'satellite' | 'terrain' | 'hybrid' */
   return (
-    <div className="fixed z-[999] border w-max bottom-[5%] left-[1%] flex p-2- pl-2 pt-2 pr-2 pb-1 gap-2 text-gray-600 bg-white rounded-md shadow-md">
+    <div className="fixed z-[999] border w-max bottom-[3%] left-[1.5%] flex pl-2 pt-2 pr-2 pb-1 gap-2 text-gray-600 bg-white rounded-md shadow-md">
       <MapButton text="hybrid" />
       <MapButton text="roadmap" />
 
