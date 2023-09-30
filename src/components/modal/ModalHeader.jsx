@@ -26,7 +26,8 @@ const ModalHeader = ({ geolocation, name, details }) => {
 
         {/* WEBSITE */}
         {/* <div className="b flex items-start justify-start w-full"> */}
-        <div className="w-full xsm:w-max">
+        {/* TODO - if under 468px add margin top / increase text for below  */}
+        <div className="w-full mt-2 xsm:mt-0 text-base xsm:text-sm xsm:w-max">
           <WebsiteLink link={website} />
         </div>
       </div>
