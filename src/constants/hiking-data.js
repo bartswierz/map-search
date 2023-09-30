@@ -425,7 +425,8 @@ export const hikingData = [
       annualVisitors: 2100000,
       // miles: 0,
     },
-    images: [],
+    // images: ["https://i.ibb.co/jM8MYVm/starved-rock.jpg, https://i.ibb.co/GVDX4vG/starved-rock2.jpg"],
+    images: ["https://i.ibb.co/GVDX4vG/starved-rock2.jpg", "https://i.ibb.co/jM8MYVm/starved-rock.jpg"],
   },
   {
     id: 26,

@@ -8,7 +8,7 @@ const Image = ({ image }) => {
   if (isBroken) return null;
 
   return (
-    <div key={image} className="max-h-[200px] w-full">
+    <div key={image} className="max-h-[200px] w-full rounded-md overflow-hidden">
       <img
         key={image}
         src={image}
