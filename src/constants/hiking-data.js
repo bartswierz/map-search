@@ -456,7 +456,7 @@ export const hikingData = [
       annualVisitors: 15000,
       // miles: 21,
     },
-    images: [],
+    images: ["https://i.ibb.co/P6Ttvpm/crater-rim-trail.jpg"],
   },
   {
     id: 25,
