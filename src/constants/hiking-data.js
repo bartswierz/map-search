@@ -204,7 +204,7 @@ export const hikingData = [
       annualVisitors: 2908458,
       // miles: 700,
     },
-    images: [],
+    images: ["https://i.ibb.co/44c6kvm/glacier-national-park.jpg", "https://i.ibb.co/h21JCcz/glacier-national-park2.jpg"],
   },
   {
     id: 13,
@@ -374,7 +374,7 @@ export const hikingData = [
       annualVisitors: 14137812,
       // miles: 500,
     },
-    images: [],
+    images: ["https://i.ibb.co/gzW1Gq2/great-smokey-mountains.jpg", "https://i.ibb.co/zGmwCYN/great-smokey-mountains2.jpg"],
   },
   {
     id: 23,
