@@ -221,7 +221,7 @@ export const hikingData = [
       annualVisitors: 1500000,
       // miles: 20,
     },
-    images: [],
+    images: ["https://i.ibb.co/YL5M4Xt/bryce-canyon.jpg"],
   },
   {
     id: 14,
@@ -391,7 +391,7 @@ export const hikingData = [
       annualVisitors: 4000000,
       // miles: 13,
     },
-    images: [],
+    images: ["https://i.ibb.co/7KY0DZH/red-rock-canyon.jpg"],
   },
   {
     id: 24,
@@ -443,7 +443,7 @@ export const hikingData = [
       annualVisitors: 3000000,
       // miles: 0,
     },
-    images: [],
+    images: ["https://i.ibb.co/KLr1qYN/matthiessen-state-park.jpg"],
   },
   {
     id: 27,
@@ -460,7 +460,7 @@ export const hikingData = [
       annualVisitors: 200000,
       // miles: 0,
     },
-    images: [],
+    images: ["https://i.ibb.co/YXYPccP/ferne-clyffe-state-park.jpg"],
   },
 ];
 
