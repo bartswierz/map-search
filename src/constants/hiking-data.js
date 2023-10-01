@@ -17,7 +17,7 @@ export const hikingData = [
       address: "8510 Mendenhall Loop Road, Juneau, AK, 99801",
       annualVisitors: 1881000,
     },
-    images: [],
+    images: ["https://i.ibb.co/R3tyhcp/tongass.jpg"],
   },
   {
     id: 2,
@@ -34,7 +34,11 @@ export const hikingData = [
       annualVisitors: 3667550,
       // miles: 750,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/yW4s4QP/yosemite1.jpg",
+      "https://i.ibb.co/QmD6NXX/yosemite2.jpg",
+      "https://i.ibb.co/tDn8Ywm/yosemite3.jpg",
+    ],
   },
   {
     id: 3,
@@ -51,7 +55,7 @@ export const hikingData = [
       annualVisitors: 4000000,
       // miles: 22,
     },
-    images: [],
+    images: ["https://i.ibb.co/8KfHkbQ/mount-whitney1.jpg", "https://i.ibb.co/5nSgvvj/mount-whitney2.jpg"],
   },
   {
     id: 4,
@@ -68,7 +72,11 @@ export const hikingData = [
       annualVisitors: 10000,
       //miles: 219
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/9m086Jb/john-muir1.jpg",
+      "https://i.ibb.co/R2TL7kt/john-muir2.jpg",
+      "https://i.ibb.co/fvxKDG1/john-muir3.jpg",
+    ],
   },
   {
     id: 5,
@@ -85,7 +93,11 @@ export const hikingData = [
       annualVisitors: 747000,
       miles: 3,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/R0LnqW4/smith-rock1.jpg",
+      "https://i.ibb.co/Ykw0C9x/smith-rock2.jpg",
+      "https://i.ibb.co/kSBJ7q8/smith-rock3.jpg",
+    ],
   },
   {
     id: 6,
@@ -102,7 +114,7 @@ export const hikingData = [
       annualVisitors: 400000,
       // miles: 2650,
     },
-    images: [],
+    images: ["https://i.ibb.co/X2k571j/pacific-crest1.jpg", "https://i.ibb.co/qRYV5Vz/pacific-crest2.jpg"],
   },
   {
     id: 7,
@@ -119,7 +131,7 @@ export const hikingData = [
       annualVisitors: 3000000,
       // miles: 2198,
     },
-    images: [],
+    images: ["https://i.ibb.co/5hC973X/appalachian-trail.jpg"],
   },
   {
     id: 8,
@@ -136,7 +148,7 @@ export const hikingData = [
       annualVisitors: 100000,
       // miles: 3100,
     },
-    images: [],
+    images: ["https://i.ibb.co/h9nBRG8/continental-divide-trail.jpg"],
   },
   {
     id: 9,
@@ -153,7 +165,11 @@ export const hikingData = [
       annualVisitors: 3064400,
       // miles: 60,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/vQ12WSS/joshua-tree-national1.jpg",
+      "https://i.ibb.co/tm81JKM/joshua-tree-national2.jpg",
+      "https://i.ibb.co/k6p11nM/joshua-tree-national3.jpg",
+    ],
   },
   {
     id: 10,
