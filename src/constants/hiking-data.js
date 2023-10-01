@@ -323,7 +323,7 @@ export const hikingData = [
       annualVisitors: 0,
       // miles: 22,
     },
-    images: [],
+    images: ["https://i.ibb.co/SthCmBm/rubicon-trail1.jpg", "https://i.ibb.co/R7vktZ7/rubicon-trail2.jpg"],
   },
   {
     id: 20,
@@ -340,7 +340,11 @@ export const hikingData = [
       annualVisitors: 3000000,
       // miles: 900,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/68P461w/yellowstone-national-park1.jpg",
+      "https://i.ibb.co/MsZSxch/yellowstone-national-park2.jpg",
+      "https://i.ibb.co/VVQ9Frj/yellowstone-national-park3.jpg",
+    ],
   },
   {
     id: 21,
@@ -357,7 +361,11 @@ export const hikingData = [
       annualVisitors: 1200000,
       // miles: 42,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/CstyGrf/pictured-rocks3.jpg",
+      "https://i.ibb.co/FVBJ6BM/pictured-rocks1.jpg",
+      "https://i.ibb.co/BChW04J/pictured-rocks2.jpg",
+    ],
   },
   {
     id: 22,
