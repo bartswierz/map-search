@@ -170,7 +170,11 @@ export const hikingData = [
       annualVisitors: 1006809,
       // miles: 80,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/WKBQTkv/badlands-national1.jpg",
+      "https://i.ibb.co/sq4S260/badlands-national2.jpg",
+      "https://i.ibb.co/QpryMzz/badlands-national3.jpg",
+    ],
   },
   {
     id: 11,
@@ -187,7 +191,11 @@ export const hikingData = [
       annualVisitors: 4730000,
       // miles: 21,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/0VtSLyc/grand-canyon1.jpg",
+      "https://i.ibb.co/hLf1yMB/grand-canyon2.jpg",
+      "https://i.ibb.co/6YqDz2v/grand-canyon3.jpg",
+    ],
   },
   {
     id: 12,
@@ -238,7 +246,7 @@ export const hikingData = [
       annualVisitors: 4500000,
       // miles: 90,
     },
-    images: [],
+    images: ["https://i.ibb.co/kyY7FKY/zion3.jpg", "https://i.ibb.co/TPWpn8R/zion1.jpg", "https://i.ibb.co/BzC7NSW/zion2.jpg"],
   },
   {
     id: 15,
@@ -255,7 +263,11 @@ export const hikingData = [
       annualVisitors: 4500000,
       // miles: 350,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/sVHsnzP/rocky-mountain1.jpg",
+      "https://i.ibb.co/3rKYMW8/rocky-mountain2.jpg",
+      "https://i.ibb.co/F3D7XF8/rocky-mountain3.jpg",
+    ],
   },
   {
     id: 16,
@@ -272,7 +284,11 @@ export const hikingData = [
       annualVisitors: 853181,
       // miles: 11,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/xqGhWjK/haleakala-national-park1.jpg",
+      "https://i.ibb.co/QbNLkMW/haleakala-national-park3.jpg",
+      "https://i.ibb.co/6ZWh4zc/haleakala-national-park2.jpg",
+    ],
   },
   {
     id: 17,
@@ -289,7 +305,11 @@ export const hikingData = [
       annualVisitors: 600000,
       // miles: 5,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/GsRc2M0/point-lobos1.jpg",
+      "https://i.ibb.co/9cQXKdq/point-lobos2.jpg",
+      "https://i.ibb.co/VC41R2X/point-lobos3.jpg",
+    ],
   },
   {
     id: 18,
@@ -306,7 +326,11 @@ export const hikingData = [
       annualVisitors: 3000000,
       // miles: 35,
     },
-    images: [],
+    images: [
+      "https://i.ibb.co/vXWqCH7/grand-teton1.jpg",
+      "https://i.ibb.co/XpKdNc2/grand-teton2.jpg",
+      "https://i.ibb.co/MM9FZGk/grand-teton3.jpg",
+    ],
   },
   {
     id: 19,
