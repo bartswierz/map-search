@@ -104,7 +104,7 @@ CHART.JS Installation - https://www.chartjs.org/docs/latest/getting-started/inst
 GOOGLE MAPS API - https://developers.google.com/maps/documentation/javascript/overview
 
 ## Possible Future Features:
-- <strong>Favorites feature</strong>: Allow users to save the hiking trails they liked from the results list. This would require a unique id for each hiking trail and a database(would also require a sign in feature to keep track of user data) or local storage to persist the data when user closes the application.
+- <strong>Favorites</strong>: Allow users to save the hiking trails they liked from the results list. This would require a unique id for each hiking trail and a database(would also require a sign in feature to keep track of user data) or local storage to persist the data when user closes the application.
       
-- <strong>Suggest Me Something feature</strong>: option that a user can choose that would select a choice for them based on their preference if they can't decide. This could help with hikers who have a difficult time deciding between some great hiking trails.
+- <strong>Suggest Me Something</strong>: A useful option for an eager hiker who is having a difficult time deciding between all the great hiking trails and state parks. This would select a hiking trail at random from the available locations for them if they can't decide. 
     
