@@ -4,7 +4,7 @@ const Description = ({ text }) => {
   if (!text) return null;
 
   return (
-    <div className="text-center xsm:text-left px-3 py-4-">
+    <div className="text-center xsm:text-left px-3">
       <p className="text-base">{text}</p>
     </div>
   );

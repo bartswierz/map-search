@@ -2,11 +2,12 @@ import { useState } from "react";
 import SearchbarClearBtn from "./SearchbarCloseBtn";
 import Results from "../results/Results";
 import SearchIcon from "../icons/SearchIcon";
+import SuggestionButton from "./SuggestionButton";
 
 const Searchbar = () => {
   const [userInput, setUserInput] = useState("");
   const [isActive, setIsActive] = useState(false);
-  // const [displayValue, setDisplayValue] = useState("");
+  const [isSuggested, setIsSuggested] = useState(false);
 
   // PREVENT PAGE REFRESH ON SUBMIT
   const handleSubmit = (e) => {
@@ -15,6 +16,7 @@ const Searchbar = () => {
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
+    setIsSuggested(false); // Sets is suggested to false when user types so the results list is displayed
   };
 
   // CHANGE SEARCH ICON COLOR: ACTIVE/onFocus = BLACK | INACTIVE/onBlur = GRAY
@@ -45,8 +47,9 @@ const Searchbar = () => {
         <SearchbarClearBtn resetInputCallback={setUserInput} input={userInput} />
       </div>
 
-      {/* CALLBACK UPDATES INPUT FIELD TO 'STORE NAME' CHOSEN */}
-      <Results input={userInput} setUserInputCallback={setUserInput} />
+      <SuggestionButton setUserInputCallback={setUserInput} setIsSuggestedCallback={setIsSuggested} />
+
+      {!isSuggested ? <Results input={userInput} setUserInputCallback={setUserInput} /> : null}
     </form>
   );
 };
